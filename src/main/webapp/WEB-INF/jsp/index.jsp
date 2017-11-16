@@ -1,6 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<c:import url="/WEB-INF/jsp/header.jsp" />
+<c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
 <h2>CLE Brews</h2>
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. 
@@ -12,5 +12,5 @@ Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdie
 Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>
 
 		
-<c:import url="/WEB-INF/jsp/footer.jsp" />
+<c:import url="/WEB-INF/jsp/shared/footer.jsp" />
 		
