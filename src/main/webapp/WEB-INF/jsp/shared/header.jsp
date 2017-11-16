@@ -10,15 +10,30 @@
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	    <c:url var="cssHref" value="/site.css" />
-		<link rel="stylesheet" type="text/css" href="${cssHref}">
+	    
+	    <c:url var="cssHref" value="/css/style.css" />
+		<link rel="stylesheet" href="${cssHref}">	
 		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$("time.timeago").timeago();
+				
+				$("#logoutLink").click(function(event){
+					$("#logoutForm").submit();
+				});
+				
+				var pathname = window.location.pathname;
+				$("nav a[href='"+pathname+"']").parent().addClass("active");
+				
+			});
+	
+		</script>
 	</head>
 	<body>
 		<header>
 		
 		</header>
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default cleNavbar">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
 					<c:url var="homePageHref" value="/" />

@@ -37,6 +37,13 @@ header h1 {
 	display: inline;
 }
 
+.cleNavbar {
+	background-color: #ff9e09;
+}
+
+.cleNavbar > li > a {
+	color: #611e34;
+}
 .button {
 	color: white;
 	background-color: coral;
