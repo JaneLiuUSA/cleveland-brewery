@@ -2,8 +2,7 @@ package com.techelevator.clebrews.model;
 
 public interface BreweryDAO {
 
-	public void saveBrewery(String name, String location, String description);
-	
+	public void saveBrewery(String name, String location, String description, String imgUrl, String websiteUrl, String businessHours,  int userId);
 	public Brewery getAllBrewery();
 	public Brewery getBreweryById(int id);
 	public void updateBreweryName();
