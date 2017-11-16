@@ -23,14 +23,15 @@
 				<ul class="nav navbar-nav">
 					<c:url var="homePageHref" value="/" />
 					<li><a href="${homePageHref}">Home</a></li>
-					<c:if test="${not empty currentUser}">
 					
-						<c:url var="newMessageHref" value="/breweries/" />
-						<li><a href="${newMessageHref}">CLE Breweries</a></li>
+						<c:url var="breweryListHref" value="/breweries/" />
+						<li><a href="${breweryListHref}">CLE Breweries</a></li>
 						
-						<c:url var="dashboardHref" value="/beers/" />
-						<li><a href="${dashboardHref}">CLE Brews</a></li>
-						
+						<c:url var="beerListHref" value="/beers/" />
+						<li><a href="${beerListHref}">CLE Brews</a></li>
+											
+					<c:if test="${not empty currentUser}">
+									
 						<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
 						<li><a href="${changePasswordHref}">Change Password</a></li>
 					</c:if>
