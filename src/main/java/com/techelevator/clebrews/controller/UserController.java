@@ -30,27 +30,9 @@ public class UserController {
 	@RequestMapping(path="/users", method=RequestMethod.POST)
 	public String createUser(@RequestParam String userName, @RequestParam String password) {
 		userDAO.saveUser(userName, password);
-		return "redirect:/login";
+		return "redirect:/index";
 	}
-//	
-//	@RequestMapping(path="/users/{userName}", method=RequestMethod.GET)
-//	public String displayDashboard(Map<String, Object> model, @PathVariable String userName) {
-//		model.put("conversations", messageDAO.getConversationsForUser(userName));
-//		return "userDashboard";
-//	}
-//	
-//	@RequestMapping(path="/users/{forUserName}/conversations/{withUserName}", method=RequestMethod.GET)
-//	public String displayConversation(Map<String, Object> model, @PathVariable String forUserName, @PathVariable String withUserName) {
-//		model.put("conversation", messageDAO.getConversation(forUserName, withUserName));
-//		return "conversation";
-//	}
-//	
-//	@RequestMapping(path="/users/{userName}/messages", method=RequestMethod.GET)
-//	public String displaySentMessages(Map<String, Object> model, @PathVariable String userName) {
-//		model.put("messages", messageDAO.getMessagesSentByUser(userName));		
-//		return "sentMessages";
-//	}
-//	
+
 	@RequestMapping(path="/users/{userName}/changePassword", method=RequestMethod.GET)
 	public String displayChangePasswordForm(Map<String, Object> model, @PathVariable String userName) {
 		model.put("userName", userName);

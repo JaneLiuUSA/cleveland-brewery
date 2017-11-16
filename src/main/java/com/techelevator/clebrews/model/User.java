@@ -1,6 +1,7 @@
 package com.techelevator.clebrews.model;
 
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
 public class User {
@@ -11,6 +12,7 @@ public class User {
 	@Pattern(regexp="[a-z]", message="Must have a lowercase"),
 	@Pattern(regexp="[0-9]", message="Must have a number")
 	})
+	@NotNull(message="You must have a password")
 	private String password;
 	private String confirmPassword;
 	private int roleId;

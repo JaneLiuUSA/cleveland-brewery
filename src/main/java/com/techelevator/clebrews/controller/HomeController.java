@@ -12,5 +12,10 @@ public class HomeController {
 		
 		return "index";
 	}
+	@RequestMapping(path="/index", method=RequestMethod.GET)
+	public String showIndex() {
+		
+		return "index";
+	}
 	
 }
