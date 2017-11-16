@@ -1,7 +1,5 @@
 package com.techelevator.clebrews.controller;
 
-import java.util.Map;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -11,7 +9,7 @@ public class HomeController {
 
 	@RequestMapping(path="/", method=RequestMethod.GET)
 	public String showHomePage() {
-		//model.put("messages", messageDAO.getPublicMessages(10));
+		
 		return "index";
 	}
 	

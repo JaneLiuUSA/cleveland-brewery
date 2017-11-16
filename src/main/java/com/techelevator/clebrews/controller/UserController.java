@@ -16,13 +16,11 @@ import com.techelevator.clebrews.model.UserDAO;
 public class UserController {
 
 	private UserDAO userDAO;
-//	private MessageDAO messageDAO;
-//
-//	@Autowired
-//	public UserController(UserDAO userDAO, MessageDAO messageDAO) {
-//		this.userDAO = userDAO;
-//		this.messageDAO = messageDAO;
-//	}
+
+	@Autowired
+	public UserController(UserDAO userDAO) {
+		this.userDAO = userDAO;
+	}
 
 	@RequestMapping(path="/users/new", method=RequestMethod.GET)
 	public String displayNewUserForm() {
