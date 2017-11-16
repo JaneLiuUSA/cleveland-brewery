@@ -44,10 +44,14 @@ header h1 {
 .cleNavbar > li > a {
 	color: #611e34;
 }
+
+.active {
+	color: #611e34;	
+}
+
 .button {
 	color: white;
 	background-color: coral;
-
 }
 
 footer {
