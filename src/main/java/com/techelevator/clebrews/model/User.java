@@ -5,8 +5,12 @@ import javax.validation.constraints.Pattern;
 
 public class User {
 	private String userName;
-	@Min(value=5, message="Password too short, must be at least 8 characters")
-	@Pattern(regexp="[A-Z]", message="Must have a capital")
+	@Min(value=8, message="Password too short, must be at least 8 characters")
+	@Pattern.List({
+	@Pattern(regexp="[A-Z]", message="Must have a capital"),
+	@Pattern(regexp="[a-z]", message="Must have a lowercase"),
+	@Pattern(regexp="[0-9]", message="Must have a number")
+	})
 	private String password;
 	private String confirmPassword;
 	private int roleId;

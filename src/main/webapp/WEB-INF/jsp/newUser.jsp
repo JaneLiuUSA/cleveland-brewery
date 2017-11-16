@@ -59,12 +59,11 @@
 			<strong>Password Rules:</strong>
 			<ul>
 				<li>Must be at least 8 characters long</li>
-				<li>Must contain at least 3 of the following 4 types of characters:
+				<li>Must contain the following types of characters:
 					<ol>
 						<li>Uppercase letter (A-Z)</li>
 						<li>Lowercase letter (a-z)</li>
 						<li>Number (0-9)</li>
-						<li>A "special" character (#, $, space, etc)</li>
 					</ol>
 				</li>
 				<li>No more than two identical characters in a row</li>
