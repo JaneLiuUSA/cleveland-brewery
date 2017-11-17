@@ -23,9 +23,9 @@ public class BreweryController {
 	
 	@RequestMapping(path="/breweries", method=RequestMethod.GET)
 	public String showAllBreweries(ModelMap modelHolder, @ModelAttribute Brewery brewery) {
-		List<Brewery> breweries = BreweryDAO.getAllBrewery();
+		List<Brewery> breweries = breweryDao.getAllBrewery();
 		modelHolder.put("allBreweries", breweries);
-		return "breweries";
+		return "breweryList";
 	}
 
 }

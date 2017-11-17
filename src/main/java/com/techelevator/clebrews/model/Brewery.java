@@ -24,7 +24,7 @@ public class Brewery {
 	private int userId;
 	
 	
-	public Brewery(){}; //default constructor
+	public Brewery(){} //default constructor
 	
 	public Brewery(String name, String location, String description) {
 		this.name = name;
