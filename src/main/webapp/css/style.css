@@ -161,7 +161,6 @@ body {
    width:100%;
 }
 
-
 @media all and (max-width: 1400px) {
   #rules { display: none; }
 }
@@ -196,7 +195,10 @@ body {
 	flex: 1;
 	margin: auto;
 }
- 
+
  .sizing {
  height: 60%;
  }
+
+
+

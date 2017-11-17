@@ -17,7 +17,9 @@ public class Brewery {
 	@NotBlank(message="Zipcode is required")
 	private int zipcode;
 	@NotNull(message="required")
+	private String phoneNumber;
 	private String description;
+	private String breweryLogoUrl;
 	private String imgUrl;
 	private String websitieUrl;
 	private String businessHour;
@@ -123,6 +125,22 @@ public class Brewery {
 
 	public void setZipcode(int zipcode) {
 		this.zipcode = zipcode;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getBreweryLogoUrl() {
+		return breweryLogoUrl;
+	}
+
+	public void setBreweryLogoUrl(String breweryLogoUrl) {
+		this.breweryLogoUrl = breweryLogoUrl;
 	}
 	
 }
