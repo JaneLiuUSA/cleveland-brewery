@@ -1,12 +1,10 @@
 package com.techelevator.clebrews.model;
 
-import javax.validation.constraints.NotNull;
-
 public class Brewery {
 
 	private int id;
-	@NotNull(message="required")
 	private String name;
+<<<<<<< HEAD
 	@NotNull(message="required")
 	private String address;
 	@NotNull(message="Address is required")
@@ -14,11 +12,18 @@ public class Brewery {
 	@NotNull(message="Zipcode is required")
 	private String zipcode;
 	@NotNull(message="required")
+=======
+	private String address;
+	private String city;
+	private int zipcode;
+>>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
 	private String description;
 	private String imgUrl;
 	private String websitieUrl;
 	private String businessHour;
+	private int userId;
 	
+<<<<<<< HEAD
 	
 	public Brewery(String name, String location, String description) {
 		this.name = name;
@@ -26,7 +31,10 @@ public class Brewery {
 		this.description = description;
 	}
 
+=======
+>>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
 
+	
 	public int getId() {
 		return id;
 	}
@@ -47,6 +55,7 @@ public class Brewery {
 	}
 
 
+<<<<<<< HEAD
 	public String getLocation() {
 		return address;
 	}
@@ -55,6 +64,8 @@ public class Brewery {
 	public void setLocation(String location) {
 		this.address = location;
 	}
+=======
+>>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
 
 
 	public String getDescription() {
@@ -97,6 +108,29 @@ public class Brewery {
 	}
 
 
+<<<<<<< HEAD
+=======
+	public int getUserId() {
+		return userId;
+	}
+
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+>>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
 	public String getCity() {
 		return city;
 	}
@@ -107,12 +141,20 @@ public class Brewery {
 	}
 
 
+<<<<<<< HEAD
 	public String getZipcode() {
+=======
+	public int getZipcode() {
+>>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
 		return zipcode;
 	}
 
 
+<<<<<<< HEAD
 	public void setZipcode(String zipcode) {
+=======
+	public void setZipcode(int zipcode) {
+>>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
 		this.zipcode = zipcode;
 	}
 	
