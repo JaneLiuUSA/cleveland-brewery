@@ -8,14 +8,25 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 	
+		$.validator.addMethod('uppercase', function(value) {
+			return value.match(/[A-Z]/);
+			});
+			$.validator.addMethod('lowercase', function(value) {
+			return value.match(/[a-z]/);
+			});
+			$.validator.addMethod('number', function(value){
+			return value.match(/[0-9]/);
+			});
+		
 		$("form").validate({
 			rules : {
 				password : {
 					required : true,
 					minlength : 8,
 					maxlength : 128,
-					complexPassword : true,
-					noMoreThan2Duplicates : true
+					uppercase : true,
+					lowercase : true,
+					number : true,
 				},
 				userName : {
 					required : true
@@ -25,7 +36,13 @@
 					equalTo : "#password"  
 				}
 			},
-			messages : {			
+			messages : {	
+				password: {
+					minlength: "Password was too short. It should be at least 8 characters.",
+					uppercase: "Password must contain at least one uppercase letter",
+					lowercase: "Password must contain at least one lowercase letter",
+					number: "Password must contain one number",
+				},
 				confirmPassword : {
 					equalTo : "Passwords do not match"
 				}
@@ -35,7 +52,12 @@
 		
 	});
 </script>
+<c:if test="${errorMessage != null }">
+	<h2>
+	<c:out value="${errorMessage }"/>
+	</h2>
 
+</c:if>
 <c:url var="formAction" value="/users" />
 <form method="POST" action="${formAction}">
 	<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
@@ -55,6 +77,8 @@
 			</div>
 			<button type="submit" class="btn btn-default">Create User</button>
 		</div>
+	</div>
+</form>	
 		<div class="col-sm-6">
 			<strong>Password Rules:</strong>
 			<ul>
@@ -66,10 +90,9 @@
 						<li>Number (0-9)</li>
 					</ol>
 				</li>
-				<li>No more than two identical characters in a row</li>
 			</ul>
 		</div>
-	</div>
-</form>
+	
+
 		
 <c:import url="/WEB-INF/jsp/shared/footer.jsp" />

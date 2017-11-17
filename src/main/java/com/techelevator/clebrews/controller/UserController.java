@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,9 +29,15 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/users", method=RequestMethod.POST)
-	public String createUser(@RequestParam String userName, @RequestParam String password) {
-		userDAO.saveUser(userName, password);
-		return "redirect:/index";
+	public String createUser(@RequestParam String userName, @RequestParam String password, ModelMap model) {
+		if(userDAO.searchForUsernameAndPassword(userName, password)) {
+			userDAO.saveUser(userName, password);
+			return "redirect:/index";
+		} else {
+			model.put("errorMessage", "This username alreadys exists");
+			return "redirect:/users/new";
+		}
+
 	}
 
 	@RequestMapping(path="/users/{userName}/changePassword", method=RequestMethod.GET)
