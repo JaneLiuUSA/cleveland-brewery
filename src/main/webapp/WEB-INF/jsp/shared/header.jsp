@@ -4,14 +4,18 @@
 <html>
 	<head>
 		
-		<title>CleBrews</title>
+		<title>CleBrews - 
+		<c:if test="${not empty currentUser}"> 
+ 			<c:out value="${currentUser}"/> 
+ 		</c:if>	
+		</title>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/jquery.validate.min.js"></script>
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	    <c:url var="cssHref" value="css/style.css" />
+	    <c:url var="cssHref" value="/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
@@ -39,7 +43,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#myPage">Cleveland Brews</a>
+      <a class="navbar-brand">CLEVELAND BREWS</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
@@ -52,12 +56,7 @@
         <c:url var="beerListHref" value="/beers/" /> 
 		<li><a href="${beerListHref}">CLE BREWS</a></li> 
 		
-        		<c:if test="${not empty currentUser}"> --%>
-									
-				<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
-						<li><a href="${changePasswordHref}">CHANGE PASSWORD</a></li>
-					</c:if>
-				</ul> 
+		</ul> 
 				<ul class="nav navbar-nav navbar-right"> 
 					<c:choose>
 						<c:when test="${empty currentUser}">
@@ -79,9 +78,6 @@
 				</ul> 
  			</div> 
  		</nav> 
-		<c:if test="${not empty currentUser}">
-			<p id="currentUser">Current User: ${currentUser}</p>
-		</c:if>		
 
  
 <!--         <li class="dropdown"> -->
@@ -93,11 +89,11 @@
 <!--             <li><a href="#">Media</a></li>  -->
 <!--           </ul> -->
 <!--         </li> -->
-        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<!--         <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li> -->
+<!--       </ul> -->
+<!--     </div> -->
+<!--   </div> -->
+<!-- </nav> -->
 	
 		
 		

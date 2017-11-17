@@ -138,82 +138,24 @@ body {
   textarea {
       resize: none;
   }
-
-/* header h1 { */
-/* 	display : inline; */
-/* } */
-
-/* .content { */
-/* 	padding-left : 1em; */
-/* } */
-
-/* .message { */
-/* 	font-size : 14pt; */
-/* } */
-
-/* .message-list { */
-/* 	list-style-type : none; */
-/* 	padding : 0; */
-/* } */
-
-/* .message-list li { */
-/* 	padding : .5em 0 .5em 0; */
-/* } */
-
-/* .message .username { */
-/* 	font-weight : bold; */
-/* 	margin-right : 1em; */
-/* } */
-
-/* .message .timeago { */
-/* 	margin-left : 1em; */
-/* 	font-style : italic; */
-/* 	color : #c0c0c0; */
-/* 	padding : 0 .3em 0 .3em; */
-/* 	border-left : 1px solid #c0c0c0; */
-/* 	border-right : 1px solid #c0c0c0; */
-/* } */
-
-/* .message form { */
-/* 	display: inline; */
-/* } */
-
-/* .cleNavbar { */
-/* 	background-color: #ff9e09; */
-/* } */
-
-/* .cleNavbar > li > a { */
-/* 	color: #611e34; */
-/* } */
-
-/* .active { */
-/* 	color: #611e34;	 */
-/* } */
-
-/* .button { */
-/* 	color: white; */
-/* 	background-color: coral; */
-/* } */
-
-/* footer { */
-/* 	text-align : center; */
-/* } */
-
-/* .to { */
-/* 	background-color : #f0f0f0; */
-/* } */
-
-/* .error { */
-/* 	color : red; */
-/* } */
-
-/* #currentUser { */
-/* 	text-align : right; */
-/* 	font-weight : bold; */
-/* } */
-
   
-/*   .header { */
-/*     position: static; */
-/*   } */
-/* } */
+  .form-group {
+  	margin-top: 70px;
+  }
+  
+  .right {
+    position: absolute;
+    right: 150px;
+    width: 300px;
+/*     border: 3px solid #000000; */
+    margin-top: 140px;
+}
+
+.footer_bottom {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:30px;
+   width:100%;
+}
+ 

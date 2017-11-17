@@ -3,6 +3,7 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
+ 
 <c:url var="pwValidationSrc" value="/passwordValidation.js" />
 <script src="${pwValidationSrc}"></script>
 
@@ -82,10 +83,7 @@
 			</div>
 			<button type="submit" class="btn btn-default">Create User</button>
 		</div>
-		<div class="col-sm-4"></div>
-	</div>
-</form:form>
-		<div class="col-sm-6">
+		<div class="col-sm-12 right responsive">
 			<strong>Password Rules:</strong>
 			<ul>
 				<li>Must be at least 8 characters long</li>
@@ -98,7 +96,10 @@
 				</li>
 			</ul>
 		</div>
-	
-
+		<div class="col-sm-4"></div>
+	</div>
+</form:form>
 		
+<div class="footer_bottom">
 <c:import url="/WEB-INF/jsp/shared/footer.jsp" />
+</div>
