@@ -81,25 +81,22 @@
 				<label for="confirmPassword">Confirm Password: </label>
 				<input type="password" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
 			</div>
-			<button type="submit" class="btn btn-default">Create User</button>
-		</div>
-		<div class="col-sm-12 right responsive">
+			<div>
+			<button type="submit" class="btn btn-default">Create User</button><br>
+			<div class="col-sm-12 rules">
 			<strong>Password Rules:</strong>
-			<ul>
-				<li>Must be at least 8 characters long</li>
-				<li>Must contain the following types of characters:
-					<ol>
-						<li>Uppercase letter (A-Z)</li>
-						<li>Lowercase letter (a-z)</li>
-						<li>Number (0-9)</li>
-					</ol>
-				</li>
-			</ul>
+				<p>Must be at least 8 characters long</p>
+				<p>Must contain the following types of characters:</p>
+					
+						<p>Uppercase letter (A-Z)</p>
+						<p>Lowercase letter (a-z)</p>
+						<p>Number (0-9)</p>
+			</div>
 		</div>
-		<div class="col-sm-4"></div>
 	</div>
+</div>
+			
 </form:form>
 		
-<div class="footer_bottom">
+
 <c:import url="/WEB-INF/jsp/shared/footer.jsp" />
-</div>

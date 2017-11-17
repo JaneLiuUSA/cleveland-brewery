@@ -22,8 +22,8 @@ body {
       border-color: #f1f1f1;
   }
   .carousel-inner img {
-      -webkit-filter: grayscale(90%);
-      filter: grayscale(90%); /* make all photos black and white */ 
+      -webkit-filter: grayscale(80%);
+      filter: grayscale(80%); /* make all photos black and white */ 
       width: 100%; /* Set width to 100% */
       margin: auto;
   }
@@ -149,6 +149,7 @@ body {
     width: 300px;
 /*     border: 3px solid #000000; */
     margin-top: 140px;
+    font-size: 15px;
 }
 
 .footer_bottom {
@@ -157,5 +158,15 @@ body {
    bottom:0px;
    height:30px;
    width:100%;
+}
+
+@media all and (max-width: 1400px) {
+  #rules { display: none; }
+}
+
+.rules {
+	margin-top: 15px;
+	text-align: center;
+	font-size: 12px;
 }
  
