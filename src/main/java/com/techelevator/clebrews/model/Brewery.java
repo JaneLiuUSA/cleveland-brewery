@@ -23,7 +23,9 @@ public class Brewery {
 	private String businessHour;
 	private int userId;
 	
-
+	
+	public Brewery(){}; //default constructor
+	
 	public Brewery(String name, String location, String description) {
 		this.name = name;
 		this.address = location;
