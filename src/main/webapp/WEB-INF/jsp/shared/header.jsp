@@ -16,6 +16,21 @@
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
 
+ 		<script type="text/javascript"> 
+  			$(document).ready(function() { 
+  				$("time.timeago").timeago(); 
+				
+  				$("#logoutLink").click(function(event){ 
+  					$("#logoutForm").submit(); 
+  				}); 
+				
+  				var pathname = window.location.pathname; 
+  				$("nav a[href='"+pathname+"']").parent().addClass("active"); 
+				
+  			}); 
+	
+  		</script> 
+
 <nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -39,8 +54,8 @@
 		
         		<c:if test="${not empty currentUser}"> --%>
 									
-						<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
-						<li><a href="${changePasswordHref}">Change Password</a></li>
+				<c:url var="changePasswordHref" value="/users/${currentUser}/changePassword" />
+						<li><a href="${changePasswordHref}">CHANGE PASSWORD</a></li>
 					</c:if>
 				</ul> 
 				<ul class="nav navbar-nav navbar-right"> 
@@ -52,12 +67,13 @@
 							<c:url var="loginHref" value="/login" />
 							<li><a href="${loginHref}">LOG IN</a></li>
 						</c:when>
+						
 						<c:otherwise>
 							<c:url var="logoutAction" value="/logout" />
 							<form id="logoutForm" action="${logoutAction}" method="POST">
 								<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
 							</form> 
- 							<li><a id="logoutLink" href="#">Log Out</a></li> 
+ 							<li><a id="logoutLink" href="#">LOG OUT</a></li> 
 						</c:otherwise>
 					</c:choose>
 				</ul> 
