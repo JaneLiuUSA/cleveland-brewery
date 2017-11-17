@@ -1,38 +1,34 @@
 package com.techelevator.clebrews.model;
 
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Brewery {
 
 	private int id;
+	@NotBlank(message="Name cannot be blank")
 	private String name;
-<<<<<<< HEAD
+
 	@NotNull(message="required")
 	private String address;
 	@NotNull(message="Address is required")
 	private String city;
-	@NotNull(message="Zipcode is required")
-	private String zipcode;
-	@NotNull(message="required")
-=======
-	private String address;
-	private String city;
+	@NotBlank(message="Zipcode is required")
 	private int zipcode;
->>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
+	@NotNull(message="required")
 	private String description;
 	private String imgUrl;
 	private String websitieUrl;
 	private String businessHour;
 	private int userId;
 	
-<<<<<<< HEAD
-	
+
 	public Brewery(String name, String location, String description) {
 		this.name = name;
 		this.address = location;
 		this.description = description;
 	}
-
-=======
->>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
 
 	
 	public int getId() {
@@ -54,39 +50,21 @@ public class Brewery {
 		this.name = name;
 	}
 
-
-<<<<<<< HEAD
-	public String getLocation() {
-		return address;
-	}
-
-
-	public void setLocation(String location) {
-		this.address = location;
-	}
-=======
->>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
-
-
 	public String getDescription() {
 		return description;
 	}
-
 
 	public void setDescription(String description) {
 		this.description = description;
 	}
 
-
 	public String getImgUrl() {
 		return imgUrl;
 	}
 
-
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
 	}
-
 
 	public String getWebsitieUrl() {
 		return websitieUrl;
@@ -107,13 +85,9 @@ public class Brewery {
 		this.businessHour = businessHour;
 	}
 
-
-<<<<<<< HEAD
-=======
 	public int getUserId() {
 		return userId;
 	}
-
 
 	public void setUserId(int userId) {
 		this.userId = userId;
@@ -130,7 +104,6 @@ public class Brewery {
 	}
 
 
->>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
 	public String getCity() {
 		return city;
 	}
@@ -141,25 +114,13 @@ public class Brewery {
 	}
 
 
-<<<<<<< HEAD
-	public String getZipcode() {
-=======
 	public int getZipcode() {
->>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
 		return zipcode;
 	}
 
 
-<<<<<<< HEAD
-	public void setZipcode(String zipcode) {
-=======
 	public void setZipcode(int zipcode) {
->>>>>>> f8aef1c014a5aaa76adbf830fd9676ae85594180
 		this.zipcode = zipcode;
 	}
-	
-	
-	
-	
 	
 }
