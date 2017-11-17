@@ -22,9 +22,10 @@ body {
       border-color: #f1f1f1;
   }
   .carousel-inner img {
-      -webkit-filter: grayscale(80%);
-      filter: grayscale(80%); /* make all photos black and white */ 
+      -webkit-filter: grayscale(70%);
+      filter: grayscale(70%); /* make all photos black and white */ 
       width: 100%; /* Set width to 100% */
+      height: 40px;
       margin: auto;
   }
   .carousel-caption h3 {
@@ -159,7 +160,7 @@ body {
    height:30px;
    width:100%;
 }
-<<<<<<< HEAD
+
 
 @media all and (max-width: 1400px) {
   #rules { display: none; }
@@ -169,7 +170,8 @@ body {
 	margin-top: 15px;
 	text-align: center;
 	font-size: 12px;
-=======
+}
+
 .breweryContainer {
 	margin-top: 75px;
 	justify-content: center;
@@ -193,6 +195,8 @@ body {
 .breweryLocation {
 	flex: 1;
 	margin: auto;
->>>>>>> 9e1b773183478416e8732af036019aae87461c1a
 }
  
+ .sizing {
+ height: 60%;
+ }

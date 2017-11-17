@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel slide" data-interval="false">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -11,8 +11,8 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="img/beer1.jpg" alt="New York" width="1200" height="700">
+      <div class="item active sizing">
+        <img src="img/beer1.jpg" alt="Beer Pic" width="1200" height="300">
         <div class="carousel-caption">
           <h3>New York</h3>
           <p>The atmosphere in New York is lorem ipsum.</p>
@@ -47,7 +47,7 @@
     </a>
 </div>
 
-<!-- Container (The Band Section) -->
+
 <div id="band" class="container text-center">
   <h3>CLEVELAND BREWS</h3>
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. 

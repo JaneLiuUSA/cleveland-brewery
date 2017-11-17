@@ -85,12 +85,8 @@
 			<button type="submit" class="btn btn-default">Create User</button><br>
 			<div class="col-sm-12 rules">
 			<strong>Password Rules:</strong>
-				<p>Must be at least 8 characters long</p>
-				<p>Must contain the following types of characters:</p>
-					
-						<p>Uppercase letter (A-Z)</p>
-						<p>Lowercase letter (a-z)</p>
-						<p>Number (0-9)</p>
+				<p>Must be at least 8 characters long and contain the following:</p>	
+						<p>Uppercase Letter (A-Z), Lowercase Letter (a-z), Number (0-9)</p>
 			</div>
 		</div>
 	</div>
