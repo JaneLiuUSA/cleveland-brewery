@@ -50,6 +50,20 @@ public class JDBCUserDAO implements UserDAO {
 	}
 
 	@Override
+	public boolean searchForUsername(String userName) {
+		String sqlSearchForUser = "SELECT * "+
+								  "FROM users "+
+			      				  "WHERE UPPER(username) = ?";
+		
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForUser, userName.toUpperCase());
+		if(results.next()) {
+			return true;
+		} else {
+		return false;
+		}
+	}
+	
+	@Override
 	public void updatePassword(String userName, String password) {
 		byte[] salt = passwordHasher.generateRandomSalt();
 		String hashedPassword = passwordHasher.computeHash(password, salt);

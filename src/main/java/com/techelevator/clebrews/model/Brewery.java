@@ -8,7 +8,11 @@ public class Brewery {
 	@NotNull(message="required")
 	private String name;
 	@NotNull(message="required")
-	private String location;
+	private String address;
+	@NotNull(message="Address is required")
+	private String city;
+	@NotNull(message="Zipcode is required")
+	private String zipcode;
 	@NotNull(message="required")
 	private String description;
 	private String imgUrl;
@@ -18,7 +22,7 @@ public class Brewery {
 	
 	public Brewery(String name, String location, String description) {
 		this.name = name;
-		this.location = location;
+		this.address = location;
 		this.description = description;
 	}
 
@@ -44,12 +48,12 @@ public class Brewery {
 
 
 	public String getLocation() {
-		return location;
+		return address;
 	}
 
 
 	public void setLocation(String location) {
-		this.location = location;
+		this.address = location;
 	}
 
 
@@ -90,6 +94,26 @@ public class Brewery {
 
 	public void setBusinessHour(String businessHour) {
 		this.businessHour = businessHour;
+	}
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+
+	public String getZipcode() {
+		return zipcode;
+	}
+
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
 	}
 	
 	

@@ -47,9 +47,9 @@ public class UserController {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "newUser", result);
 			return "redirect:/users/new";
 		}
-		if(!userDAO.searchForUsernameAndPassword(newUser.getUserName(), newUser.getPassword())) { //TODO dao function search by username only
+		if(!userDAO.searchForUsername(newUser.getUserName())) { 
 			userDAO.saveUser(newUser.getUserName(), newUser.getPassword());
-			return "redirect:/index"; 
+			return "redirect:/login"; 
 		} else {
 				flash.addFlashAttribute("message", "This username alreadys exists");
 				return "redirect:/users/new";
