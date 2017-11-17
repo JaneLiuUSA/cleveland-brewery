@@ -25,7 +25,7 @@ public class BreweryController {
 	public String showAllBreweries(ModelMap modelHolder, @ModelAttribute Brewery brewery) {
 		List<Brewery> breweries = breweryDao.getAllBrewery();
 		modelHolder.put("allBreweries", breweries);
-		return "breweryList";
+		return "breweries";
 	}
 
 }
