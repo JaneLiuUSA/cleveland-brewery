@@ -1,9 +1,13 @@
 package com.techelevator.clebrews.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 
 public class JDBCBreweryDAO implements BreweryDAO {
@@ -15,58 +19,33 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}	
 	
-	@Override
-	public void saveBrewery(String name, String location, String description, String imgUrl, String websiteUrl, String businessHours, int userId) {
-		jdbcTemplate.update("INSERT INTO breweries(name, location, description, img_url, website_url, business_hours, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
-				name, location, description, imgUrl, websiteUrl, businessHours, userId);
-	}
 
 	@Override
-	public Brewery getAllBrewery() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Brewery> getAllBrewery() {
+		List<Brewery> allBreweries = new ArrayList<>();
+		String sqlSelectAllBreweries = "SELECT * FROM breweries";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllBreweries);
+		while(results.next()) {
+			Brewery brewery = new Brewery();
+			brewery.setId(results.getInt("brewery_id"));
+			brewery.setName(results.getString("name"));
+			brewery.setAddress(results.getString("address"));
+			brewery.setCity(results.getString("city"));
+			brewery.setZipcode(results.getInt("zipcode"));
+			brewery.setDescription(results.getString("description"));
+			brewery.setImgUrl(results.getString("img_url"));
+			brewery.setWebsitieUrl(results.getString("website_url"));
+			brewery.setBusinessHour(results.getString("business_hours"));
+			brewery.setUserId(results.getInt("user_id"));
+			allBreweries.add(brewery);
+		}
+		return allBreweries;
 	}
 
-	@Override
-	public Brewery getBreweryById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void updateBreweryName() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void updateBreweryLocation() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void updateBreweryDescription() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void updateBreweryimgUrl() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void updateBreweryWebsiteUrl() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void updateBreweryBusinessHours() {
-		// TODO Auto-generated method stub
-
-	}
+//	@Override
+//	public void saveBrewery(String name, String location, String description, String imgUrl, String websiteUrl, String businessHours, int userId) {
+//		jdbcTemplate.update("INSERT INTO breweries(name, location, description, img_url, website_url, business_hours, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
+//				name, location, description, imgUrl, websiteUrl, businessHours, userId);
+//	}
 
 }

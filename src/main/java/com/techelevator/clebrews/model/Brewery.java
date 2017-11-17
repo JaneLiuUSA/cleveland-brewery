@@ -1,28 +1,20 @@
 package com.techelevator.clebrews.model;
 
-import javax.validation.constraints.NotNull;
-
 public class Brewery {
 
 	private int id;
-	@NotNull(message="required")
 	private String name;
-	@NotNull(message="required")
-	private String location;
-	@NotNull(message="required")
+	private String address;
+	private String city;
+	private int zipcode;
 	private String description;
 	private String imgUrl;
 	private String websitieUrl;
 	private String businessHour;
+	private int userId;
 	
+
 	
-	public Brewery(String name, String location, String description) {
-		this.name = name;
-		this.location = location;
-		this.description = description;
-	}
-
-
 	public int getId() {
 		return id;
 	}
@@ -43,14 +35,6 @@ public class Brewery {
 	}
 
 
-	public String getLocation() {
-		return location;
-	}
-
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
 
 
 	public String getDescription() {
@@ -90,6 +74,46 @@ public class Brewery {
 
 	public void setBusinessHour(String businessHour) {
 		this.businessHour = businessHour;
+	}
+
+
+	public int getUserId() {
+		return userId;
+	}
+
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public String getCity() {
+		return city;
+	}
+
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+
+	public int getZipcode() {
+		return zipcode;
+	}
+
+
+	public void setZipcode(int zipcode) {
+		this.zipcode = zipcode;
 	}
 	
 	
