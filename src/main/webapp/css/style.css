@@ -159,7 +159,6 @@ body {
    height:30px;
    width:100%;
 }
-<<<<<<< HEAD
 
 @media all and (max-width: 1400px) {
   #rules { display: none; }
@@ -169,7 +168,7 @@ body {
 	margin-top: 15px;
 	text-align: center;
 	font-size: 12px;
-=======
+}
 .breweryContainer {
 	margin-top: 75px;
 	justify-content: center;
@@ -193,6 +192,5 @@ body {
 .breweryLocation {
 	flex: 1;
 	margin: auto;
->>>>>>> 9e1b773183478416e8732af036019aae87461c1a
 }
- 
+

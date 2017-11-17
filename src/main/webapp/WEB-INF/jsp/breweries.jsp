@@ -13,9 +13,7 @@
 			<div class="breweryImage"> <img src="<c:out value='${brewery.imgUrl}'/>" /> </div>
 			<div class="breweryLocation">
 				<ul>
-					<li> <c:out value="${brewery.address}"/> </li>
-					<li> <c:out value="${brewery.city}"/> </li>
-					<li> <c:out value="${brewery.zipcode}"/> </li>
+					<li> <c:out value="${brewery.address}"/> <c:out value="${brewery.city}"/>, <c:out value="${brewery.zipcode}"/> </li>
 				</ul>
 			</div>
 		</div>
