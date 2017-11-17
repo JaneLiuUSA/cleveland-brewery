@@ -10,10 +10,11 @@
 		<h2> <a href=" <c:out value='${breweryLink}'/> "><c:out value="${brewery.name}"/></a></h2>
 		
 		<div class="breweryList">			
-			<div class="breweryImage"> <img src="<c:out value='${brewery.imgUrl}'/>" /> </div>
+			<div class="breweryImage"> <img src="<c:out value='${brewery.breweryLogoUrl}'/>" /> </div>
 			<div class="breweryLocation">
 				<ul>
 					<li> <c:out value="${brewery.address}"/> <c:out value="${brewery.city}"/>, <c:out value="${brewery.zipcode}"/> </li>
+					<li><c:out value="${brewery.phoneNumber }"/></li>
 				</ul>
 			</div>
 		</div>

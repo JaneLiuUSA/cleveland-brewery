@@ -87,10 +87,14 @@
 			<strong>Password Rules:</strong>
 				<p>Must be at least 8 characters long and contain the following:</p>	
 						<p>Uppercase Letter (A-Z), Lowercase Letter (a-z), Number (0-9)</p>
+						<br>
+
+
 			</div>
 		</div>
 	</div>
 </div>
+
 			
 </form:form>
 		

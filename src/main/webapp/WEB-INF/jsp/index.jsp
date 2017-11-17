@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
-<div id="myCarousel" class="carousel slide" data-interval="false">
+<div id="myCarousel" class="carousel slide minHeight" data-interval="false">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -12,9 +12,9 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active sizing">
-        <img src="img/beer1.jpg" alt="Beer Pic" width="1200" height="300">
+        <img src="img/beer1.jpg" alt="Beer Pic">
         <div class="carousel-caption">
-          <h3>New York</h3>
+          <h3>Cleveland Brews<br>f</h3>
           <p>The atmosphere in New York is lorem ipsum.</p>
         </div>      
       </div>
@@ -22,7 +22,7 @@
       <div class="item">
         <img src="chicago.jpg" alt="Chicago" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>Chicago</h3>
+          <h2>Chicago</h2>
           <p>Thank you, Chicago - A night we won't forget.</p>
         </div>      
       </div>
@@ -49,7 +49,7 @@
 
 
 <div id="band" class="container text-center">
-  <h3>CLEVELAND BREWS</h3>
+  <h2>CLEVELAND BREWS</h2>
 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. 
 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
 Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. 
@@ -93,6 +93,7 @@ Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, s
     </div>
   </div>
 </div>
-		
-<c:import url="/WEB-INF/jsp/shared/footer.jsp" />
-		
+
+<div class="col-sm-12 bottom_footer" id="indexFooter">
+&copy; 2017 CLE Brews Inc. &reg; All right reserved.
+</div>		
