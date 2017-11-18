@@ -21,7 +21,7 @@ public class Brewery {
 	private String description;
 	private String breweryLogoUrl;
 	private String imgUrl;
-	private String websitieUrl;
+	private String websiteUrl;
 	private String businessHours;
 	private int userId;
 	
@@ -70,23 +70,23 @@ public class Brewery {
 		this.imgUrl = imgUrl;
 	}
 
-	public String getWebsitieUrl() {
-		return websitieUrl;
+	public String getWebsiteUrl() {
+		return websiteUrl;
 	}
 
 
-	public void setWebsitieUrl(String websitieUrl) {
-		this.websitieUrl = websitieUrl;
+	public void setWebsiteUrl(String websiteUrl) {
+		this.websiteUrl = websiteUrl;
 	}
 
 
-	public String getBusinessHour() {
+	public String getBusinessHours() {
 		return businessHours;
 	}
 
 
-	public void setBusinessHour(String businessHour) {
-		this.businessHours = businessHour;
+	public void setBusinessHours(String businessHours) {
+		this.businessHours = businessHours;
 	}
 
 	public int getUserId() {

@@ -37,8 +37,8 @@ public class JDBCBreweryDAO implements BreweryDAO {
 			brewery.setDescription(results.getString("description"));
 			brewery.setBreweryLogoUrl(results.getString("brewery_logo_url"));
 			brewery.setImgUrl(results.getString("img_url"));
-			brewery.setWebsitieUrl(results.getString("website_url"));
-			brewery.setBusinessHour(results.getString("business_hours"));
+			brewery.setWebsiteUrl(results.getString("website_url"));
+			brewery.setBusinessHours(results.getString("business_hours"));
 			brewery.setUserId(results.getInt("user_id"));
 			allBreweries.add(brewery);
 		}
@@ -46,9 +46,24 @@ public class JDBCBreweryDAO implements BreweryDAO {
 	}
 
 	@Override
-	public void saveBrewery(String name, String address, String city, int zipcode, String phoneNumber, String description, String breweryLogoUrl, String imageUrl, String websiteUrl, String businessHours, int userId) {
+	public void saveBrewery(String name, String address, String city, int zipcode, String phoneNumber, String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHours, int userId) {
 		jdbcTemplate.update("INSERT INTO breweries(name, address, city, zipcode, phone_number, description, brewery_logo_url, img_url, website_url, business_hours, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imageUrl, websiteUrl, businessHours, userId);
+				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imgUrl, websiteUrl, businessHours, userId);
+	}
+
+
+	@Override
+	public boolean searchForBrewery(String name) {
+		String sqlSearchForBrewery = "SELECT * " +
+									 "FROM breweries" +
+									 "WHERE UPPER(name) = ?";
+		
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForBrewery, name.toUpperCase());
+		if(results.next()) {
+			return true;
+		} else {
+		return false;
+	}
 	}
 
 }
