@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
+
 <div id="myCarousel" class="carousel slide" data-interval="false">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -94,6 +95,5 @@ Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, s
   </div>
 </div>
 
-<div class="col-sm-12 bottom_footer" id="indexFooter">
-&copy; 2017 CLE Brews Inc. &reg; All right reserved.
-</div>		
+<c:import url="/WEB-INF/jsp/shared/footer.jsp" />
+	
