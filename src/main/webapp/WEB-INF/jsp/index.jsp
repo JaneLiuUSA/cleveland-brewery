@@ -1,7 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
-<div id="myCarousel" class="carousel slide minHeight" data-interval="false">
+<div id="myCarousel" class="carousel slide" data-interval="false">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -11,7 +11,7 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <div class="item active sizing flex-container responsive">
+      <div class="item active sizing responsive">
         <img src="img/beer1.jpg" alt="Beer Pic">
         <div class="carousel-caption">
           <h3>Cleveland Brews</h3>
