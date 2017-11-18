@@ -4,9 +4,9 @@
 <html>
 	<head>
 		
-		<title>CleBrews - 
+		<title>CleBrews 
 		<c:if test="${not empty currentUser}"> 
- 			<c:out value="${currentUser}"/> 
+ 			: <c:out value="${currentUser}"/> 
  		</c:if>	
 		</title>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
