@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
-<div class="breweryContainer">
+<div class="breweryContainer col-md-4">
 
 	<c:forEach items="${allBreweries}" var="brewery">
 	

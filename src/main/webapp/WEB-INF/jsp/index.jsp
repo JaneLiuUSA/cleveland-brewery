@@ -11,11 +11,11 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <div class="item active sizing">
+      <div class="item active sizing flex-container">
         <img src="img/beer1.jpg" alt="Beer Pic">
         <div class="carousel-caption">
-          <h3>Cleveland Brews<br>f</h3>
-          <p>The atmosphere in New York is lorem ipsum.</p>
+          <h3>Cleveland Brews</h3>
+          <p>Explore Some of Cleveland's Top Breweries.</p>
         </div>      
       </div>
 
