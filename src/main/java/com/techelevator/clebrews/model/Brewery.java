@@ -9,7 +9,6 @@ public class Brewery {
 	private int id;
 	@NotBlank(message="Name cannot be blank")
 	private String name;
-
 	@NotNull(message="required")
 	private String address;
 	@NotNull(message="Address is required")
@@ -18,6 +17,7 @@ public class Brewery {
 	private int zipcode;
 	@NotNull(message="required")
 	private String phoneNumber;
+	@NotNull(message="required")
 	private String description;
 	private String breweryLogoUrl;
 	private String imgUrl;
