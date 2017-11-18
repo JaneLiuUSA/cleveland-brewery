@@ -22,7 +22,7 @@ public class Brewery {
 	private String breweryLogoUrl;
 	private String imgUrl;
 	private String websitieUrl;
-	private String businessHour;
+	private String businessHours;
 	private int userId;
 	
 	
@@ -81,12 +81,12 @@ public class Brewery {
 
 
 	public String getBusinessHour() {
-		return businessHour;
+		return businessHours;
 	}
 
 
 	public void setBusinessHour(String businessHour) {
-		this.businessHour = businessHour;
+		this.businessHours = businessHour;
 	}
 
 	public int getUserId() {

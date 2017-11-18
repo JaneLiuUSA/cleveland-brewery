@@ -45,10 +45,10 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		return allBreweries;
 	}
 
-//	@Override
-//	public void saveBrewery(String name, String location, String description, String imgUrl, String websiteUrl, String businessHours, int userId) {
-//		jdbcTemplate.update("INSERT INTO breweries(name, location, description, img_url, website_url, business_hours, user_id) VALUES (?, ?, ?, ?, ?, ?, ?)",
-//				name, location, description, imgUrl, websiteUrl, businessHours, userId);
-//	}
+	@Override
+	public void saveBrewery(String name, String address, String city, int zipcode, String phoneNumber, String description, String breweryLogoUrl, String imageUrl, String websiteUrl, String businessHours, int userId) {
+		jdbcTemplate.update("INSERT INTO breweries(name, address, city, zipcode, phone_number, description, brewery_logo_url, img_url, website_url, business_hours, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imageUrl, websiteUrl, businessHours, userId);
+	}
 
 }

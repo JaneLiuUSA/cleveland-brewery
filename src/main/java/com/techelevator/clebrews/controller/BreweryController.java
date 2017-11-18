@@ -18,14 +18,25 @@ import com.techelevator.clebrews.model.BreweryDAO;
 public class BreweryController {
 	
 	@Autowired
-	BreweryDAO breweryDao;
+	BreweryDAO breweryDAO;
 	
 	
 	@RequestMapping(path="/breweries", method=RequestMethod.GET)
 	public String showAllBreweries(ModelMap modelHolder, @ModelAttribute Brewery brewery) {
-		List<Brewery> breweries = breweryDao.getAllBrewery();
+		List<Brewery> breweries = breweryDAO.getAllBrewery();
 		modelHolder.put("allBreweries", breweries);
 		return "breweries";
 	}
-
+	
+	@RequestMapping(path="/breweries/new", method=RequestMethod.GET)
+	public String displayNewBreweryForm() {
+		return "addBrewery";
+	}
+	
+	@RequestMapping(path="/breweries", method=RequestMethod.POST)
+	public String createBrewery(@ModelAttribute Brewery newBrewery) {
+		breweryDAO.saveBrewery(newBrewery.getName(), newBrewery.getAddress(), newBrewery.getCity(), newBrewery.getZipcode(), newBrewery.getPhoneNumber(), newBrewery.getDescription(), newBrewery.getBreweryLogoUrl(), newBrewery.getImgUrl(), newBrewery.getWebsitieUrl(), newBrewery.getBusinessHour(), newBrewery.getUserId() );
+		return "redirect:/breweries";
+	}
+	
 }

@@ -1,21 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
-
- 
-<%-- <c:url var="pwValidationSrc" value="/passwordValidation.js" /> --%>
-<%-- <script src="${pwValidationSrc}"></script> --%>
 
 <script type="text/javascript">
 	$(document).ready(function () {
 	
-		$.validator.addMethod('uppercase', function(value) {
-			return value.match(/[A-Z]/);
-			});
-			$.validator.addMethod('lowercase', function(value) {
-			return value.match(/[a-z]/);
-			});
+		
 			$.validator.addMethod('number', function(value){
 			return value.match(/[0-9]/);
 			});
@@ -60,8 +50,8 @@
 	</h2>
 
 </c:if>
-<c:url var="formAction" value="/users" />
-<form:form method="POST" action="${formAction}" modelAttribute="newUser">
+<c:url var="formAction" value="/breweries" />
+<form:form method="POST" action="${formAction}" modelAttribute="newBrewery">
 <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
 	<div class="row">
 		<div class="col-sm-4"></div>
@@ -97,6 +87,8 @@
 
 			
 </form:form>
-		
+
+
+
 
 <c:import url="/WEB-INF/jsp/shared/footer.jsp" />
