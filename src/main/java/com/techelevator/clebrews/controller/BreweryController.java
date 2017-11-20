@@ -2,6 +2,7 @@ package com.techelevator.clebrews.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.clebrews.model.Brewery;
 import com.techelevator.clebrews.model.BreweryDAO;
+import com.techelevator.clebrews.model.User;
 
 
 
@@ -34,7 +36,13 @@ public class BreweryController {
 	}
 	
 	@RequestMapping(path="/breweries/new", method=RequestMethod.GET)
-	public String displayNewBreweryForm(ModelMap modelHolder) {
+	public String displayNewBreweryForm(ModelMap modelHolder, HttpSession session) throws NotAllowedException {
+		User currentUser = (User) session.getAttribute("currentUser");
+		
+		//Verify if the user is logged in and if the user is admin
+		if(currentUser == null || currentUser.getRoleId() != 1){
+			throw new NotAllowedException(); //call the NotAllowedException class
+		}
 		if( ! modelHolder.containsAttribute("newBrewery")){
 			modelHolder.put("newBrewery", new Brewery());
 		}

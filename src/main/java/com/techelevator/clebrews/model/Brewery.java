@@ -1,6 +1,5 @@
 package com.techelevator.clebrews.model;
 
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
@@ -9,15 +8,15 @@ public class Brewery {
 	private int id;
 	@NotBlank(message="Name cannot be blank")
 	private String name;
-	@NotNull(message="required")
+	@NotBlank(message="required")
 	private String address;
-	@NotNull(message="Address is required")
+	@NotBlank(message="Address is required")
 	private String city;
-	@NotNull(message="Zipcode is required")
+	@NotBlank(message="Zipcode is required")
 	private String zipcode;
-	@NotNull(message="required")
+	@NotBlank(message="required")
 	private String phoneNumber;
-	@NotNull(message="required")
+	@NotBlank(message="required")
 	private String description;
 	private String breweryLogoUrl;
 	private String imgUrl;

@@ -2,6 +2,7 @@ package com.techelevator.clebrews.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.techelevator.clebrews.model.User;
 import com.techelevator.clebrews.model.UserDAO;
 
 
 
 @Controller
-@SessionAttributes("currentUser")
+//@SessionAttributes("currentUser")
 public class AuthenticationController {
 
 	private UserDAO userDAO;
@@ -33,14 +35,15 @@ public class AuthenticationController {
 	
 	@RequestMapping(path="/login", method=RequestMethod.POST)
 	public String login(Map<String, Object> model, 
-						@RequestParam String userName, 
+						@RequestParam String userName,
 						@RequestParam String password,
 						@RequestParam(required=false) String destination,
-						HttpSession session) {
+						HttpServletRequest request) {
 		
 		if(userDAO.searchForUsernameAndPassword(userName, password)) {
-			session.invalidate();
-			model.put("currentUser", userName);
+			request.changeSessionId();
+			User currentUser = userDAO.getUserByUsername(userName);
+			request.getSession().setAttribute("currentUser", currentUser);  //put the user object in the session
 			if(isValidRedirect(destination)) {
 				return "redirect:"+destination;
 			} else {
@@ -59,6 +62,7 @@ public class AuthenticationController {
 	public String logout(Map<String, Object> model, HttpSession session) {
 		model.remove("currentUser");
 		session.removeAttribute("currentUser");
+		session.invalidate();  //kill the object in the session
 		return "redirect:/";
 	}
 }

@@ -73,4 +73,20 @@ public class JDBCUserDAO implements UserDAO {
 		jdbcTemplate.update("UPDATE users SET password = ?, salt = ? WHERE username = ?", hashedPassword, saltString, userName);
 	}
 
+	@Override
+	public User getUserByUsername(String userName) {
+		User user = new User();
+		String sqlgetUserByUsername = "SELECT * FROM users WHERE UPPER(username) = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlgetUserByUsername, userName.toUpperCase());
+		if(results.next()) {
+			user.setId(results.getInt("user_id")); 
+			user.setUserName(results.getString("username"));
+			user.setPassword(results.getString("password"));
+			user.setEmail(results.getString("email"));
+			user.setRoleId(results.getInt("role_id"));
+			user.setActive(results.getBoolean("is_active"));
+		}
+		return user;
+	}
+
 }

@@ -10,30 +10,60 @@
 			    return /\d{5}-\d{4}$|^\d{5}$/.test(value)
 			}, "The specified US ZIP Code is invalid");
 			
-			$validator.addMethod("phoneNumber",function(value){
-				return ^\(\d{3}\)\s\d{3}-\d{4}.test(value);
-			});
-
 			$.validator.addMethod('number', function(value){
 			return value.match(/[0-9]/);
 			});
 		
 		$("form").validate({
 			rules : {
+				name:{
+					required: true,
+				},
+				address:{
+					required: true,
+				},
+				city:{
+					required: true,
+				},
 				zipcode:{
 					zipcode: true,
 					
 				},
 				phoneNumber:{
-					phoneNumber: true;
-				}
+					required : true,
+					minlength : 10,
+					maxlength : 10,
+				},
+				description:{
+					required: true,
+					
+				},
 				/* confirmPassword : {
 					required : true,		
 					equalTo : "#password"  
 				} */
 			},
-			messages : {	
-				
+			messages : {
+				name:{
+					required: "required",
+				},
+				address:{
+					required: "required",
+				},
+				city:{
+					required: "required",
+				},
+				zipcode:{
+					required: "required",
+				},
+				description:{
+					required: "required",
+					
+				},
+				phoneNumber:{
+					minlength : "Please enter 10 digits",
+					maxlength :	"Please enter 10 digits",
+				}
 				/* confirmPassword : {
 					equalTo : "Passwords do not match"
 				} */
@@ -80,7 +110,7 @@
 			</div>	
 			<div class="form-group">
 				<label for="phoneNumber">Phone Number: </label>
-				<form:input path="phoneNumber" placeHolder="(xxx)xxx-xxxx" class="form-control" />
+				<form:input path="phoneNumber" placeHolder="Please enter 10 digits " class="form-control" />
 				<form:errors path="phoneNumber"></form:errors>
 			</div>	
 			<div class="form-group">
@@ -90,7 +120,7 @@
 			</div>	
 			<div class="form-group">
 				<label for="breweryLogoUrl">Brewery Logo: </label>
-				<form:input path="breweryLogoUrl"  placeHolder="Logo Required" class="form-control" />
+				<form:input path="breweryLogoUrl"  class="form-control" />
 				<form:errors path="breweryLogoUrl"></form:errors>
 			</div>	
 			<div class="form-group">
