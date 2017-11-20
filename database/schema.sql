@@ -15,7 +15,9 @@ CREATE TABLE users (
     username varchar(30) NOT NULL,
     password varchar(100) NOT NULL,
     salt varchar(255),
+    email varchar(50),
     role_id integer,
+    is_active boolean,
     CONSTRAINT pk_user_user_id PRIMARY KEY (user_id),
     CONSTRAINT fk_role_role_id FOREIGN KEY (role_id) REFERENCES roles(role_id)
 );

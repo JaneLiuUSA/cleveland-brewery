@@ -8,11 +8,11 @@ INSERT INTO roles (role_name) VALUES ('Administrator');
 INSERT INTO roles (role_name) VALUES ('Brewery');
 INSERT INTO roles (role_name) VALUES ('User');
 
-INSERT INTO users (username, password, salt, role_id) VALUES ('GreatLakes', 'JNsgQNfCCRx64tmiZ/HhLw==',
-'PVdax8VEkIH+HFetpanMHibgaMAo/f1tHfWWjRwW5HfJcI0GVv13Uar9tEN33XAD/PHZ5xshZI6dLfqrmW8xsAmKIwptYOrdfsTG0OCYmnL6a0HpoScweR5i7f3RQZ2GubZg2MHvldKDEG8NZ5kqopuDNitsFHMTeRyP9O2Ts3o=',2);
+INSERT INTO users (username, password, salt, email, role_id, is_active) VALUES ('GreatLakes', 'JNsgQNfCCRx64tmiZ/HhLw==',
+'PVdax8VEkIH+HFetpanMHibgaMAo/f1tHfWWjRwW5HfJcI0GVv13Uar9tEN33XAD/PHZ5xshZI6dLfqrmW8xsAmKIwptYOrdfsTG0OCYmnL6a0HpoScweR5i7f3RQZ2GubZg2MHvldKDEG8NZ5kqopuDNitsFHMTeRyP9O2Ts3o=', 'greatLakes@greatlakes.com', 2, true);
 
-INSERT INTO users (username, password, salt, role_id) VALUES ('Admin', 'hZXjqaGhL0grm4MiB4hhAQ==',
-'5b3wt/HW0UxbuIYY1gtRLA1jgytVdOntincQdB6OZRyfvPPDyrqLW0U4TbxY2KMAAj8G4jT14W8N5g8Z1W/KVLTLupoPlp0IFeb9ubo0AbfqDe60Z0FxQRo8+d88wlBNUo006L95PVlI4bLYjTtQK1njqQ5RIhySqEfoajBGjYU=',1);
+INSERT INTO users (username, password, salt, email, role_id, is_active) VALUES ('Admin', 'hZXjqaGhL0grm4MiB4hhAQ==',
+'5b3wt/HW0UxbuIYY1gtRLA1jgytVdOntincQdB6OZRyfvPPDyrqLW0U4TbxY2KMAAj8G4jT14W8N5g8Z1W/KVLTLupoPlp0IFeb9ubo0AbfqDe60Z0FxQRo8+d88wlBNUo006L95PVlI4bLYjTtQK1njqQ5RIhySqEfoajBGjYU=', 'test_admin@TE.com', 1, true);
 
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url, website_url, img_url, business_hours, user_id)
 VALUES ('Great Lakes Brewery', '2516 Market Ave.', 'Cleveland', 44113, '(216) 771-4404', 'Cleveland`s premier brewery','http://res.cloudinary.com/teclebrew/image/upload/v1510954447/GLBC_logo-centered-710x412_tmjldt.png','https://www.greatlakesbrewing.com','http://res.cloudinary.com/teclebrew/image/upload/v1510956260/greatlakes_ps4e7h.jpg',
