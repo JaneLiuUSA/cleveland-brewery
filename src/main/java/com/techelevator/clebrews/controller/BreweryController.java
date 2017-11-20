@@ -59,9 +59,10 @@ public class BreweryController {
 	}
 	
 	@RequestMapping(path="/breweryDetails/{id}", method=RequestMethod.GET)
-	public String showBreweryDetails(@PathVariable int id, ModelMap ModelHolder) {
+	public String showBreweryDetails(@PathVariable int id, ModelMap modelHolder) {
 		Brewery breweryDetails = breweryDAO.getBreweryById(id);
-		ModelHolder.put("details", breweryDetails);
+		System.out.print(breweryDetails);
+		modelHolder.addAttribute("details", breweryDetails);
 		
 		return "breweryDetails";
 	}
