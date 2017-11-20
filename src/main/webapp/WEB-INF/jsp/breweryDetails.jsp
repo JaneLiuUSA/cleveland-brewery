@@ -6,17 +6,21 @@
 <div class="breweryContainer">
 	
 		<div class="breweryList">			
-			<div class="breweryImage"> <img src="<c:out value='${brewery.breweryLogoUrl}'/>" /> </div>
 			<div class="breweryLocation">
-			
-				<h2><c:out value="${brewery.name}"/></h2>
+						
+				<div class="col-md-12 breweryImage"> <img class="center-block" src="<c:out value='${details.breweryLogoUrl}'/>" /> </div>
+				
+				<h2 class="namePadding"><c:out value="${details.name}"/></h2>
 				<ul>
-					<li><c:out value="${brewery.address}"/> <c:out value="${brewery.city}"/><c:out value="${brewery.zipcode}"/> </li>
-					<li><c:out value="${brewery.phoneNumber }"/></li>
-					<li><c:out value="${brewery.description }"/></li>
-					<li><c:out value="${brewery.imgUrl }"/></li>
-					<li><c:out value="${brewery.websiteUrl }"/></li>
-					<li><c:out value="${brewery.businessHours }"/></li>
+					<li><c:out value="${details.address}"/> <c:out value="${details.city}"/><c:out value="${details.zipcode}"/> </li>
+					<li><c:out value="${details.phoneNumber }"/></li>
+					<li><c:out value="${details.description }"/></li>
+<%-- 					<li><c:out value="${details.imgUrl }"/></li> --%>
+					
+					<c:url var="breweryWebsite" value="${details.websiteUrl }"></c:url>
+					<li><a href=" <c:out value='${breweryWebsite }'/> "><c:out value="${details.name } Website"/></a></li>
+					
+					<li><c:out value="${details.businessHours }"/></li>
 				</ul>
 			</div>
 	</div>
