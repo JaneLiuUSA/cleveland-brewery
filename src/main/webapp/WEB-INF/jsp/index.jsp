@@ -13,7 +13,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active sizing responsive">
-        <img src="img/beer1.jpg" alt="Beer Pic">
+        <img src="http://res.cloudinary.com/teclebrew/image/upload/c_scale,w_500/v1511044706/greatlaketap_z4rj0z.jpg" alt="Beer taps">
         <div class="carousel-caption">
           <h3>Cleveland Brews</h3>
           <p>Explore Some of Cleveland's Top Breweries.</p>
@@ -21,18 +21,18 @@
       </div>
 
       <div class="item">
-        <img src="chicago.jpg" alt="Chicago" width="1200" height="700">
+        <img src="https://res.cloudinary.com/teclebrew/image/upload/c_scale,w_500/v1511044706/glb_hlbuoh.png" alt="GL Porter">
         <div class="carousel-caption">
-          <h2>Chicago</h2>
-          <p>Thank you, Chicago - A night we won't forget.</p>
+          <h2>Great Lakes</h2>
+          <p>Great Lakes Robust Porter 25th anniversary.</p>
         </div>      
       </div>
     
       <div class="item">
-        <img src="la.jpg" alt="Los Angeles" width="1200" height="700">
+        <img src="http://res.cloudinary.com/teclebrew/image/upload/c_scale,w_500/v1511045134/fourbeer_xaw6zv.png" alt="Market Garden">
         <div class="carousel-caption">
-          <h3>LA</h3>
-          <p>Even though the traffic was a mess, we had the best time playing at Venice Beach!</p>
+          <h3>Market Garden</h3>
+          <p>Market Garden journey!</p>
         </div>      
       </div>
     </div>
