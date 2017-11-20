@@ -70,10 +70,14 @@ public class JDBCBreweryDAO implements BreweryDAO {
 	@Override
 	public Brewery getBreweryById(int id) {
 		Brewery details = new Brewery();
+<<<<<<< HEAD
 		String sqlGetBreweryById = "SELECT * FROM breweries " +
 								   "WHERE brewery_id = ?";
+=======
+		String sqlGetBreweryById = "SELECT * FROM breweries WHERE brewery_id = ?";
+>>>>>>> aa86724041d9688d4f64ba49d4bc8f35edd6a5c9
 		
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetBreweryById);
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetBreweryById, id);
 		
 		while(results.next()) {
 			details.setName(results.getString("name"));
@@ -85,7 +89,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 			details.setBreweryLogoUrl(results.getString("brewery_logo_url"));
 			details.setImgUrl(results.getString("img_url"));
 			details.setWebsiteUrl(results.getString("website_url"));
-			details.setBusinessHours(results.getString("bussines_hours"));
+			details.setBusinessHours(results.getString("business_hours"));
 		}
 		return details;
 	}
