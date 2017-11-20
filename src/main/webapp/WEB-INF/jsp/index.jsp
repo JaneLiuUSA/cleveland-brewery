@@ -12,8 +12,8 @@
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
-      <div class="item active sizing responsive">
-        <img src="http://res.cloudinary.com/teclebrew/image/upload/c_scale,w_500/v1511044706/greatlaketap_z4rj0z.jpg" alt="Beer taps">
+      <div class="item active">
+        <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511214076/amber_beer_vqd5xw.jpg" alt="Beer taps">
         <div class="carousel-caption">
           <h3>Cleveland Brews</h3>
           <p>Explore Some of Cleveland's Top Breweries.</p>
@@ -21,7 +21,7 @@
       </div>
 
       <div class="item">
-        <img src="https://res.cloudinary.com/teclebrew/image/upload/c_scale,w_500/v1511044706/glb_hlbuoh.png" alt="GL Porter">
+        <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511207908/platformBeer_g0km7c.jpg" alt="GL Porter">
         <div class="carousel-caption">
           <h2>Great Lakes</h2>
           <p>Great Lakes Robust Porter 25th anniversary.</p>
@@ -29,7 +29,7 @@
       </div>
     
       <div class="item">
-        <img src="http://res.cloudinary.com/teclebrew/image/upload/c_scale,w_500/v1511045134/fourbeer_xaw6zv.png" alt="Market Garden">
+        <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511214071/brown_beer_aassb3.jpg" alt="Market Garden">
         <div class="carousel-caption">
           <h3>Market Garden</h3>
           <p>Market Garden journey!</p>
@@ -60,9 +60,9 @@ Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdie
 Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>  <br>
   <div class="row">
     <div class="col-sm-4">
-      <p class="text-center"><strong>Name</strong></p><br>
+      <p class="text-center"><strong>Masthead Brewery</strong></p><br>
       <a href="#demo" data-toggle="collapse">
-        <img src="bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+        <img src="img/mastheadBeer.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
       <div id="demo" class="collapse">
         <p>Guitarist and Lead Vocalist</p>
@@ -73,7 +73,7 @@ Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, s
     <div class="col-sm-4">
       <p class="text-center"><strong>Name</strong></p><br>
       <a href="#demo2" data-toggle="collapse">
-        <img src="bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+        <img src="img/goldhorn.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
       <div id="demo2" class="collapse">
         <p>Drummer</p>
@@ -84,7 +84,7 @@ Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, s
     <div class="col-sm-4">
       <p class="text-center"><strong>Name</strong></p><br>
       <a href="#demo3" data-toggle="collapse">
-        <img src="bandmember.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
+        <img src="img/greatlakes.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
       <div id="demo3" class="collapse">
         <p>Bass player</p>
