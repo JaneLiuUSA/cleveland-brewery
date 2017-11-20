@@ -6,42 +6,37 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 		
-		$.validator.addMethod("zipcodeUS", function(value, element) {
-		    return this.optional(element) || /\d{5}-\d{4}$|^\d{5}$/.test(value)
-		}, "The specified US ZIP Code is invalid");
+			$.validator.addMethod("zipcode", function(value, element) {
+			    return /\d{5}-\d{4}$|^\d{5}$/.test(value)
+			}, "The specified US ZIP Code is invalid");
+			
+			$validator.addMethod("phoneNumber",function(value){
+				return ^\(\d{3}\)\s\d{3}-\d{4}.test(value);
+			});
 
-	
-		
 			$.validator.addMethod('number', function(value){
 			return value.match(/[0-9]/);
 			});
 		
 		$("form").validate({
 			rules : {
-				password : {
-					required : true,
-					minlength : 8,
-					maxlength : 128,
-					number : true,
+				zipcode:{
+					zipcode: true,
+					
 				},
-				userName : {
-					required : true
-				},
-				confirmPassword : {
+				phoneNumber:{
+					phoneNumber: true;
+				}
+				/* confirmPassword : {
 					required : true,		
 					equalTo : "#password"  
-				}
+				} */
 			},
 			messages : {	
-				password: {
-					minlength: "Password was too short. It should be at least 8 characters.",
-					uppercase: "Password must contain at least one uppercase letter",
-					lowercase: "Password must contain at least one lowercase letter",
-					number: "Password must contain one number",
-				},
-				confirmPassword : {
+				
+				/* confirmPassword : {
 					equalTo : "Passwords do not match"
-				}
+				} */
 			},
 			errorClass : "error"
 		});
@@ -56,6 +51,7 @@
 </c:if>
 <c:url var="formAction" value="/breweries" />
 <form:form method="POST" action="${formAction}" modelAttribute="newBrewery">
+<input type="hidden" name="destination" value="${param.destination}"/>
 <input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
 
 	<div class="row">
@@ -84,7 +80,7 @@
 			</div>	
 			<div class="form-group">
 				<label for="phoneNumber">Phone Number: </label>
-				<form:input path="phoneNumber"  class="form-control" />
+				<form:input path="phoneNumber" placeHolder="(xxx)xxx-xxxx" class="form-control" />
 				<form:errors path="phoneNumber"></form:errors>
 			</div>	
 			<div class="form-group">

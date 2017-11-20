@@ -7,7 +7,7 @@ public interface BreweryDAO {
 
 	public List<Brewery> getAllBrewery();
 
-	public void saveBrewery(String name, String address, String city, int zipcode, String phoneNumber, String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHour, int userId);
+	public void saveBrewery(String name, String address, String city, String zipcode, String phoneNumber, String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHour);
 
 //	public void updateBreweryName();
 //	public void updateBreweryLocation();

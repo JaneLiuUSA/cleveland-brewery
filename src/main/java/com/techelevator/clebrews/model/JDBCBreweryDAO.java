@@ -32,7 +32,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 			brewery.setName(results.getString("name"));
 			brewery.setAddress(results.getString("address"));
 			brewery.setCity(results.getString("city"));
-			brewery.setZipcode(results.getInt("zipcode"));
+			brewery.setZipcode(results.getString("zipcode"));
 			brewery.setPhoneNumber(results.getString("phone_number"));
 			brewery.setDescription(results.getString("description"));
 			brewery.setBreweryLogoUrl(results.getString("brewery_logo_url"));
@@ -46,16 +46,16 @@ public class JDBCBreweryDAO implements BreweryDAO {
 	}
 
 	@Override
-	public void saveBrewery(String name, String address, String city, int zipcode, String phoneNumber, String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHours, int userId) {
-		jdbcTemplate.update("INSERT INTO breweries(name, address, city, zipcode, phone_number, description, brewery_logo_url, img_url, website_url, business_hours, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imgUrl, websiteUrl, businessHours, userId);
+	public void saveBrewery(String name, String address, String city, String zipcode, String phoneNumber, String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHours) {
+		jdbcTemplate.update("INSERT INTO breweries(name, address, city, zipcode, phone_number, description, brewery_logo_url, img_url, website_url, business_hours) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imgUrl, websiteUrl, businessHours);
 	}
 
 
 	@Override
 	public boolean searchForBrewery(String name) {
 		String sqlSearchForBrewery = "SELECT * " +
-									 "FROM breweries" +
+									 "FROM breweries " +
 									 "WHERE UPPER(name) = ?";
 		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForBrewery, name.toUpperCase());
@@ -70,7 +70,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 	@Override
 	public Brewery getBreweryById(int id) {
 		Brewery details = new Brewery();
-		String sqlGetBreweryById = "SELECT * FROM breweries" +
+		String sqlGetBreweryById = "SELECT * FROM breweries " +
 								   "WHERE brewery_id = ?";
 		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetBreweryById);
@@ -79,7 +79,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 			details.setName(results.getString("name"));
 			details.setAddress(results.getString("address"));
 			details.setCity(results.getString("city"));
-			details.setZipcode(results.getInt("zipcode"));
+			details.setZipcode(results.getString("zipcode"));
 			details.setPhoneNumber(results.getString("phone_number"));
 			details.setDescription(results.getString("description"));
 			details.setBreweryLogoUrl(results.getString("brewery_logo_url"));
