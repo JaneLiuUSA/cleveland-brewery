@@ -13,8 +13,8 @@ public class Brewery {
 	private String address;
 	@NotNull(message="Address is required")
 	private String city;
-	@NotBlank(message="Zipcode is required")
-	private int zipcode;
+	@NotNull(message="Zipcode is required")
+	private String zipcode;
 	@NotNull(message="required")
 	private String phoneNumber;
 	@NotNull(message="required")
@@ -118,12 +118,12 @@ public class Brewery {
 	}
 
 
-	public int getZipcode() {
+	public String getZipcode() {
 		return zipcode;
 	}
 
 
-	public void setZipcode(int zipcode) {
+	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
 
