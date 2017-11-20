@@ -15,6 +15,7 @@ public interface BreweryDAO {
 //	public void updateBreweryimgUrl();
 //	public void updateBreweryWebsiteUrl();
 //	public void updateBreweryBusinessHours();
+	public void updateBreweryUserId(int id, int userId);
 
 	public boolean searchForBrewery(String name);
 	

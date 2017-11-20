@@ -89,4 +89,10 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		return details;
 	}
 
+
+	@Override
+	public void updateBreweryUserId(int id, int userId) {
+		jdbcTemplate.update("UPDATE breweries SET user_id = ? WHERE brewery_id = ?",userId,id);
+	}
+
 }

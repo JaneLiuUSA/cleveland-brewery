@@ -56,7 +56,8 @@ public class UserController {
 			return "redirect:/users/new";
 		}
 		if(!userDAO.searchForUsername(newUser.getUserName())) { 
-			Long userId = userDAO.saveUser(newUser);
+			int userId = userDAO.saveUser(newUser);
+			breweryDAO.updateBreweryUserId(newUser.getId(), userId);
 			//TODO use breweryDAO to take the Long userId that will be returned from userDAO.saveUser
 			return "redirect:/login"; 
 		} else {

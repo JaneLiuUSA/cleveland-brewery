@@ -2,7 +2,7 @@ package com.techelevator.clebrews.model;
 
 public interface UserDAO {
 
-	public Long saveUser(User newUser);
+	public int saveUser(User newUser);
 
 	public boolean searchForUsernameAndPassword(String userName, String password);
 	
