@@ -25,12 +25,13 @@ public class JDBCUserDAO implements UserDAO {
 	}
 	
 	@Override
-	public void saveUser(String userName, String password) {
+	public Long saveUser(User newUser) {
 		byte[] salt = passwordHasher.generateRandomSalt();
-		String hashedPassword = passwordHasher.computeHash(password, salt);
+		String hashedPassword = passwordHasher.computeHash(newUser.getPassword(), salt);
 		String saltString = new String(Base64.encode(salt));
-		jdbcTemplate.update("INSERT INTO users(username, password, salt, role_id) VALUES (?, ?, ?, 2)", userName, hashedPassword, saltString);
+		Long userId = jdbcTemplate.queryForObject("INSERT INTO users(username, password, salt, email, role_id) VALUES (?, ?, ?,?, 2) RETURNING user_id", Long.class, newUser.getUserName(), hashedPassword, saltString, newUser.getEmail());
 		//TODO brewery account (role_id = 2)
+		return userId;
 	}
 
 	@Override

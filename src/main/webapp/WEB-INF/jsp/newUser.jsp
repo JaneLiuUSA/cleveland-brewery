@@ -36,6 +36,10 @@
 				confirmPassword : {
 					required : true,		
 					equalTo : "#password"  
+				},
+				email : {
+					required : true,
+					email : true,
 				}
 			},
 			messages : {	
@@ -46,8 +50,8 @@
 					number: "Password must contain one number",
 				},
 				confirmPassword : {
-					equalTo : "Passwords do not match"
-				}
+					equalTo : "Passwords do not match",
+				},
 			},
 			errorClass : "error"
 		});
@@ -80,6 +84,20 @@
 			<div class="form-group">
 				<label for="confirmPassword">Confirm Password: </label>
 				<input type="password" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
+			</div>
+			<div class="form-group">
+				<label for="email">Email address: </label>
+				<form:input path="email" placeHolder="Email Address" class="form-control"/>
+				<form:errors path="email"></form:errors>
+			</div>
+			<div class="form-group">
+				<label for="id">Select Brewery</label>
+					<select name="id">
+						<option value="#">Select a Brewery</option>
+						<c:forEach items="${allBreweries}" var="brewery">
+							<option value="${brewery.id}"><c:out value="${brewery.name }"/></option>
+						</c:forEach>
+					</select>
 			</div>
 			<div>
 			<button type="submit" class="btn btn-default">Create User</button><br>
