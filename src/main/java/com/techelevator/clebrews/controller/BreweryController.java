@@ -2,6 +2,7 @@ package com.techelevator.clebrews.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.clebrews.model.Brewery;
 import com.techelevator.clebrews.model.BreweryDAO;
+import com.techelevator.clebrews.model.User;
 
 
 
@@ -34,7 +36,13 @@ public class BreweryController {
 	}
 	
 	@RequestMapping(path="/breweries/new", method=RequestMethod.GET)
-	public String displayNewBreweryForm(ModelMap modelHolder) {
+	public String displayNewBreweryForm(ModelMap modelHolder, HttpSession session) throws NotAllowedException {
+		User currentUser = (User) session.getAttribute("currentUser");
+		
+		//Verify if the user is logged in and if the user is admin
+		if(currentUser == null || currentUser.getRoleId() != 1){
+			throw new NotAllowedException(); //call the NotAllowedException class
+		}
 		if( ! modelHolder.containsAttribute("newBrewery")){
 			modelHolder.put("newBrewery", new Brewery());
 		}
@@ -50,7 +58,7 @@ public class BreweryController {
 			return "redirect:/breweries/new";
 		}
 		if(!breweryDAO.searchForBrewery(newBrewery.getName())) { 
-			breweryDAO.saveBrewery(newBrewery.getName(), newBrewery.getAddress(), newBrewery.getCity(), newBrewery.getZipcode(), newBrewery.getPhoneNumber(), newBrewery.getDescription(), newBrewery.getBreweryLogoUrl(), newBrewery.getImgUrl(), newBrewery.getWebsiteUrl(), newBrewery.getBusinessHours(), newBrewery.getUserId() );
+			breweryDAO.saveBrewery(newBrewery.getName(), newBrewery.getAddress(), newBrewery.getCity(), newBrewery.getZipcode(), newBrewery.getPhoneNumber(), newBrewery.getDescription(), newBrewery.getBreweryLogoUrl(), newBrewery.getImgUrl(), newBrewery.getWebsiteUrl(), newBrewery.getBusinessHours());
 			return "redirect:/breweries";
 		} else {
 			flash.addFlashAttribute("message", "This brewery alreadys exists");
@@ -61,6 +69,7 @@ public class BreweryController {
 	@RequestMapping(path="/breweryDetails/{id}", method=RequestMethod.GET)
 	public String showBreweryDetails(@PathVariable int id, ModelMap modelHolder) {
 		Brewery breweryDetails = breweryDAO.getBreweryById(id);
+		System.out.print(breweryDetails);
 		modelHolder.addAttribute("details", breweryDetails);
 		
 		return "breweryDetails";

@@ -27,7 +27,7 @@ CREATE TABLE breweries (
     name varchar(255) NOT NULL,
     address varchar(255) NOT NULL,
     city varchar(50) NOT NULL,
-    zipcode integer,
+    zipcode varchar(15) NOT NULL,
     phone_number varchar(15),
     description text NOT NULL,
     brewery_logo_url varchar(255),

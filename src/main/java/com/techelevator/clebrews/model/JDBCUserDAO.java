@@ -25,12 +25,13 @@ public class JDBCUserDAO implements UserDAO {
 	}
 	
 	@Override
-	public void saveUser(String userName, String password) {
+	public int saveUser(User newUser) {
 		byte[] salt = passwordHasher.generateRandomSalt();
-		String hashedPassword = passwordHasher.computeHash(password, salt);
+		String hashedPassword = passwordHasher.computeHash(newUser.getPassword(), salt);
 		String saltString = new String(Base64.encode(salt));
-		jdbcTemplate.update("INSERT INTO users(username, password, salt, role_id) VALUES (?, ?, ?, 2)", userName, hashedPassword, saltString);
+		int userId = jdbcTemplate.queryForObject("INSERT INTO users(username, password, salt, email, role_id) VALUES (?, ?, ?,?, 2) RETURNING user_id", Integer.class, newUser.getUserName(), hashedPassword, saltString, newUser.getEmail());
 		//TODO brewery account (role_id = 2)
+		return userId;
 	}
 
 	@Override
@@ -70,6 +71,22 @@ public class JDBCUserDAO implements UserDAO {
 		String hashedPassword = passwordHasher.computeHash(password, salt);
 		String saltString = new String(Base64.encode(salt));
 		jdbcTemplate.update("UPDATE users SET password = ?, salt = ? WHERE username = ?", hashedPassword, saltString, userName);
+	}
+
+	@Override
+	public User getUserByUsername(String userName) {
+		User user = new User();
+		String sqlgetUserByUsername = "SELECT * FROM users WHERE UPPER(username) = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlgetUserByUsername, userName.toUpperCase());
+		if(results.next()) {
+			user.setId(results.getInt("user_id")); 
+			user.setUserName(results.getString("username"));
+			user.setPassword(results.getString("password"));
+			user.setEmail(results.getString("email"));
+			user.setRoleId(results.getInt("role_id"));
+			user.setActive(results.getBoolean("is_active"));
+		}
+		return user;
 	}
 
 }

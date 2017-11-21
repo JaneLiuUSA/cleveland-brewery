@@ -3,11 +3,14 @@ package com.techelevator.clebrews.model;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 public class User {
-	
+	private int id;
+	@NotBlank(message="Username cannnot be blank")
 	private String userName;
+	
 	@Size(min=8, message="Password too short, must be at least 8 characters")
 	@NotBlank(message="You must have a password")
 	@Pattern.List({
@@ -15,10 +18,14 @@ public class User {
 	@Pattern(regexp="^.*[a-z].*$", message="Must have a lowercase"),
 	@Pattern(regexp="^.*[0-9].*$", message="Must have a number")
 	})
-	
 	private String password;
-
+	
+	@NotBlank(message="Email cannot be blank")
+	@Email(message="Must be a valid email address")
+	private String email;
 	private int roleId;
+	
+	private boolean isActive = false;
 	
 	public String getUserName() {
 		return userName;
@@ -38,6 +45,24 @@ public class User {
 	}
 	public void setRoleId(int roleId) {
 		this.roleId = roleId;
+	}
+	public boolean isActive() {
+		return isActive;
+	}
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

@@ -1,5 +1,6 @@
 package com.techelevator.clebrews.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.validation.Valid;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.techelevator.clebrews.model.Brewery;
+import com.techelevator.clebrews.model.BreweryDAO;
 import com.techelevator.clebrews.model.User;
 import com.techelevator.clebrews.model.UserDAO;
 
@@ -24,6 +27,9 @@ import com.techelevator.clebrews.model.UserDAO;
 public class UserController {
 
 	private UserDAO userDAO;
+	
+	@Autowired
+	BreweryDAO breweryDAO;
 
 	@Autowired
 	public UserController(UserDAO userDAO) {
@@ -31,15 +37,17 @@ public class UserController {
 	}
 
 	@RequestMapping(path="/users/new", method=RequestMethod.GET)
-	public String displayNewUserForm(ModelMap modelHolder) {
+	public String displayNewUserForm(ModelMap modelHolder, @ModelAttribute Brewery brewery) {
 		if(! modelHolder.containsAttribute("newUser")) {
 			modelHolder.addAttribute("newUser", new User());
 		}
+		List<Brewery> breweries = breweryDAO.getAllBrewery();
+		modelHolder.put("allBreweries", breweries);
 		return "newUser";
 	}
 	
 	@RequestMapping(path="/users", method=RequestMethod.POST)
-	public String createUser(@Valid @ModelAttribute("newUser") User newUser, BindingResult result, RedirectAttributes flash) {
+	public String createUser(@Valid @ModelAttribute("newUser") User newUser, @RequestParam Long id, BindingResult result, RedirectAttributes flash) {
 		
 		flash.addFlashAttribute("newUser", newUser);
 		
@@ -48,7 +56,9 @@ public class UserController {
 			return "redirect:/users/new";
 		}
 		if(!userDAO.searchForUsername(newUser.getUserName())) { 
-			userDAO.saveUser(newUser.getUserName(), newUser.getPassword());
+			int userId = userDAO.saveUser(newUser);
+			breweryDAO.updateBreweryUserId(newUser.getId(), userId);
+			//TODO use breweryDAO to take the Long userId that will be returned from userDAO.saveUser
 			return "redirect:/login"; 
 		} else {
 				flash.addFlashAttribute("message", "This username alreadys exists");
