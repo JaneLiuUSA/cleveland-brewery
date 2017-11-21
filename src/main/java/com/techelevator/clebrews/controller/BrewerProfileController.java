@@ -35,5 +35,10 @@ public class BrewerProfileController {
 			modelHolder.put("allBrewers", brewers);
 			return "brewerAccounts";
 		}
+		
+//		@RequestMapping(path="/brewerActive", method=RequestMethod.POST)
+//		public String updateActiveBreweryAccount(int userId, boolean isActive){
+//			userDAO.getUserByRoleId(id)
+//		}
 	
 }

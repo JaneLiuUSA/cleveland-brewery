@@ -32,7 +32,8 @@ public class JDBCUserDAO implements UserDAO {
 		byte[] salt = passwordHasher.generateRandomSalt();
 		String hashedPassword = passwordHasher.computeHash(newUser.getPassword(), salt);
 		String saltString = new String(Base64.encode(salt));
-		int userId = jdbcTemplate.queryForObject("INSERT INTO users(username, password, salt, email, role_id) VALUES (?, ?, ?,?, 2) RETURNING user_id", Integer.class, newUser.getUserName(), hashedPassword, saltString, newUser.getEmail());
+		int userId = jdbcTemplate.queryForObject("INSERT INTO users(username, password, salt, email, role_id, is_active) VALUES (?, ?, ?, ?,?, 2) RETURNING user_id",
+					Integer.class, newUser.getUserName(), hashedPassword, saltString, newUser.getEmail(), newUser.isActive());
 		//TODO brewery account (role_id = 2)
 		return userId;
 	}
@@ -110,5 +111,21 @@ public class JDBCUserDAO implements UserDAO {
 		
 		return brewers;
 	}
+
+//	@Override
+//	public User getUserByUserId(int userId) {
+//		User user = new User();
+//		String sqlgetUserByUsername = "SELECT * FROM users WHERE user_id = ?";
+//		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlgetUserByUsername, userName.toUpperCase());
+//		if(results.next()) {
+//			user.setId(results.getInt("user_id")); 
+//			user.setUserName(results.getString("username"));
+//			user.setPassword(results.getString("password"));
+//			user.setEmail(results.getString("email"));
+//			user.setRoleId(results.getInt("role_id"));
+//			user.setActive(results.getBoolean("is_active"));
+//		}
+//		return user;
+//	}
 
 }

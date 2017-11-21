@@ -25,7 +25,7 @@ public class User {
 	private String email;
 	private int roleId;
 	
-	private boolean isActive = false;
+	private boolean active = false;
 	
 	public String getUserName() {
 		return userName;
@@ -46,12 +46,6 @@ public class User {
 	public void setRoleId(int roleId) {
 		this.roleId = roleId;
 	}
-	public boolean isActive() {
-		return isActive;
-	}
-	public void setActive(boolean isActive) {
-		this.isActive = isActive;
-	}
 	public String getEmail() {
 		return email;
 	}
@@ -63,6 +57,13 @@ public class User {
 	}
 	public void setId(int id) {
 		this.id = id;
+	}
+	
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean isActive) {
+		this.active = isActive;
 	}
 
 }
