@@ -42,6 +42,10 @@
 			</div>
 			<button type="submit" class="btn btn-default">Login</button>
 		</form>
+		<div>
+				<c:url var="signUpHref" value="/users/new" />
+				<a href="${signUpHref}">Brewer without an account? Click here to create one!</a>
+		</div>
 	</div>
 	<div class="col-sm-4"></div>
 </div>
