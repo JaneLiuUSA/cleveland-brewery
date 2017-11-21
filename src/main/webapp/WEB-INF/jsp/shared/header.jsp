@@ -74,16 +74,6 @@
 							</form> 
  							<li><a id="logoutLink" href="#">LOG OUT</a></li> 
  							
- 							
- 							<c:url var="brewerHref" value="/brewer" />
-						 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${brewerHref}">BREWER<span class="caret"></span></a>
-        					<ul class="dropdown-menu">
-        					  <c:url var="brewerAccount" value="/" />
-        					  <li><a href="#">UPDATE INFO</a></li>
-        					  <c:url var="addBrewery" value="/" />
-        					  <li><a href="#">ADD BEER</a></li>
-       						</ul>
-     					 </li>
 						</c:otherwise>
 					</c:choose>
 					<c:choose>
@@ -91,10 +81,23 @@
 						<c:url var="admindHref" value="/admin" />
 						 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${adminHref}">ADMIN<span class="caret"></span></a>
         					<ul class="dropdown-menu">
-        					  <c:url var="brewerAccount" value="/" />
-        					  <li><a href="#">BREWER ACCOUNT</a></li>
+        					  <c:url var="brewerAccounts" value="/brewerAccounts" />
+        					  <li><a href="${brewerAccounts }">BREWER ACCOUNTS</a></li>
         					  <c:url var="addBrewery" value="/breweries/new" />
         					  <li><a href="${addBrewery}">ADD BREWERY</a></li>
+       						</ul>
+       					</c:when>
+       					</c:choose>
+       					
+       					<c:choose>
+       					<c:when test="${currentUser.roleId == 2 }">
+       						 <c:url var="brewerHref" value="/brewer" />
+						 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${brewerHref}">BREWER<span class="caret"></span></a>
+        					<ul class="dropdown-menu">
+        					  <c:url var="brewerAccount" value="/" />
+        					  <li><a href="/updateBreweryInfo">UPDATE INFO</a></li>
+        					  <c:url var="addBrewery" value="/" />
+        					  <li><a href="#">ADD BEER</a></li>
        						</ul>
      					 </li>
 						</c:when>

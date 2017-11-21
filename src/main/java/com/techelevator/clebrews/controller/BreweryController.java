@@ -74,5 +74,14 @@ public class BreweryController {
 		
 		return "breweryDetails";
 	}
-	
 }
+	
+/*	@RequestMapping(path="updateBreweryInfo/{name}", method=RequestMethod.POST)
+	public String updateBreweryInfo() {
+	
+	
+	breweryDAO.saveBrewery(updatedInfo);
+	}
+		return "updateBreweryInfo";
+}
+*/

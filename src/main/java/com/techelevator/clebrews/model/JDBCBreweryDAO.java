@@ -95,4 +95,55 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		jdbcTemplate.update("UPDATE breweries SET user_id = ? WHERE brewery_id = ?",userId,id);
 	}
 
+
+	@Override
+	public void updateBreweryName(String name) {
+		jdbcTemplate.update("UPDATE breweries SET name = ? WHERE name = ?", name);
+		
+	}
+
+
+	@Override
+	public void updateBreweryAddress(String address, String name) {
+		jdbcTemplate.update("UPDATE breweries SET address = ? WHERE name = ?", name);
+		
+	}
+	
+	@Override
+	public void updateBreweryCity(String city, String name) {
+		jdbcTemplate.update("UPDATE breweries SET city = ? WHERE name = ?", name);
+	}
+	
+	@Override
+	public void updateBreweryZipCode(String zipcode, String name) {
+		jdbcTemplate.update("UPDATE breweries SET zipcode = ? WHERE name = ?", name);
+	}
+
+	@Override
+	public void updateBreweryDescription(String description, String name) {
+		jdbcTemplate.update("UPDATE breweries SET description = ? WHERE name = ?", name);
+		
+	}
+
+
+	@Override
+	public void updateBreweryimgUrl(String imgUrl, String name) {
+		jdbcTemplate.update("UPDATE breweries SET img_url = ? WHERE name = ?", name);
+		
+	}
+
+
+	@Override
+	public void updateBreweryWebsiteUrl(String websiteUrl, String name) {
+		jdbcTemplate.update("UPDATE breweries SET website_url = ? WHERE name = ?", name);
+		
+	}
+
+
+	@Override
+	public void updateBreweryBusinessHours(String businessHours, String name) {
+		jdbcTemplate.update("UPDATE breweries SET business_hours = ? WHERE name = ?", name);
+		
+	}
+
 }
