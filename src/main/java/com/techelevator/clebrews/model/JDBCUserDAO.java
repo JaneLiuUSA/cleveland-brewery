@@ -1,5 +1,8 @@
 package com.techelevator.clebrews.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.sql.DataSource;
 
 import org.bouncycastle.util.encoders.Base64;
@@ -87,6 +90,25 @@ public class JDBCUserDAO implements UserDAO {
 			user.setActive(results.getBoolean("is_active"));
 		}
 		return user;
+	}
+
+	@Override
+	public List<User> getUserByRoleId(int id) {
+		List<User> brewers = new ArrayList<>();
+		String sqlgetUserByRoleId = "SELECT * FROM users WHERE role_id = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlgetUserByRoleId, id);
+		while(results.next()){
+			User brewer = new User();
+			brewer.setId(results.getInt("user_id"));
+			brewer.setUserName(results.getString("username"));
+			brewer.setPassword(results.getString("password"));
+			brewer.setEmail(results.getString("email"));
+			brewer.setRoleId(results.getInt("role_id"));
+			brewer.setActive(results.getBoolean("is_active"));
+			brewers.add(brewer);
+		}
+		
+		return brewers;
 	}
 
 }
