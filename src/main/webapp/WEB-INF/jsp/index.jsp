@@ -71,7 +71,7 @@ Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, s
       </div>
     </div>
     <div class="col-sm-4">
-      <p class="text-center"><strong>Name</strong></p><br>
+      <p class="text-center"><strong>Goldhorn Brewery</strong></p><br>
       <a href="#demo2" data-toggle="collapse">
         <img src="img/goldhorn.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
@@ -82,7 +82,7 @@ Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, s
       </div>
     </div>
     <div class="col-sm-4">
-      <p class="text-center"><strong>Name</strong></p><br>
+      <p class="text-center"><strong>Great Lakes Brewery</strong></p><br>
       <a href="#demo3" data-toggle="collapse">
         <img src="img/greatlakes.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>

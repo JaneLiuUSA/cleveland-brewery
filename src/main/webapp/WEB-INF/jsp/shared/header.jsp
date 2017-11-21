@@ -57,15 +57,14 @@
         <c:url var="beerListHref" value="/beers/" /> 
 		<li><a href="${beerListHref}">CLE BREWS</a></li> 
 		
-		</ul> 
+		 
 				<ul class="nav navbar-nav navbar-right"> 
 					<c:choose>
 						<c:when test="${empty currentUser}">
 							<c:url var="newUserHref" value="/users/new" />
-							<li><a href="${newUserHref}">SIGN UP</a></li>
 							
 							<c:url var="loginHref" value="/login" />
-							<li><a href="${loginHref}">LOG IN</a></li>
+							<li><a href="${loginHref}">BREWER LOG-IN</a></li>
 						</c:when>
 						
 						<c:otherwise>
@@ -74,8 +73,33 @@
 								<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
 							</form> 
  							<li><a id="logoutLink" href="#">LOG OUT</a></li> 
+ 							
+ 							
+ 							<c:url var="brewerHref" value="/brewer" />
+						 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${brewerHref}">BREWER<span class="caret"></span></a>
+        					<ul class="dropdown-menu">
+        					  <c:url var="brewerAccount" value="/" />
+        					  <li><a href="#">UPDATE INFO</a></li>
+        					  <c:url var="addBrewery" value="/" />
+        					  <li><a href="#">ADD BEER</a></li>
+       						</ul>
+     					 </li>
 						</c:otherwise>
 					</c:choose>
+					<c:choose>
+						<c:when test="${currentUser.roleId == 1 }">
+						<c:url var="admindHref" value="/admin" />
+						 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${adminHref}">ADMIN<span class="caret"></span></a>
+        					<ul class="dropdown-menu">
+        					  <c:url var="brewerAccount" value="/" />
+        					  <li><a href="#">BREWER ACCOUNT</a></li>
+        					  <c:url var="addBrewery" value="/breweries/new" />
+        					  <li><a href="${addBrewery}">ADD BREWERY</a></li>
+       						</ul>
+     					 </li>
+						</c:when>
+						</c:choose>
 				</ul> 
+				</ul>
  			</div> 
  		</nav> 
