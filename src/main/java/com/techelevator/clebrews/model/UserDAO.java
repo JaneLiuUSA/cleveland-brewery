@@ -1,5 +1,7 @@
 package com.techelevator.clebrews.model;
 
+import java.util.List;
+
 public interface UserDAO {
 
 	public int saveUser(User newUser);
@@ -11,5 +13,7 @@ public interface UserDAO {
 	public void updatePassword(String userName, String password);
 
 	public User getUserByUsername(String userName);
+	
+	public List<User> getUserByRoleId(int id);
 
 }

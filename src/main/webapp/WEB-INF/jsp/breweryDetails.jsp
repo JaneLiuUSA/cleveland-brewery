@@ -8,7 +8,7 @@
 		<div class="breweryList">			
 			<div class="breweryLocation">
 						
-				<div class="col-md-12 breweryImage"> <img class="center-block" src="<c:out value='${details.breweryLogoUrl}'/>" /> </div>
+				<div class="col-md-12 breweryImage responsive"> <img class="center-block" src="<c:out value='${details.breweryLogoUrl}'/>" /> </div>
 				
 				<h2 class="namePadding"><c:out value="${details.name}"/></h2>
 				<ul>
