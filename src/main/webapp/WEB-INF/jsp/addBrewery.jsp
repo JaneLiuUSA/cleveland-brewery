@@ -2,75 +2,95 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
+<c:url value="/javascripts" var="jsUrl"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.19.1/js/jquery.iframe-transport.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.19.1/js/jquery.fileupload.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.19.1/js/vendor/jquery.ui.widget.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-jquery-file-upload/2.3.0/cloudinary-jquery-file-upload.min.js"></script>
+<script type='text/javascript'>
 
-<script type="text/javascript">
-	$(document).ready(function () {
-		
-			$.validator.addMethod("zipcode", function(value, element) {
-			    return /\d{5}-\d{4}$|^\d{5}$/.test(value)
-			}, "The specified US ZIP Code is invalid");
-			
-			$.validator.addMethod('number', function(value){
+	$.cloudinary.config({
+		"cloud_name" : "teclebrew",
+		"api_key" : "976593415828521",
+		"private_cdn" : false,
+		"cdn_subdomain" : false
+	});
+	
+	$(document).ready(function() {
+		  if($.fn.cloudinary_fileupload !== undefined) {
+		    $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
+		  }
+		});
+
+
+	$(document).ready(function() {
+
+		$.validator.addMethod("zipcode", function(value, element) {
+			return /\d{5}-\d{4}$|^\d{5}$/.test(value)
+		}, "The specified US ZIP Code is invalid");
+
+		$.validator.addMethod('number', function(value) {
 			return value.match(/[0-9]/);
-			});
-		
+		});
+
 		$("form").validate({
 			rules : {
-				name:{
-					required: true,
+				name : {
+					required : true,
 				},
-				address:{
-					required: true,
+				address : {
+					required : true,
 				},
-				city:{
-					required: true,
+				city : {
+					required : true,
 				},
-				zipcode:{
-					zipcode: true,
-					
+				zipcode : {
+					zipcode : true,
+
 				},
-				phoneNumber:{
+				phoneNumber : {
 					required : true,
 					minlength : 10,
 					maxlength : 10,
 				},
-				description:{
-					required: true,
-					
+				description : {
+					required : true,
+
 				},
-				/* confirmPassword : {
-					required : true,		
-					equalTo : "#password"  
-				} */
+			/* confirmPassword : {
+				required : true,		
+				equalTo : "#password"  
+			} */
 			},
 			messages : {
-				name:{
-					required: "required",
+				name : {
+					required : "required",
 				},
-				address:{
-					required: "required",
+				address : {
+					required : "required",
 				},
-				city:{
-					required: "required",
+				city : {
+					required : "required",
 				},
-				zipcode:{
-					required: "required",
+				zipcode : {
+					required : "required",
 				},
-				description:{
-					required: "required",
-					
+				description : {
+					required : "required",
+
 				},
-				phoneNumber:{
+				phoneNumber : {
 					minlength : "Please enter 10 digits",
-					maxlength :	"Please enter 10 digits",
+					maxlength : "Please enter 10 digits",
 				}
-				/* confirmPassword : {
-					equalTo : "Passwords do not match"
-				} */
+			/* confirmPassword : {
+				equalTo : "Passwords do not match"
+			} */
 			},
 			errorClass : "error"
 		});
-		
+
 	});
 </script>
 <c:if test="${message != null }">
@@ -120,7 +140,11 @@
 			</div>	
 			<div class="form-group">
 				<label for="breweryLogoUrl">Brewery Logo: </label>
-				<form:input path="breweryLogoUrl"  class="form-control" />
+				<form:input path="breweryLogoUrl"  class="form-control" />  
+				
+
+				<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="breweryLogoUrl" 
+   data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" ></input>
 				<form:errors path="breweryLogoUrl"></form:errors>
 			</div>	
 			<div class="form-group">
