@@ -85,11 +85,31 @@ public class BreweryController {
 		
 		User currentUser = (User) session.getAttribute("currentUser");
 		
-		List<Brewery> breweries = breweryDAO.getBreweryByUserId(currentUser.getId());
-		modelHolder.put("allBreweries", breweries);
+		if(currentUser == null){
+			return "redirect:/login";
+		}
+		
+		if( ! modelHolder.containsAttribute("updatedBrewery")){
+			modelHolder.put("updatedBrewery", new Brewery());
+		}
+		
+		Brewery brewery = breweryDAO.getBreweryByUserId(currentUser.getId());
+		modelHolder.put("brewery", brewery);
 		
 	 return "updateBreweryInfo";
 	 
+		}
+	
+	@RequestMapping(path="/updateBreweryInfo", method=RequestMethod.POST)
+	public String updateBreweryInfo (@Valid @ModelAttribute("updatedBrewery") Brewery updatedBrewery, BindingResult result, RedirectAttributes flash){
+		flash.addFlashAttribute("updatedBrewery", updatedBrewery);
+		
+		if(result.hasErrors()) {
+			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "updatedBrewery", result);
+			return "redirect:/updateBreweryInfo";
+		}
+			breweryDAO.saveBrewery(updatedBrewery.getName(), updatedBrewery.getAddress(), updatedBrewery.getCity(), updatedBrewery.getZipcode(), updatedBrewery.getPhoneNumber(), updatedBrewery.getDescription(), updatedBrewery.getBreweryLogoUrl(), updatedBrewery.getImgUrl(), updatedBrewery.getWebsiteUrl(), updatedBrewery.getBusinessHours());
+		return "redirect:/breweries";
 		}
 		
 }
