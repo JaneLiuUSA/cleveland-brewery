@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
-<c:url var="updateAction" value="/updateBreweryInfo" />
+<c:url var="updateAction" value="updateBreweryInfo" />
 <form action="${updateAction}" id="" method="post">
 
 <h3>Edit Brewery Information</h3>

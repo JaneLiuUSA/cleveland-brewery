@@ -41,7 +41,7 @@ public class UserController {
 		if(! modelHolder.containsAttribute("newUser")) {
 			modelHolder.addAttribute("newUser", new User());
 		}
-		List<Brewery> breweries = breweryDAO.getAllBrewery();
+		List<Brewery> breweries = breweryDAO.getBreweryWhereUserIdIsNULL();
 		modelHolder.put("allBreweries", breweries);
 		return "newUser";
 	}

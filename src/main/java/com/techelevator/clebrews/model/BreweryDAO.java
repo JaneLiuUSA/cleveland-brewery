@@ -30,5 +30,10 @@ public interface BreweryDAO {
 	public boolean searchForBrewery(String name);
 	
 	public Brewery getBreweryById(int id);
+
+
+	public List<Brewery> getBreweryByUserId(int userId);
+	
+	public List<Brewery> getBreweryWhereUserIdIsNULL();
 	
 }

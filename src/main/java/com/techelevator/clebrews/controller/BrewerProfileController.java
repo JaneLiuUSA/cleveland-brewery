@@ -43,7 +43,6 @@ public class BrewerProfileController {
 		public boolean updateActiveBreweryAccount(@RequestParam int brewerId, @RequestParam boolean active){
 			userDAO.UpdatetActiveByUserId(brewerId, active);
 			
-			System.out.println("brewerActive is calling the controller");
 			return true;
 		}
 	
