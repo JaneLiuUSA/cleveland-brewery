@@ -141,15 +141,15 @@
 			<div class="form-group">
 				<label for="breweryLogoUrl">Brewery Logo: </label>
 				<form:input path="breweryLogoUrl"  class="form-control" />  
-				
-
 				<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="breweryLogoUrl" 
-   data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" ></input>
+   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" ></input>
 				<form:errors path="breweryLogoUrl"></form:errors>
 			</div>	
 			<div class="form-group">
 				<label for="imgUrl">Brewery Image: </label>
 				<form:input path="imgUrl"  class="form-control" />
+				<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="imgUrl" 
+   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" ></input>
 				<form:errors path="imgUrl"></form:errors>
 			</div>	
 			<div class="form-group">

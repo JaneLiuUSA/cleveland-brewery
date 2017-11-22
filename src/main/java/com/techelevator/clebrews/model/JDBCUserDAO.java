@@ -32,7 +32,7 @@ public class JDBCUserDAO implements UserDAO {
 		byte[] salt = passwordHasher.generateRandomSalt();
 		String hashedPassword = passwordHasher.computeHash(newUser.getPassword(), salt);
 		String saltString = new String(Base64.encode(salt));
-		int userId = jdbcTemplate.queryForObject("INSERT INTO users(username, password, salt, email, role_id, is_active) VALUES (?, ?, ?, ?,?, 2) RETURNING user_id",
+		int userId = jdbcTemplate.queryForObject("INSERT INTO users(username, password, salt, email, role_id, is_active) VALUES (?, ?, ?, ?, 2, ?) RETURNING user_id",
 					Integer.class, newUser.getUserName(), hashedPassword, saltString, newUser.getEmail(), newUser.isActive());
 		//TODO brewery account (role_id = 2)
 		return userId;
