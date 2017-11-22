@@ -120,4 +120,12 @@ public class JDBCBreweryDAO implements BreweryDAO {
 				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imgUrl, websiteUrl, businessHours, id);		
 	}
 
+
+	@Override
+	public void updateBreweryUserId(int id, int userId) {
+		String sqlUpdateBreweryUserId = "UPDATE breweries SET user_id = ? WHERE brewery_id = ?";
+		jdbcTemplate.queryForRowSet(sqlUpdateBreweryUserId, userId, id);
+		
+	}
+
 }

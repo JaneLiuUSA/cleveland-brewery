@@ -101,10 +101,6 @@
         					  <c:url var="addBeer" value="/addBeer" />
         					  <li><a href="${addBeer}">ADD BEER</a></li>
 
-        					  <li><a href="updateBreweryInfo">UPDATE INFO</a></li>
-        					  <c:url var="addBrewery" value="/" />
-        					  <li><a href="#">ADD BEER</a></li>
-
        						</ul>
      					 </li>
 						</c:when>

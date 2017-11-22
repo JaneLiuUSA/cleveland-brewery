@@ -62,7 +62,8 @@ public class BreweryController {
 			newBrewery.setBreweryLogoUrl("http://res.cloudinary.com/teclebrew/" + newBrewery.getBreweryLogoUrl()); 
 			newBrewery.setImgUrl("http://res.cloudinary.com/teclebrew/" + newBrewery.getImgUrl()); 
 
-			breweryDAO.saveBrewery(newBrewery.getName(), newBrewery.getAddress(), newBrewery.getCity(), newBrewery.getZipcode(), newBrewery.getPhoneNumber(), newBrewery.getDescription(), newBrewery.getBreweryLogoUrl(), newBrewery.getImgUrl(), newBrewery.getWebsiteUrl(), newBrewery.getBusinessHours());
+			breweryDAO.saveBrewery(newBrewery.getName(), newBrewery.getAddress(), newBrewery.getCity(), newBrewery.getZipcode(), 
+					newBrewery.getPhoneNumber(), newBrewery.getDescription(), newBrewery.getBreweryLogoUrl(), newBrewery.getImgUrl(), newBrewery.getWebsiteUrl(), newBrewery.getBusinessHours());
 			return "redirect:/breweries";
 		} else {
 			flash.addFlashAttribute("message", "This brewery alreadys exists");
@@ -108,7 +109,12 @@ public class BreweryController {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "updatedBrewery", result);
 			return "redirect:/updateBreweryInfo";
 		}
-			breweryDAO.updateBrewery(updatedBrewery.getName(), updatedBrewery.getAddress(), updatedBrewery.getCity(), updatedBrewery.getZipcode(), updatedBrewery.getPhoneNumber(), updatedBrewery.getDescription(), updatedBrewery.getBreweryLogoUrl(), updatedBrewery.getImgUrl(), updatedBrewery.getWebsiteUrl(), updatedBrewery.getBusinessHours(),updatedBrewery.getId());
+		
+			updatedBrewery.setBreweryLogoUrl("http://res.cloudinary.com/teclebrew/" + updatedBrewery.getBreweryLogoUrl()); 
+			updatedBrewery.setImgUrl("http://res.cloudinary.com/teclebrew/" + updatedBrewery.getImgUrl());
+			breweryDAO.updateBrewery(updatedBrewery.getName(), updatedBrewery.getAddress(), updatedBrewery.getCity(), updatedBrewery.getZipcode(), 
+					updatedBrewery.getPhoneNumber(), updatedBrewery.getDescription(), updatedBrewery.getBreweryLogoUrl(), updatedBrewery.getImgUrl(), 
+					updatedBrewery.getWebsiteUrl(), updatedBrewery.getBusinessHours(),updatedBrewery.getId());
 		return "redirect:/breweries";
 		}
 		

@@ -21,6 +21,8 @@ public interface BreweryDAO {
 	
 	public List<Brewery> getBreweryWhereUserIdIsNULL();
 
+	public void updateBreweryUserId(int id, int userId);
+
 
 	
 }
