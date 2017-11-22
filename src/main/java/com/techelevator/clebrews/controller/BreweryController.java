@@ -78,13 +78,17 @@ public class BreweryController {
 		
 		return "breweryDetails";
 	}
-}
 	
-//	@RequestMapping(path="updateBreweryInfo/{name}", method=RequestMethod.POST)
-//	public String updateBreweryInfo() {
-//	
-//	
-//	breweryDAO.saveBrewery(updatedInfo);
-//	}
-//		return "updateBreweryInfo";
-//}
+	@RequestMapping(path="/updateBreweryInfo", method=RequestMethod.GET)
+	public String updateBreweryInfo (HttpSession session, ModelMap modelHolder) {
+		
+		User currentUser = (User) session.getAttribute("currentUser");
+		
+		List<Brewery> breweries = breweryDAO.getBreweryByUserId(currentUser.getId());
+		modelHolder.put("allBreweries", breweries);
+		
+	 return "updateBreweryInfo";
+	 
+		}
+		
+}

@@ -146,4 +146,32 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		
 	}
 
+
+	@Override
+	public List<Brewery> getBreweryByUserId(int userId) {
+		
+		List<Brewery> breweries = new ArrayList<>();
+		String sqlSelectBrewerieByUserId = "SELECT * FROM breweries WHERE user_id = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBrewerieByUserId, userId);
+		
+		while(results.next()) {
+			Brewery brewery = new Brewery();
+			brewery.setId(results.getInt("brewery_id"));
+			brewery.setName(results.getString("name"));
+			brewery.setAddress(results.getString("address"));
+			brewery.setCity(results.getString("city"));
+			brewery.setZipcode(results.getString("zipcode"));
+			brewery.setPhoneNumber(results.getString("phone_number"));
+			brewery.setDescription(results.getString("description"));
+			brewery.setBreweryLogoUrl(results.getString("brewery_logo_url"));
+			brewery.setImgUrl(results.getString("img_url"));
+			brewery.setWebsiteUrl(results.getString("website_url"));
+			brewery.setBusinessHours(results.getString("business_hours"));
+			brewery.setUserId(results.getInt("user_id"));
+			breweries.add(brewery);
+		}
+		return breweries;
+		
+	}
+
 }
