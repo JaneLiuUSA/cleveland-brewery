@@ -10,8 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.SessionAttributes;
 
+import com.techelevator.clebrews.model.BreweryDAO;
 import com.techelevator.clebrews.model.User;
 import com.techelevator.clebrews.model.UserDAO;
 
@@ -22,7 +22,10 @@ import com.techelevator.clebrews.model.UserDAO;
 public class AuthenticationController {
 
 	private UserDAO userDAO;
-
+	
+	@Autowired
+	BreweryDAO breweryDAO;
+	
 	@Autowired
 	public AuthenticationController(UserDAO userDAO) {
 		this.userDAO = userDAO;
@@ -44,6 +47,7 @@ public class AuthenticationController {
 			request.changeSessionId();
 			User currentUser = userDAO.getUserByUsername(userName);
 			request.getSession().setAttribute("currentUser", currentUser);  //put the user object in the session
+			
 			if(isValidRedirect(destination)) {
 				return "redirect:"+destination;
 			} else {

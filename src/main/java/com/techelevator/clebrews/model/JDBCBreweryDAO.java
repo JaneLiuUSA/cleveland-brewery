@@ -68,72 +68,16 @@ public class JDBCBreweryDAO implements BreweryDAO {
 	}
 	
 
-	@Override
-	public void updateBreweryUserId(int id, int userId) {
-		jdbcTemplate.update("UPDATE breweries SET user_id = ? WHERE brewery_id = ?",userId,id);
-	}
-
 
 	@Override
-	public void updateBreweryName(String name) {
-		jdbcTemplate.update("UPDATE breweries SET name = ? WHERE name = ?", name);
+	public Brewery getBreweryByUserId(int userId) {
 		
-	}
-
-
-	@Override
-	public void updateBreweryAddress(String address, String name) {
-		jdbcTemplate.update("UPDATE breweries SET address = ? WHERE name = ?", name);
-		
-	}
-	
-	@Override
-	public void updateBreweryCity(String city, String name) {
-		jdbcTemplate.update("UPDATE breweries SET city = ? WHERE name = ?", name);
-	}
-	
-	@Override
-	public void updateBreweryZipCode(String zipcode, String name) {
-		jdbcTemplate.update("UPDATE breweries SET zipcode = ? WHERE name = ?", name);
-	}
-
-	@Override
-	public void updateBreweryDescription(String description, String name) {
-		jdbcTemplate.update("UPDATE breweries SET description = ? WHERE name = ?", name);
-		
-	}
-
-
-	@Override
-	public void updateBreweryimgUrl(String imgUrl, String name) {
-		jdbcTemplate.update("UPDATE breweries SET img_url = ? WHERE name = ?", name);
-		
-	}
-
-
-	@Override
-	public void updateBreweryWebsiteUrl(String websiteUrl, String name) {
-		jdbcTemplate.update("UPDATE breweries SET website_url = ? WHERE name = ?", name);
-		
-	}
-
-
-	@Override
-	public void updateBreweryBusinessHours(String businessHours, String name) {
-		jdbcTemplate.update("UPDATE breweries SET business_hours = ? WHERE name = ?", name);
-		
-	}
-
-
-	@Override
-	public List<Brewery> getBreweryByUserId(int userId) {
-		
-		List<Brewery> breweries = new ArrayList<>();
+		Brewery breweries = new Brewery();
 		String sqlSelectBrewerieByUserId = "SELECT * FROM breweries WHERE user_id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBrewerieByUserId, userId);
 		
 		while(results.next()) {
-			breweries.add(mapRowToBrewery(results));
+			breweries= mapRowToBrewery(results);
 		}
 		return breweries;
 	}
@@ -165,6 +109,15 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		newBrewery.setBusinessHours(row.getString("business_hours"));
 		
 		return newBrewery;
+	}
+
+
+	@Override
+	public void updateBrewery(String name, String address, String city, String zipcode, String phoneNumber,
+			String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHours, int id) {
+		jdbcTemplate.update("UPDATE breweries SET name = ?, address =? , city = ?, zipcode = ?, phone_number = ?, description = ?, "
+				+ "brewery_logo_url = ?, img_url = ?, website_url = ?, business_hours = ? WHERE brewery_id = ?",
+				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imgUrl, websiteUrl, businessHours, id);		
 	}
 
 }
