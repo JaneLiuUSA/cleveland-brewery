@@ -36,7 +36,6 @@
 	$("input[name=active]").on('change',function() {
 		 var isActive = $( this ).prop( "checked" );
 		 var brewerId = $( this ).attr('data-brewer-id');
-		 alert('Jerk');
 		 
 	//	 $('form').append('<input type="hidden" name="actives" value="' + brewerId + ':' + isActive + '">');
 	
@@ -45,8 +44,9 @@
  			data: {
  				brewerId: brewerId,
  				active: isActive,
+ 				'CSRF_TOKEN': '${CSRF_TOKEN}',
 			},
-			type: "POST"
+			type: 'POST'
 		});
 	});
 </script>
