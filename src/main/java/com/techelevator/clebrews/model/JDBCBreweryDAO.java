@@ -126,14 +126,14 @@ public class JDBCBreweryDAO implements BreweryDAO {
 
 
 	@Override
-	public List<Brewery> getBreweryByUserId(int userId) {
+	public Brewery getBreweryByUserId(int userId) {
 		
-		List<Brewery> breweries = new ArrayList<>();
+		Brewery breweries = new Brewery();
 		String sqlSelectBrewerieByUserId = "SELECT * FROM breweries WHERE user_id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBrewerieByUserId, userId);
 		
 		while(results.next()) {
-			breweries.add(mapRowToBrewery(results));
+			breweries= mapRowToBrewery(results);
 		}
 		return breweries;
 	}

@@ -95,9 +95,15 @@
 						 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${brewerHref}">BREWER<span class="caret"></span></a>
         					<ul class="dropdown-menu">
         					  <c:url var="brewerAccount" value="/" />
+
         					  <li><a href="/updateBreweryInfo">UPDATE INFO</a></li>
         					  <c:url var="addBeer" value="/addBeer" />
         					  <li><a href="${addBeer}">ADD BEER</a></li>
+
+        					  <li><a href="updateBreweryInfo">UPDATE INFO</a></li>
+        					  <c:url var="addBrewery" value="/" />
+        					  <li><a href="#">ADD BEER</a></li>
+
        						</ul>
      					 </li>
 						</c:when>
