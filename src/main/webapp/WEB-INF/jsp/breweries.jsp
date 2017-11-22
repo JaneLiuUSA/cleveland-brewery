@@ -8,16 +8,18 @@
 	
 		
 		
-		<div class="breweryList">			
-			<div class="breweryImage"> <img src="<c:out value='${brewery.breweryLogoUrl}'/>" /> </div>
+		<div class="col-md-4 breweryList">			
+			<div class="breweryImage clickHover grow"> 
+			<c:url var="breweryLink" value="/breweryDetails/${brewery.id}"></c:url>
+			<a href=" <c:out value='${breweryLink}'/> "> <img src="<c:out value='${brewery.breweryLogoUrl}'/>" /> </a></div>
 			<div class="breweryLocation">
 			
 				<c:url var="breweryLink" value="/breweryDetails/${brewery.id}"></c:url>
 				<h2> <a href=" <c:out value='${breweryLink}'/> "><c:out value="${brewery.name}"/></a></h2>
 				<ul>
-					<li> <c:out value="${brewery.address}"/> <c:out value="${brewery.city}"/>, <c:out value="OH ${brewery.zipcode}"/> </li>
+					<li> <c:out value="${brewery.address}"/> <c:out value="${brewery.city}"/><br><%--  <c:out value="${brewery.zipcode}"/> --%> </li>
 					<li><c:out value="${brewery.phoneNumber }"/></li>
-					<li><c:out value="${brewery.description }"/></li>
+<%-- 					<li><c:out value="${brewery.description }"/></li> --%>
 				</ul>
 			</div>
 		</div>

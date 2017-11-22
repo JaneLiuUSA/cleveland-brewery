@@ -79,6 +79,7 @@ public class BreweryController {
 		return "breweryDetails";
 	}
 	
+
 	@RequestMapping(path="/updateBreweryInfo", method=RequestMethod.GET)
 	public String updateBreweryInfo (HttpSession session, ModelMap modelHolder) {
 		
@@ -112,3 +113,4 @@ public class BreweryController {
 		}
 		
 }
+
