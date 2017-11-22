@@ -58,7 +58,6 @@ public class BreweryController {
 			return "redirect:/breweries/new";
 		}
 		if(!breweryDAO.searchForBrewery(newBrewery.getName())) { 
-			newBrewery.setBreweryLogoUrl("http://res.cloudinary.com/teclebrew/" + newBrewery.getBreweryLogoUrl());  
 			breweryDAO.saveBrewery(newBrewery.getName(), newBrewery.getAddress(), newBrewery.getCity(), newBrewery.getZipcode(), newBrewery.getPhoneNumber(), newBrewery.getDescription(), newBrewery.getBreweryLogoUrl(), newBrewery.getImgUrl(), newBrewery.getWebsiteUrl(), newBrewery.getBusinessHours());
 			return "redirect:/breweries";
 		} else {
@@ -77,12 +76,11 @@ public class BreweryController {
 	}
 }
 	
-/*	@RequestMapping(path="updateBreweryInfo/{name}", method=RequestMethod.POST)
-	public String updateBreweryInfo() {
-	
-	
-	breweryDAO.saveBrewery(updatedInfo);
-	}
-		return "updateBreweryInfo";
-}
-*/
+//	@RequestMapping(path="updateBreweryInfo/{name}", method=RequestMethod.POST)
+//	public String updateBreweryInfo() {
+//	
+//	
+//	breweryDAO.saveBrewery(updatedInfo);
+//	}
+//		return "updateBreweryInfo";
+//}
