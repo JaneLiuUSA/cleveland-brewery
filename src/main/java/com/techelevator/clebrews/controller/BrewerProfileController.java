@@ -7,8 +7,11 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.techelevator.clebrews.model.Brewery;
 import com.techelevator.clebrews.model.BreweryDAO;
@@ -17,8 +20,7 @@ import com.techelevator.clebrews.model.UserDAO;
 
 @Controller
 public class BrewerProfileController {
-	@Autowired
-	private BreweryDAO breweryDAO;
+	
 	@Autowired
 	private UserDAO userDAO;
 	
@@ -36,9 +38,13 @@ public class BrewerProfileController {
 			return "brewerAccounts";
 		}
 		
-//		@RequestMapping(path="/brewerActive", method=RequestMethod.POST)
-//		public String updateActiveBreweryAccount(int userId, boolean isActive){
-//			userDAO.getUserByRoleId(id)
-//		}
+		@ResponseBody  //tell spring don't run true.jsp , true is response body
+		@RequestMapping(path="/brewerActive", method=RequestMethod.POST)
+		public boolean updateActiveBreweryAccount(@RequestParam int brewerId, @RequestParam boolean active){
+			userDAO.UpdatetActiveByUserId(brewerId, active);
+			
+			System.out.println("brewerActive is calling the controller");
+			return true;
+		}
 	
 }
