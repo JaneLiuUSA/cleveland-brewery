@@ -3,23 +3,6 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
-<script type="text/javascript">
-	$("input[name=active]").on('change',function() {
-		 var isActive = $( this ).prop( "checked" );
-		 var brewerId = $( this ).attr('data-brewer-id');
-		 
-	//	 $('form').append('<input type="hidden" name="actives" value="' + brewerId + ':' + isActive + '">');
-	
-		$.ajax({
-			url: 'brewerActive',
-			data: {
-				brewerId: brewerId,
-				active: isActive
-			},
-			type: 'POST'
-		});
-	});
-</script>
 
 <c:url var="formAction" value="/users" />
 <form:form method="POST" action="${formAction}" modelAttribute="currentUser">
@@ -48,5 +31,24 @@
 	
 </div>
 </form:form>
+
+<script type="text/javascript">
+	$("input[name=active]").on('change',function() {
+		 var isActive = $( this ).prop( "checked" );
+		 var brewerId = $( this ).attr('data-brewer-id');
+		 alert('Jerk');
+		 
+	//	 $('form').append('<input type="hidden" name="actives" value="' + brewerId + ':' + isActive + '">');
+	
+		$.ajax({
+			url: '/capstone/brewerActive',
+ 			data: {
+ 				brewerId: brewerId,
+ 				active: isActive,
+			},
+			type: "POST"
+		});
+	});
+</script>
 
 <c:import url="/WEB-INF/jsp/shared/footer.jsp" />

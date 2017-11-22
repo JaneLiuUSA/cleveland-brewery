@@ -112,20 +112,10 @@ public class JDBCUserDAO implements UserDAO {
 		return brewers;
 	}
 
-//	@Override
-//	public User getUserByUserId(int userId) {
-//		User user = new User();
-//		String sqlgetUserByUsername = "SELECT * FROM users WHERE user_id = ?";
-//		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlgetUserByUsername, userName.toUpperCase());
-//		if(results.next()) {
-//			user.setId(results.getInt("user_id")); 
-//			user.setUserName(results.getString("username"));
-//			user.setPassword(results.getString("password"));
-//			user.setEmail(results.getString("email"));
-//			user.setRoleId(results.getInt("role_id"));
-//			user.setActive(results.getBoolean("is_active"));
-//		}
-//		return user;
-//	}
+	@Override
+	public void UpdatetActiveByUserId(int userId, boolean isActive) {
+		jdbcTemplate.update("UPDATE users SET is_active = ? WHERE user_id = ?", isActive, userId);
+	}
+
 
 }

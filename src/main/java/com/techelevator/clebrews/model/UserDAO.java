@@ -14,7 +14,7 @@ public interface UserDAO {
 
 	public User getUserByUsername(String userName);
 	
-//	public User getUserByUserId(int userId);
+	public void UpdatetActiveByUserId(int userId, boolean isActive);
 	
 	public List<User> getUserByRoleId(int id);
 
