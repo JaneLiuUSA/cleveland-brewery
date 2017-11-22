@@ -27,20 +27,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		String sqlSelectAllBreweries = "SELECT * FROM breweries ORDER BY name";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllBreweries);
 		while(results.next()) {
-			Brewery brewery = new Brewery();
-			brewery.setId(results.getInt("brewery_id"));
-			brewery.setName(results.getString("name"));
-			brewery.setAddress(results.getString("address"));
-			brewery.setCity(results.getString("city"));
-			brewery.setZipcode(results.getString("zipcode"));
-			brewery.setPhoneNumber(results.getString("phone_number"));
-			brewery.setDescription(results.getString("description"));
-			brewery.setBreweryLogoUrl(results.getString("brewery_logo_url"));
-			brewery.setImgUrl(results.getString("img_url"));
-			brewery.setWebsiteUrl(results.getString("website_url"));
-			brewery.setBusinessHours(results.getString("business_hours"));
-			brewery.setUserId(results.getInt("user_id"));
-			allBreweries.add(brewery);
+			allBreweries.add(mapRowToBrewery(results));
 		}
 		return allBreweries;
 	}
@@ -63,7 +50,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 			return true;
 		} else {
 		return false;
-	}
+		}
 	}
 
 
@@ -74,21 +61,12 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetBreweryById, id);
 		
-		while(results.next()) {
-			details.setName(results.getString("name"));
-			details.setAddress(results.getString("address"));
-			details.setCity(results.getString("city"));
-			details.setZipcode(results.getString("zipcode"));
-			details.setPhoneNumber(results.getString("phone_number"));
-			details.setDescription(results.getString("description"));
-			details.setBreweryLogoUrl(results.getString("brewery_logo_url"));
-			details.setImgUrl(results.getString("img_url"));
-			details.setWebsiteUrl(results.getString("website_url"));
-			details.setBusinessHours(results.getString("business_hours"));
+		if (results.next()) {
+			details = mapRowToBrewery(results);
 		}
 		return details;
 	}
-
+	
 
 	@Override
 	public void updateBreweryUserId(int id, int userId) {
@@ -144,6 +122,35 @@ public class JDBCBreweryDAO implements BreweryDAO {
 	public void updateBreweryBusinessHours(String businessHours, String name) {
 		jdbcTemplate.update("UPDATE breweries SET business_hours = ? WHERE name = ?", name);
 		
+	}
+
+
+	@Override
+	public List<Brewery> getBreweryWhereUserIdIsNULL() {
+		List<Brewery> breweryList = new ArrayList<>();
+		String sqlGetBreweryById = "SELECT * FROM breweries WHERE user_id IS NULL";
+		
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetBreweryById);
+		while (results.next()) {
+			breweryList.add(mapRowToBrewery(results));
+		}
+		return breweryList;
+	}
+	
+	private Brewery mapRowToBrewery(SqlRowSet row) {
+		Brewery newBrewery = new Brewery();
+		newBrewery.setName(row.getString("name"));
+		newBrewery.setAddress(row.getString("address"));
+		newBrewery.setCity(row.getString("city"));
+		newBrewery.setZipcode(row.getString("zipcode"));
+		newBrewery.setPhoneNumber(row.getString("phone_number"));
+		newBrewery.setDescription(row.getString("description"));
+		newBrewery.setBreweryLogoUrl(row.getString("brewery_logo_url"));
+		newBrewery.setImgUrl(row.getString("img_url"));
+		newBrewery.setWebsiteUrl(row.getString("website_url"));
+		newBrewery.setBusinessHours(row.getString("business_hours"));
+		
+		return newBrewery;
 	}
 
 }
