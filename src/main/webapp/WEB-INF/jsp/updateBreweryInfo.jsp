@@ -4,7 +4,7 @@
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
 
-<<<<<<< HEAD
+
 <c:url var="formAction" value="/updateBreweryInfo" />
 <form:form method="POST" action="${formAction}" modelAttribute="brewery">
 	<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
@@ -20,7 +20,7 @@
 		<div>
 			<button type="submit" class="btn btn-default">Update</button><br>
 		</div>
-=======
+
 <h3>Edit Brewery Information</h3>
 		<input id="" name="name" placeholder="Brewery Name" type="text" value="" />
 		<input id="" name="address" placeholder="Address" type="text" value="" />
@@ -31,7 +31,7 @@
 		<input id="" name="brewery_logo" placeholder="Brewery Logo" type="text" value="" />
 		<input id="" name="website_url" placeholder="Website Url" type="text" value="" />
 		<input id="" name="business_hours" placeholder="Business  Hours" type="text" value="" />
->>>>>>> 1ad2bc2f2dd295ad617578dd29baf963e4bd5295
+
 		
 </form:form>
 

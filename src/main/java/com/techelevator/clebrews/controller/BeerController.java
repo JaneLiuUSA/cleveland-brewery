@@ -1,5 +1,7 @@
 package com.techelevator.clebrews.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
@@ -14,6 +16,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.clebrews.model.Beer;
 import com.techelevator.clebrews.model.BeerDAO;
+import com.techelevator.clebrews.model.Brewery;
+import com.techelevator.clebrews.model.BreweryDAO;
 import com.techelevator.clebrews.model.User;
 
 @Controller
@@ -21,10 +25,17 @@ public class BeerController {
 	
 	@Autowired
 	BeerDAO beerDAO;
+	
+	@Autowired
+	BreweryDAO breweryDAO;
 
 	@RequestMapping(path="/beers", method=RequestMethod.GET)
 	public String showAllBeers(ModelMap modelHolder) {
-		//TODO DAO call to get all beer
+		List<Beer> beerList = beerDAO.getAllBeer();
+		List<Brewery> breweries = breweryDAO.getAllBrewery();
+		
+		modelHolder.put("allBeers", beerList);
+		modelHolder.put("allBreweries", breweries);
 		return "beers";
 	}
 	
@@ -38,6 +49,10 @@ public class BeerController {
 		if( ! modelHolder.containsAttribute("newBeer")){
 			modelHolder.put("newBeer", new Beer());
 		}
+		
+		Brewery currentBrewery = breweryDAO.getBreweryByUserId(currentUser.getId());
+		modelHolder.put("brewery", currentBrewery);
+		
 		return "addBeer";
 	}
 	

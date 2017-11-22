@@ -21,7 +21,7 @@ public class JDBCBeerDAO implements BeerDAO {
 	}	
 		
 	@Override
-	public List<Beer> allBeer() {
+	public List<Beer> getAllBeer() {
 		List<Beer> allBeers = new ArrayList<>();
 		String sqlSelectAllBeers = "SELECT * FROM beers ORDER BY name";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllBeers);
@@ -47,7 +47,7 @@ public class JDBCBeerDAO implements BeerDAO {
 	@Override
 	public boolean searchForBeerByName(String name) {
 		String sqlSearchForBeer = "SELECT * " +
-									 "FROM beer " +
+									 "FROM beers " +
 									 "WHERE UPPER(name) = ?";
 		
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchForBeer, name.toUpperCase());
@@ -60,7 +60,7 @@ public class JDBCBeerDAO implements BeerDAO {
 
 	@Override
 	public void saveBeer(Beer newBeer) {
-		jdbcTemplate.update("SELECT INTO beers(name, abv, ibu, type, info, img_url, brewery_id) VALUES (?,?,?,?,?,?,?)",
+		jdbcTemplate.update("INSERT INTO beers(name, abv, ibu, type, info, img_url, brewery_id) VALUES (?,?,?,?,?,?,?)",
 				newBeer.getName(), newBeer.getAbv(), newBeer.getIbu(), newBeer.getType(), newBeer.getInfo(), newBeer.getImgUrl(), newBeer.getBreweryId());
 	}
 	

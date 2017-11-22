@@ -303,6 +303,13 @@ textarea {
 	box-shadow: 5px 5px 20px #949296;
 }
 
+.beer-list-table {
+	table-layout: fixed;
+}
+.beer-list-table td {
+	padding: 10px;
+}
+
 .center-block {
 	display: block;
     margin-left: auto;
