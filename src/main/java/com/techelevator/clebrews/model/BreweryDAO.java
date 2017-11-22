@@ -34,4 +34,6 @@ public interface BreweryDAO {
 
 	public List<Brewery> getBreweryByUserId(int userId);
 	
+	public List<Brewery> getBreweryWhereUserIdIsNULL();
+	
 }
