@@ -3,7 +3,7 @@ package com.techelevator.clebrews.model;
 import java.util.List;
 
 public interface BeerDAO {
-	public List<Beer> allBeer();
+	public List<Beer> getAllBeer();
 	
 	public Beer getBeerByName(String name);
 	

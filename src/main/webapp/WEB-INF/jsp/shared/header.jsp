@@ -7,7 +7,7 @@
 		
 		<title>CleBrews 
 		<c:if test="${not empty currentUser}"> 
- 			: <c:out value="${currentUser}"/> 
+ 			: <c:out value="${currentUser.userName}"/> 
  		</c:if>	
 		</title>
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -95,9 +95,8 @@
        						 <c:url var="brewerHref" value="/brewer" />
 						 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${brewerHref}">BREWER<span class="caret"></span></a>
         					<ul class="dropdown-menu">
-        					  <c:url var="brewerAccount" value="/" />
-
-        					  <li><a href="/updateBreweryInfo">UPDATE INFO</a></li>
+        					  <c:url var="brewerAccount" value="/updateBreweryInfo" />
+        					  <li><a href="${brewerAccount}">UPDATE INFO</a></li>
         					  <c:url var="addBeer" value="/addBeer" />
         					  <li><a href="${addBeer}">ADD BEER</a></li>
 
