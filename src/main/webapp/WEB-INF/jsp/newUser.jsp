@@ -80,15 +80,19 @@
 				<label for="password">Password: </label>
 				<form:input type="password" path="password" placeHolder="Password" class="form-control" />
 				<form:errors path="password"></form:errors>
+				<div class="rules">
+				<p>Must be at least 8 characters long and contain the following:
+				Uppercase Letter (A-Z), Lowercase Letter (a-z), Number (0-9)</p>	
 			</div>
 			<div class="form-group">
 				<label for="confirmPassword">Confirm Password: </label>
-				<input type="password" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />	
+				<input type="password" name="confirmPassword" placeHolder="Re-Type Password" class="form-control" />
 			</div>
 			<div class="form-group">
 				<label for="email">Email address: </label>
 				<form:input path="email" placeHolder="Email Address" class="form-control"/>
 				<form:errors path="email"></form:errors>
+				<p>**An email will be sent and a phone call will be placed for verification. Account will be verified and accessible within 24 hours.</p>
 			</div>
 			<div class="form-group">
 				<label for="id">Select Brewery</label>
@@ -101,13 +105,7 @@
 			</div>
 			<div>
 			<button type="submit" class="btn btn-default">Create User</button><br>
-			<div class="col-sm-12 rules">
-			<strong>Password Rules:</strong>
-				<p>Must be at least 8 characters long and contain the following:</p>	
-						<p>Uppercase Letter (A-Z), Lowercase Letter (a-z), Number (0-9)</p>
-						<br>
-
-
+				<br>
 			</div>
 		</div>
 	</div>
