@@ -126,7 +126,6 @@ public class JDBCBreweryDAO implements BreweryDAO {
 
 
 	@Override
-<<<<<<< HEAD
 	public List<Brewery> getBreweryByUserId(int userId) {
 		
 		List<Brewery> breweries = new ArrayList<>();
@@ -134,24 +133,12 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBrewerieByUserId, userId);
 		
 		while(results.next()) {
-			Brewery brewery = new Brewery();
-			brewery.setId(results.getInt("brewery_id"));
-			brewery.setName(results.getString("name"));
-			brewery.setAddress(results.getString("address"));
-			brewery.setCity(results.getString("city"));
-			brewery.setZipcode(results.getString("zipcode"));
-			brewery.setPhoneNumber(results.getString("phone_number"));
-			brewery.setDescription(results.getString("description"));
-			brewery.setBreweryLogoUrl(results.getString("brewery_logo_url"));
-			brewery.setImgUrl(results.getString("img_url"));
-			brewery.setWebsiteUrl(results.getString("website_url"));
-			brewery.setBusinessHours(results.getString("business_hours"));
-			brewery.setUserId(results.getInt("user_id"));
-			breweries.add(brewery);
+			breweries.add(mapRowToBrewery(results));
 		}
 		return breweries;
-		
-=======
+	}
+	
+	
 	public List<Brewery> getBreweryWhereUserIdIsNULL() {
 		List<Brewery> breweryList = new ArrayList<>();
 		String sqlGetBreweryById = "SELECT * FROM breweries WHERE user_id IS NULL";
@@ -178,7 +165,6 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		newBrewery.setBusinessHours(row.getString("business_hours"));
 		
 		return newBrewery;
->>>>>>> 3da5f9b26937cc1b88b54d6e04157fbaf8d49c81
 	}
 
 }
