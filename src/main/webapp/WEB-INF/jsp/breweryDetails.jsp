@@ -88,18 +88,12 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC3mur1M8U_H2VkkIPY79clXbZpNg19nI&callback=initMap">
     </script>
-  </body>
-</html>
-
-	</div>
+    </div>
 	</div>
 	</div>
 
 
-
-
-
-    
+	
 
 
 <c:import url="/WEB-INF/jsp/shared/footer.jsp" />

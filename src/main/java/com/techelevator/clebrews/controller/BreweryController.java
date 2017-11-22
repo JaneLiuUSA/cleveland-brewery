@@ -80,9 +80,9 @@ public class BreweryController {
 	}
 }
 	
-//	@RequestMapping(path="updateBreweryInfo/{name}", method=RequestMethod.POST)
-//	public String updateBreweryInfo() {
-//	
+//	@RequestMapping(path="updateBreweryInfo/{name}", method=RequestMethod.GET)
+//	public String showCurrentBreweryInfo() {
+//		
 //	
 //	breweryDAO.saveBrewery(updatedInfo);
 //	}

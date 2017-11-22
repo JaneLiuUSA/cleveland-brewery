@@ -34,6 +34,20 @@ h2 {
 	opacity: 0.5;
 }
 
+.clickHover:hover {
+	opacity: 0.75;
+}
+
+.grow:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.circle:hover {
+	border-radius:50%;
+}
+
 .carousel {
 	margin-top: 50px;
 	width: 100%;
@@ -147,6 +161,10 @@ h2 {
 	filter: grayscale(100%);
 }
 
+#map {
+	left: 35%;
+}
+
 .navbar {
 	font-family: Montserrat, sans-serif;
 	margin-bottom: 0;
@@ -252,21 +270,29 @@ textarea {
 }
 
 .breweryContainer h2 {
+	letter-spacing: 0;
 	text-align: center;
+	text-decoration: underline;
+}
+
+.breweryContainer a {
+	color: #d69827;
 }
 
 .breweryList {
 	flex: 1;
-	display: inline-flex;
+	display: inline-block;
 	border-style: solid;
 	padding: 5px;
 	border: 0;
+	text-align: center;
 }
 
 .breweryList ul {
 	list-style-type: none;
 	margin: auto;
 	text-align: center;
+	padding: .5em 1em 1em 1em;
 }
 
 .breweryImage img {
@@ -274,6 +300,7 @@ textarea {
 	width: 200px;
 	height: 200px;
 	background-color: black;
+	box-shadow: 5px 5px 20px #949296;
 }
 
 .center-block {
@@ -288,7 +315,7 @@ textarea {
 
 .breweryLocation {
 	flex: 1;
-	padding: 1em 1em 1em 0em;
+	padding: 1em 1em 1em 1em;
 }
 
 .sizing img {
