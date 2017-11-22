@@ -91,6 +91,12 @@ h2 {
 	}
 }
 
+@media (min-width : 768px ) {
+	.navbar-right {
+		margin-right: 0px;
+	}
+}
+
 .bg-1 {
 	background: #2d2d30;
 	color: #bdbdbd;
@@ -170,14 +176,19 @@ h2 {
 	margin-bottom: 0;
 	background-color: #2d2d30;
 	border: 0;
-	font-size: 11px !important;
+	font-size: 12px !important;
 	letter-spacing: 4px;
 	opacity: 0.9;
 }
 
-.navbar li a, .navbar .navbar-brand {
+.navbar li a, .navbar {
 	color: #d5d5d5 !important;
 }
+
+.navbar-default .navbar-brand {
+	color: #fff;
+}
+
 
 .navbar-nav li a:hover {
 	color: #fff !important;
@@ -185,7 +196,7 @@ h2 {
 
 .navbar-nav li.active a {
 	color: #fff !important;
-	background-color: #29292c !important;
+	background-color: #b48331!important;
 }
 
 .navbar-default .navbar-toggle {
@@ -267,7 +278,7 @@ textarea {
 	justify-content: center;
 	border-style: solid;
 	border: 0;
-}
+} 
 
 .breweryContainer h2 {
 	letter-spacing: 0;
@@ -303,11 +314,18 @@ textarea {
 	box-shadow: 5px 5px 20px #949296;
 }
 
+
 .beer-list-table {
 	table-layout: fixed;
 }
 .beer-list-table td {
 	padding: 10px;
+
+.row {
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 30px;
+
 }
 
 .center-block {

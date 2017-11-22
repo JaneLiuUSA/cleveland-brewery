@@ -44,7 +44,8 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand">CLEVELAND BREWS</a>
+      <c:url var="homeRef" value="/"/>
+     <p><a class="navbar-brand" href="${homeRef}">CLEVELAND BREWS</a></p>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
