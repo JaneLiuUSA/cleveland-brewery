@@ -2,13 +2,14 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
+<div class="backgroundPic">
 <div class="breweryContainer">
 
 	<c:forEach items="${allBreweries}" var="brewery">
 	
 		
-		
-		<div class="col-md-4 breweryList">			
+		<div class="row">
+		<div class="col-lg-12 breweryList">			
 			<div class="breweryImage clickHover grow"> 
 			<c:url var="breweryLink" value="/breweryDetails/${brewery.id}"></c:url>
 			<a href=" <c:out value='${breweryLink}'/> "> <img src="<c:out value='${brewery.breweryLogoUrl}'/>" /> </a></div>
@@ -22,9 +23,10 @@
 <%-- 					<li><c:out value="${brewery.description }"/></li> --%>
 				</ul>
 			</div>
+			</div>
 		</div>
 	</c:forEach>
 
 </div>
-
+</div>
 <c:import url="/WEB-INF/jsp/shared/footer.jsp" />
