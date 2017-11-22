@@ -8,5 +8,6 @@
 <h3>Edit Brewery Information</h3>
 		<input id="" name="" placeholder="name" type="text" value="" />
 		<input id="" name="" placeholder="address" type="text" value="" />
+		
 </form>
 <c:import url="/WEB-INF/jsp/shared/footer.jsp" />
