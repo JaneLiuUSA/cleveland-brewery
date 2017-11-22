@@ -162,7 +162,10 @@ h2 {
 }
 
 #map {
-	left: 35%;
+	      position: absolute;
+        height: 40%;
+     	width: 60%;
+     	text-align: center;
 }
 
 .navbar {
