@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
-<div id="myCarousel" class="carousel slide" data-interval="false">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -50,16 +50,14 @@
 
 
 <div id="band" class="container text-center">
-  <h2>CLEVELAND BREWS</h2>
-<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. 
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. 
-Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. 
-Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. 
-Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. 
-Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. 
-Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. </p>  <br>
+  <h2 class="homeTitle">CLEVELAND BREWS</h2>
+<p>Here at Cleveland Brews, we love beer as much as you do. And when we say beer, we mean Cleveland beer. Founded by a group of ambitious boot camp grads,
+we followed our passion to bring you closer to the Cleveland Beer scene. From finding your local brewery to checking out new beers, Cleveland Brews is
+here to keep you up to date on those hopped up buds. Take a look around and get involved! Cheers! </p>  <br>
+ <h2 class="homeTitle">TOP RATED THIS MONTH</h2>
   <div class="row">
     <div class="col-sm-4">
+     <p class="text-center homeTitle"><strong>BREWERY</strong></p><br>
       <p class="text-center"><strong>Masthead Brewery</strong></p><br>
       <a href="#demo" data-toggle="collapse">
         <img src="img/mastheadBeer.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
@@ -71,6 +69,7 @@ Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, s
       </div>
     </div>
     <div class="col-sm-4">
+    <p class="text-center homeTitle"><strong>BEER</strong></p><br>
       <p class="text-center"><strong>Goldhorn Brewery</strong></p><br>
       <a href="#demo2" data-toggle="collapse">
         <img src="img/goldhorn.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
@@ -82,6 +81,7 @@ Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, s
       </div>
     </div>
     <div class="col-sm-4">
+    <p class="text-center homeTitle"><strong>REVIEW</strong></p><br>
       <p class="text-center"><strong>Great Lakes Brewery</strong></p><br>
       <a href="#demo3" data-toggle="collapse">
         <img src="img/greatlakes.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
