@@ -142,4 +142,8 @@ public class Brewery {
 		this.breweryLogoUrl = breweryLogoUrl;
 	}
 	
+	public String getNameById(int id){
+		return name;
+	}
+	
 }

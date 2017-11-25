@@ -16,7 +16,7 @@ public class Beer {
 	
 	private String imgUrl;
 	
-	private Long BreweryId;
+	private Long breweryId;
 
 	public Long getId() {
 		return id;
@@ -75,11 +75,11 @@ public class Beer {
 	}
 
 	public Long getBreweryId() {
-		return BreweryId;
+		return breweryId;
 	}
 
 	public void setBreweryId(Long breweryId) {
-		BreweryId = breweryId;
+		this.breweryId = breweryId;
 	}
 	
 	

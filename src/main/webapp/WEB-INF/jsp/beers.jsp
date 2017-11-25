@@ -8,7 +8,7 @@
 			<th>ABV</th>
 			<th>IBU</th>
 			<th>Type</th>
-			<th>Description</th>
+			<th>Brewery</th>
 			<th></th>
 			
 		<c:forEach items="${allBeers}" var="beer">
@@ -18,7 +18,14 @@
 				<td> <c:out value="${beer.abv}"/>% </td>
 				<td> <c:out value="${beer.ibu}"/> </td>
 				<td> <c:out value="${beer.type}"/> </td>
-				<td> <c:out value="${beer.info}"/> </td>
+				<td>
+				<c:forEach items="${allBreweries}" var="brewery">
+				<c:set var = "breweryId" value = "${beer.breweryId}"/>
+				<c:if test="${brewery.id eq breweryId}">
+					<c:out value="${brewery.getNameById(beer.breweryId)}"/> 
+				</c:if>
+				</c:forEach>
+				</td>
 				<td> <button type="button" class="btn btn-default">Review this Beer</button></td>
 			</tr>	
 		</c:forEach>
