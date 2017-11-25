@@ -71,6 +71,7 @@
 <form:form method="POST" action="${formAction}" modelAttribute="newBeer">
 
 	<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
+	<input type="hidden" name="BreweryId" value="${brewery.id}"/>
 
 	<div class="row">
 		<div class="col-sm-4"></div>
