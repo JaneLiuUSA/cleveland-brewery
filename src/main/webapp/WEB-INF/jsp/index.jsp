@@ -23,8 +23,8 @@
       <div class="item">
         <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511207908/platformBeer_g0km7c.jpg" alt="GL Porter">
         <div class="carousel-caption">
-          <h2>Great Lakes</h2>
-          <p>Great Lakes Robust Porter 25th anniversary.</p>
+          <h2 class="title">Platform Brewery</h2>
+          <p>Check out one of Cleveland's newest breweries!</p>
         </div>      
       </div>
     

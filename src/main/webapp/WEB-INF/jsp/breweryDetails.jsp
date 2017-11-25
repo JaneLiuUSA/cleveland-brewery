@@ -13,10 +13,12 @@
 					src="<c:out value='${details.breweryLogoUrl}'/>" />
 			</div>
 
-			<h2 class="namePadding">
+			<h2>
 				<c:out value="${details.name}" />
 			</h2>
+			<div class="breweryLocation">
 			<ul>
+				<p class="detailsTitle">Location</p>
 				<li><c:out value="${details.address}" /> <c:out
 						value="${details.city}" />
 					<c:out value="${details.zipcode}" /></li>
@@ -30,6 +32,7 @@
 
 				<li><c:out value="${details.businessHours }" /></li>
 			</ul>
+			</div>
 
 		</div>
 	</div>
