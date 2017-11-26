@@ -100,6 +100,3 @@
 </body>
 </html>
 
-<footer>
-	2017 CLE Brews Inc. &reg; All right reserved.
-</footer>

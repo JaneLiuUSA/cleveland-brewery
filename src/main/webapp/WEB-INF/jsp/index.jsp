@@ -51,10 +51,12 @@
 
 <div id="band" class="container text-center">
   <h2 class="homeTitle">CLEVELAND BREWS</h2>
+  <hr/>
 <p>Here at Cleveland Brews, we love beer as much as you do. And when we say beer, we mean Cleveland beer. Founded by a group of ambitious boot camp grads,
 we followed our passion to bring you closer to the Cleveland Beer scene. From finding your local brewery to checking out new beers, Cleveland Brews is
 here to keep you up to date on those hopped up buds. Take a look around and get involved! Cheers! </p>  <br>
  <h2 class="homeTitle">TOP RATED THIS MONTH</h2>
+ <hr/>
   <div class="row">
     <div class="col-sm-4">
      <p class="text-center homeTitle"><strong>BREWERY</strong></p><br>
@@ -63,9 +65,9 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
         <img src="img/mastheadBeer.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
       <div id="demo" class="collapse">
-        <p>Guitarist and Lead Vocalist</p>
-        <p>Loves long walks on the beach</p>
-        <p>Member since 1988</p>
+        <p>Opened 2016</p>
+        <p>Top Beer Goes Here</p>
+        <p>Rating Goes Here</p>
       </div>
     </div>
     <div class="col-sm-4">
@@ -75,9 +77,9 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
         <img src="img/goldhorn.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
       <div id="demo2" class="collapse">
-        <p>Drummer</p>
-        <p>Loves drummin'</p>
-        <p>Member since 1988</p>
+        <p>Beer Description</p>
+        <p>Link To Top Review Goes Here</p>
+        <p>Rating Goes Here</p>
       </div>
     </div>
     <div class="col-sm-4">
@@ -87,9 +89,9 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
         <img src="img/greatlakes.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
       <div id="demo3" class="collapse">
-        <p>Bass player</p>
-        <p>Loves math</p>
-        <p>Member since 2005</p>
+        <p>Review Title Goes Here</p>
+        <p>Reviewer Name Goes Here</p>
+        <p>Link to review?</p>
       </div>
     </div>
   </div>
