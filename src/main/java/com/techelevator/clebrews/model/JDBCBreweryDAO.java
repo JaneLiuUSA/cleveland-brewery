@@ -55,7 +55,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 
 
 	@Override
-	public Brewery getBreweryById(int id) {
+	public Brewery getBreweryById(long id) {
 		Brewery details = new Brewery();
 		String sqlGetBreweryById = "SELECT * FROM breweries WHERE brewery_id = ?";
 		
@@ -114,7 +114,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 
 	@Override
 	public void updateBrewery(String name, String address, String city, String zipcode, String phoneNumber,
-			String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHours, int id) {
+			String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHours, long id) {
 		jdbcTemplate.update("UPDATE breweries SET name = ?, address =? , city = ?, zipcode = ?, phone_number = ?, description = ?, "
 				+ "brewery_logo_url = ?, img_url = ?, website_url = ?, business_hours = ? WHERE brewery_id = ?",
 				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imgUrl, websiteUrl, businessHours, id);		
@@ -122,7 +122,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 
 
 	@Override
-	public void updateBreweryUserId(int id, int userId) {
+	public void updateBreweryUserId(long id, int userId) {
 		String sqlUpdateBreweryUserId = "UPDATE breweries SET user_id = ? WHERE brewery_id = ?";
 		jdbcTemplate.queryForRowSet(sqlUpdateBreweryUserId, userId, id);
 		

@@ -13,7 +13,8 @@
 			
 		<c:forEach items="${allBeers}" var="beer">
 			<tr>
-				<td><img src="<c:out value='${beer.imgUrl}'/>" style='width:40%' /></td>
+				<td><c:url var="beerDetailLink" value="/beerDetails/${beer.id}"></c:url>
+					<a href=" <c:out value='${beerDetailLink}'/> "><img src="<c:out value='${beer.imgUrl}'/>" style='width:40%' /></a></td>
 				<td> <c:out value="${beer.name}"/> </td>
 				<td> <c:out value="${beer.abv}"/>% </td>
 				<td> <c:out value="${beer.ibu}"/> </td>
