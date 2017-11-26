@@ -17,14 +17,14 @@ INSERT INTO users (username, password, salt, email, role_id, is_active) VALUES (
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url, website_url, img_url, business_hours, user_id)
 VALUES ('Great Lakes Brewery', '2516 Market Ave.', 'Cleveland', 44113, '(216) 771-4404',
 'Iconic microbrewery with house suds, an updated American menu, free tours & a patio.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1510954447/GLBC_logo-centered-710x412_tmjldt.png',
+'http://res.cloudinary.com/teclebrew/image/upload/v1511722746/gret_lakes_brewery_logo_black_uw5ech.jpg',
 'https://www.greatlakesbrewing.com',
 'http://res.cloudinary.com/teclebrew/image/upload/v1510956260/greatlakes_ps4e7h.jpg',
 'Monday - Thursday: 10:00 AM - 10:00 PM Friday and Saturday: 10:00 AM - 11:00 PM Closed on Sundays', 1);
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url, website_url, img_url, business_hours)
 VALUES ('Goldhorn Brewery', '1361 E 55th St.', 'Cleveland', 44103,'(216) 465-1352',
 'Cool taproom offering seasonal, housemade beer in a vast space with a long bar & tables outside.',
-'https://www.facebook.com/goldhornbrewery/',
+'http://res.cloudinary.com/teclebrew/image/upload/v1511722787/goldhorn_brown_logo_er48xf.png',
 'http://res.cloudinary.com/teclebrew/image/upload/v1510954471/goldhorn_izgvac.jpg',
 'http://res.cloudinary.com/teclebrew/image/upload/v1510956260/goldhorn_yzoif0.jpg',
 'Tuesday - Friday: 11:00 AM - 09:00 PM  Saturday: 12:00 PM - 10:00 PM Sunday: 12:00 PM - 06:00 PM Closed on Mondays');
@@ -52,7 +52,7 @@ VALUES ('Butcher and the Brewer', '2043 E 4th St.', 'Cleveland', 44115,'(216) 33
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours)
 VALUES ('Collision Bend Brewing Co.', '1250 Old River Rd.', 'Cleveland', 44113,'(216) 273-7879',
 'Collision Bend Brewing Company is setting new standards in modern microbreweries. With an unrivaled fresh, natural menu and beers destine for national awards, the brewery is quickly becoming a Cleveland landmark on the Cuyahoga River.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511637606/collision-bend-logo-b_o1kkyj.png',
+'http://res.cloudinary.com/teclebrew/image/upload/v1511722985/collision_bend_logo_2_wgyqgb.jpg',
 'http://www.collisionbendbrewery.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511637603/collision_bend_brewery_pstfuf.jpg',
 'Monday - Thursday: 03:00 PM - 11:00 PM Friday: 03:00 PM - 12:00 AM Saturday: 01:00 PM - 11:00 PM Sunday: 01:00 PM - 08:00 PM');
@@ -73,7 +73,7 @@ VALUES ('Market Garden Brewery', '1947 W 25th St.', 'Cleveland', 44113,'(216) 62
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours)
 VALUES ('Brick And Barrel', '1844 Columbus Rd.', 'Cleveland', 44113,'(216) 331-3308',
 'Taphouse offering house-brewed ales & wine in a cozy space with beer-centric decor.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511640626/BRICK_BARREL_LOGO_CLE_g6tbki.png',
+'http://res.cloudinary.com/teclebrew/image/upload/v1511723017/brick_and_barrel_logo_2_auqnny.jpg',
 'https://www.brickandbarrelbrewing.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511640631/brick_and_barrel_image_n6ic5b.jpg',
 'Monday - Thursday: 04:00 PM - 10:00 PM Friday: 02:00 PM - 12:00 AM Saturday: 12:00 PM - 12:00 AM Sunday: 12:00 PM - 08:00 PM');
@@ -118,6 +118,10 @@ INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES
 ('Agora Altbier', 5.3, 'Altbier',
 'A delicious Altbier named after the iconic Cleveland landmark theater, the Agora.',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511646093/agora_altbier_eedw4a.jpg', 2);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+('Rowdy Piper', 5.1, 'Scotish Ale',
+'A delicious Ale from like those from the highlands, there can be only one.',
+'http://res.cloudinary.com/teclebrew/image/upload/v1511721482/goldhorn_rowdy_piper_beer_pic_fbjzt8.jpg', 2);
 INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id) VALUES 
 ('Masthead IPA', 6.8, 70, 'IPA',
 'This IPA is the culmination of hundreds of recipe iterations over the last six years. You’ll be met upfront with aromas of grapefruit and passionfruit, accompanied by a smooth mouthfeel, soft bitterness, and tropical fruit flavors.',
