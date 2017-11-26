@@ -7,7 +7,7 @@ public interface BeerDAO {
 	
 	public Beer getBeerByName(String name);
 	
-	public Beer getBeerByBrewery(Long breweryId);
+	public List<Beer> getBeerByBrewery(Long breweryId);
 	
 	public Beer getBeerById(Long id);
 	

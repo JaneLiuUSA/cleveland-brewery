@@ -45,7 +45,7 @@ CREATE TABLE beers (
     abv decimal,
     ibu integer,
     type varchar(255) NOT NULL,
-    info varchar(255) NOT NULL,
+    info text NOT NULL,
     img_url varchar(255),
     brewery_id integer,
     CONSTRAINT pk_beer_beer_id PRIMARY KEY (beer_id),

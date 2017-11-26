@@ -34,14 +34,26 @@ public class JDBCBeerDAO implements BeerDAO {
 
 	@Override
 	public Beer getBeerByName(String name) {
-		// TODO Auto-generated method stub
-		return null;
+		Beer newBeer = new Beer();
+		String sqlSelectBeerByName = "SELECT * FROM beers WHERE name = ?";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSelectBeerByName, name);
+		
+		if(result.next()) {
+			newBeer = mapRowToBeer(result);
+		}
+		return newBeer;
 	}
 
 	@Override
-	public Beer getBeerByBrewery(Long breweryId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Beer> getBeerByBrewery(Long breweryId) {
+		List<Beer> breweryBeerList = new ArrayList<>();
+		String sqlSelectBeerByBrewery = "SELECT * FROM beers WHERE brewery_id = ? ORDER BY name";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeerByBrewery, breweryId);
+		
+		while(results.next()) {
+			breweryBeerList.add(mapRowToBeer(results));
+		}
+		return breweryBeerList;
 	}
 
 	@Override

@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.techelevator.clebrews.model.Beer;
+import com.techelevator.clebrews.model.BeerDAO;
 import com.techelevator.clebrews.model.Brewery;
 import com.techelevator.clebrews.model.BreweryDAO;
 import com.techelevator.clebrews.model.User;
@@ -26,6 +28,9 @@ public class BreweryController {
 	
 	@Autowired
 	BreweryDAO breweryDAO;
+	
+	@Autowired
+	BeerDAO beerDAO;
 	
 	
 	@RequestMapping(path="/breweries", method=RequestMethod.GET)
@@ -74,8 +79,11 @@ public class BreweryController {
 	@RequestMapping(path="/breweryDetails/{id}", method=RequestMethod.GET)
 	public String showBreweryDetails(@PathVariable int id, ModelMap modelHolder) {
 		Brewery breweryDetails = breweryDAO.getBreweryById(id);
-//		System.out.print(breweryDetails);
+
 		modelHolder.addAttribute("details", breweryDetails);
+		
+		List<Beer> breweryBeerList = beerDAO.getBeerByBrewery((long) id);
+		modelHolder.addAttribute("beers", breweryBeerList);
 		
 		return "breweryDetails";
 	}
