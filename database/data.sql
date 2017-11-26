@@ -17,14 +17,14 @@ INSERT INTO users (username, password, salt, email, role_id, is_active) VALUES (
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url, website_url, img_url, business_hours, user_id)
 VALUES ('Great Lakes Brewery', '2516 Market Ave.', 'Cleveland', 44113, '(216) 771-4404',
 'Iconic microbrewery with house suds, an updated American menu, free tours & a patio.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1510954447/GLBC_logo-centered-710x412_tmjldt.png',
+'http://res.cloudinary.com/teclebrew/image/upload/v1511722746/gret_lakes_brewery_logo_black_uw5ech.jpg',
 'https://www.greatlakesbrewing.com',
 'http://res.cloudinary.com/teclebrew/image/upload/v1510956260/greatlakes_ps4e7h.jpg',
 'Monday - Thursday: 10:00 AM - 10:00 PM Friday and Saturday: 10:00 AM - 11:00 PM Closed on Sundays', 1);
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url, website_url, img_url, business_hours)
 VALUES ('Goldhorn Brewery', '1361 E 55th St.', 'Cleveland', 44103,'(216) 465-1352',
 'Cool taproom offering seasonal, housemade beer in a vast space with a long bar & tables outside.',
-'https://www.facebook.com/goldhornbrewery/',
+'http://res.cloudinary.com/teclebrew/image/upload/v1511722787/goldhorn_brown_logo_er48xf.png',
 'http://res.cloudinary.com/teclebrew/image/upload/v1510954471/goldhorn_izgvac.jpg',
 'http://res.cloudinary.com/teclebrew/image/upload/v1510956260/goldhorn_yzoif0.jpg',
 'Tuesday - Friday: 11:00 AM - 09:00 PM  Saturday: 12:00 PM - 10:00 PM Sunday: 12:00 PM - 06:00 PM Closed on Mondays');
@@ -52,7 +52,7 @@ VALUES ('Butcher and the Brewer', '2043 E 4th St.', 'Cleveland', 44115,'(216) 33
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours)
 VALUES ('Collision Bend Brewing Co.', '1250 Old River Rd.', 'Cleveland', 44113,'(216) 273-7879',
 'Collision Bend Brewing Company is setting new standards in modern microbreweries. With an unrivaled fresh, natural menu and beers destine for national awards, the brewery is quickly becoming a Cleveland landmark on the Cuyahoga River.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511637606/collision-bend-logo-b_o1kkyj.png',
+'http://res.cloudinary.com/teclebrew/image/upload/v1511722985/collision_bend_logo_2_wgyqgb.jpg',
 'http://www.collisionbendbrewery.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511637603/collision_bend_brewery_pstfuf.jpg',
 'Monday - Thursday: 03:00 PM - 11:00 PM Friday: 03:00 PM - 12:00 AM Saturday: 01:00 PM - 11:00 PM Sunday: 01:00 PM - 08:00 PM');
@@ -73,7 +73,7 @@ VALUES ('Market Garden Brewery', '1947 W 25th St.', 'Cleveland', 44113,'(216) 62
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours)
 VALUES ('Brick And Barrel', '1844 Columbus Rd.', 'Cleveland', 44113,'(216) 331-3308',
 'Taphouse offering house-brewed ales & wine in a cozy space with beer-centric decor.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511640626/BRICK_BARREL_LOGO_CLE_g6tbki.png',
+'http://res.cloudinary.com/teclebrew/image/upload/v1511723017/brick_and_barrel_logo_2_auqnny.jpg',
 'https://www.brickandbarrelbrewing.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511640631/brick_and_barrel_image_n6ic5b.jpg',
 'Monday - Thursday: 04:00 PM - 10:00 PM Friday: 02:00 PM - 12:00 AM Saturday: 12:00 PM - 12:00 AM Sunday: 12:00 PM - 08:00 PM');
@@ -99,144 +99,148 @@ VALUES ('Noble Beast Brewing Co.', '1470 Lakeside Ave E', 'Cleveland', 44114,'(2
 'http://res.cloudinary.com/teclebrew/image/upload/v1511644471/noble_beast_pic_zkeocq.jpg',
 'Tuesday - Thursday and Sunday: 11:00 AM - 11:00 PM Friday - Saturday: 11:00 AM - 01:00 AM Closed on Mondays');
 
-INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id) VALUES ('Christmas Ale', 7.5, 30, 
+INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id, is_active) VALUES ('Christmas Ale', 7.5, 30, 
 'Ale with spices and honey', 'A Yuletide`s worth of holiday spices and sweet honey
-to keep you a-wassailing all season long','http://res.cloudinary.com/teclebrew/image/upload/v1511640275/christmas_ale_great_lakes_av32aw.png', 1);
-INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id) VALUES 
+to keep you a-wassailing all season long','http://res.cloudinary.com/teclebrew/image/upload/v1511640275/christmas_ale_great_lakes_av32aw.png', 1, true);
+INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('Eliot Ness', 6.1, 27, 'Amber Lager',
 'Almost untouchably smooth--armed with lightly toasted malts and noble hops.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511645068/eliotness_beer_yx7iv4.png', 1);
-INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511645068/eliotness_beer_yx7iv4.png', 1, true);
+INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('Burning river', 6.0, 35, 'Pale Ale',
 'Crisp and bright, with refreshing flickers of citrus and pine that ignite the senses (not our local waterways).',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511645196/burningriver_beer_v1vzlz.png', 1);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511645196/burningriver_beer_v1vzlz.png', 1, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('Dead Mans Curve IPA', 8.0,'American IPA',
 'A delicious and strong American IPA.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511645661/Dead_Man_s_Curve_zjb7tc.png', 2);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511645661/Dead_Man_s_Curve_zjb7tc.png', 2, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('Agora Altbier', 5.3, 'Altbier',
 'A delicious Altbier named after the iconic Cleveland landmark theater, the Agora.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511646093/agora_altbier_eedw4a.jpg', 2);
-INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511646093/agora_altbier_eedw4a.jpg', 2, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
+('Rowdy Piper', 5.1, 'Scotish Ale',
+'A delicious Ale from like those from the highlands, there can be only one.',
+'http://res.cloudinary.com/teclebrew/image/upload/v1511721482/goldhorn_rowdy_piper_beer_pic_fbjzt8.jpg', 2, true);
+INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('Masthead IPA', 6.8, 70, 'IPA',
 'This IPA is the culmination of hundreds of recipe iterations over the last six years. You’ll be met upfront with aromas of grapefruit and passionfruit, accompanied by a smooth mouthfeel, soft bitterness, and tropical fruit flavors.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511646520/Masthead_IPA_qjlinw.jpg', 3);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511646520/Masthead_IPA_qjlinw.jpg', 3, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('Single Origin Coffee Stout', 6.9, 'Coffee Stout',
 'Our stout with a healthy dose of Six Shooter Coffee!',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511646683/masthead_single_origin_coffee_stout_pic_y1h07y.jpg', 3);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511646683/masthead_single_origin_coffee_stout_pic_y1h07y.jpg', 3, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('Sweet Heat', 7.7, 'Imperial Fruit',
 'Brewed with fresh Mango puree and Habanero peppers.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511646810/masthead_sweet_heat_pic_wbnnif.jpg', 3);
-INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511646810/masthead_sweet_heat_pic_wbnnif.jpg', 3, true);
+INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('SPEED MERCHANT WHITE IPA', 6.6, 66, 'American White IPA',
 'American ipa brewed with wheat, bursting with tropical fruit + citrus.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511647071/speed_merchant_white_ipa_pic_zec3wv.jpg', 4);
-INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511647071/speed_merchant_white_ipa_pic_zec3wv.jpg', 4, true);
+INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('NEW CLEVELAND PALESNER', 5.0, 23, 'Pilsner Pale Ale Hybrid',
 'Crisp german malt body + refreshing noble hop finish.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511647242/platform-newcleveland_palesnear_pic_lmkgbh.png', 4);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511647242/platform-newcleveland_palesnear_pic_lmkgbh.png', 4, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('Amarillo Fog', 8.1,'Imperial IPA',
 'A small batch Double American Imperial IPA',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511655618/platform_amarillo_fog_beer_pic_eesxaz.jpg', 4);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511655618/platform_amarillo_fog_beer_pic_eesxaz.jpg', 4, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('NITRO ALBINO STOUT', 5.4, 'White Stout',
 'For all of you that drink with your eyes, full bodied white oat ale with chocolate and coffee overtones.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511647786/butcher_albino_stout_pic_ut7szr.jpg', 5);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511647786/butcher_albino_stout_pic_ut7szr.jpg', 5, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('THE REPEATER', 5.3, 'GERMAN KÖLSCH',
 'Cool, fermented with a prominent Noble hop nose. Light, crisp, and thirst-quenching.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511648029/butcher_repeater_pic_kpqhqg.jpg', 5);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511648029/butcher_repeater_pic_kpqhqg.jpg', 5, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('AFTER DARK', 7.5, 'Black IPA',
 'Our Cleveland Beer Week collaboration beer with Noble Beast, Hofbrauhaus and Masthead.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511655513/butcher_after_dark_beer_pic_lf6kzv.jpg', 5);
-INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511655513/butcher_after_dark_beer_pic_lf6kzv.jpg', 5, true);
+INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('FLANDRIA FLATS', 7.6, 56, 'Belgian IPA',
 'Cleveland Beer Week Collaboration Beer',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511648584/collision_FLANDRIA_FLATS_pic_gfqrb6.jpg', 6);
-INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511648584/collision_FLANDRIA_FLATS_pic_gfqrb6.jpg', 6, true);
+INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('LAKE ERIE SUNSET', 5.6, 15, 'American Wheat',
 'Blood Orange American Wheat',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511648710/collision_blood_orange_american_wheat_pic_a0byzt.jpg', 6);
-INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511648710/collision_blood_orange_american_wheat_pic_a0byzt.jpg', 6, true);
+INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('OLD RIVER KOLSCH', 5.5, 15, 'Light Ale',
 'Light German-style Ale',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511648716/collision_pils_pic_krk7kh.jpg', 6);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511648716/collision_pils_pic_krk7kh.jpg', 6, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('Original Lager', 5.2, 'German Lager',
 'A traditional full flavored German Lager with a crisp finish. The bier Hofbrauhaus has been famous for since 1589.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511649200/hofbrau_lager_puc_h8or43.jpg', 7);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511649200/hofbrau_lager_puc_h8or43.jpg', 7, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('Hefeweizen', 5.4, 'Hefeweizen',
 'A specialty born in Munich – loved by the world. A fairly sweet old-style Wheat bier brewed to create a wonderful combination banana and clove flavor and aroma.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511649351/hofbrau_heffwiz_pic_uz7nlz.jpg', 7);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511649351/hofbrau_heffwiz_pic_uz7nlz.jpg', 7, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('Dunkel', 5.5, 'Dunkel',
 'For centuries Munich’s favorite bier. Dunkel translates to “Dark” lager. It is medium bodied, easy to drink, with simple roasted malt flavor and slight caramel undertones.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511649546/Hofbrauhaus_dunkel_pic_w5bxhw.jpg', 7);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511649546/Hofbrauhaus_dunkel_pic_w5bxhw.jpg', 7, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('CITRAMAX IPA', 6.7, 'IPA',
 'A West Coast style IPA dry-hopped with organic Citra hops to impart intense tropical and citrus fruit aromas. This brew has an aggressive, boldly-bright American hop character that will leave you craving another.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511650026/market_citramax_beer_pic_mh7psh.png', 8);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511650026/market_citramax_beer_pic_mh7psh.png', 8, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('PROSPERITY WHEAT', 6.0, 'Wheat',
 'Formerly known as ***** Street Wheat! If you’ve ever spent time in a German Beer Garden, you know how much they love their wheat beer.  Our Bavarian style Hefeweizen is a satisfying blend of sweet wheat and pale malts, clove and banana aromatics, and the zesty tang of wheat beer yeast.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511650039/market_prosperity_ber_pic_efdril.png', 8);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511650039/market_prosperity_ber_pic_efdril.png', 8, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('PROGRESS PILSNER', 5.5, 'Pilsner',
 'Great American Beer Festival Award Winning Brew! Inspired by the Pilsners of the Rhine region, this lager is a tribute to the spicy, crisp and clean character of German noble hops and has just the right malt body to balance. Named aptly for the Cleveland slogan “Progress&Prosperity”.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511650338/market_progress_beer_pic_oe4yta.png', 8);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511650338/market_progress_beer_pic_oe4yta.png', 8, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('Bitter Chief IPA', 6.9, 'IPA',
 'For our bitter Tribe fans, we almost got that series win. In the meantime, drink some local craft beer and enjoy. Light cooper color. Nice bitterness with refreshing citrus and grassy flavors and aromas. Malty finish balancing out the bitterness.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511650891/brick_bitter_cheilf_beer_pic_kd17rx.jpg', 9);
-INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511650891/brick_bitter_cheilf_beer_pic_kd17rx.jpg', 9, true);
+INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('Central Run Red', 8.9,95, 'Imperial Red IPA',
 'The Central Run Imperial Red, IPA.  8.9 ABV with 95 IBU’s (1995 Division Win). A big malt and hop forward ruby-ale. Great hop aroma from the late additions and dry hopping of Citra and Simcoe. For the 2018 Central Run. Yes, next year.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511651111/brick_central_red_beer_pic_oet1rf.jpg', 9);
-INSERT INTO beers (name, abv, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511651111/brick_central_red_beer_pic_oet1rf.jpg', 9, true);
+INSERT INTO beers (name, abv, type, info, img_url, brewery_id, is_active) VALUES 
 ('Cleveland Dark Ale', 6.0, 'Ale',
 'Dark and roasty ale. Drinks light with caramel, dark chocolate, coffee and roasted malt flavors with a nice hop presence',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511651283/brick_dark_ale_beer_pic_vl8yuj.jpg', 9);
-INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511651283/brick_dark_ale_beer_pic_vl8yuj.jpg', 9, true);
+INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('FURBELLY IRISH STOUT', 4.5, 22, 'Stout',
 'Brewed in the tradition of a true Irish Stout, this jet black beauty bounds with strong roasted malt bitterness and notes of dark chocolate. The low acid, highly aromatic English noble hops impart a medium hop intensity. Oats used in the mash create a nice, smooth creamy body and a thick tan head to round out this creation. A fantastic full bodied drinking experience. Fill up your belly with Furbelly!',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511652238/forst_city_irish_stout_beer_pic_lo3fxw.jpg', 10);
-INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511652238/forst_city_irish_stout_beer_pic_lo3fxw.jpg', 10, true);
+INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('OPENING DAY IPA', 7.1, 62, 'IPA',
 'This flavorsome and balanced India Pale Ale is loaded with Mosaic and Citra hops offering a luscious amount of citrus and tropical fruit taste with an earthy, floral and fruity aroma.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511652358/forest_IPA_beer_pic_pzutgl.jpg', 10);
-INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511652358/forest_IPA_beer_pic_pzutgl.jpg', 10, true);
+INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('ST. WENDELIN WHEAT', 5.8, 16, 'Wheat',
 'Named after our neighbor – St. Wendelin Catholic Church, founded in 1903. This refreshing, perfectly balanced wheat beer combines German malts and hops with American wheat. ',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511652238/forst_city_irish_stout_beer_pic_lo3fxw.jpg', 10);
-INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511652238/forst_city_irish_stout_beer_pic_lo3fxw.jpg', 10, true);
+INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('Habituale', 5.3, 21, 'Kölsch',
 'This crisp, clean Kölsch is a true German classic. It’s the perfect tribute to our fair-minded friend: sweet balanced with faint bitterness. Appeals to crossover mainstream drinkers and beer connoisseurs alike.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511653346/saucy_habituale_beer_pic_e4okwx.png', 11);
-INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511653346/saucy_habituale_beer_pic_e4okwx.png', 11, true);
+INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('B.F.Hefe', 5.5, 11, 'Wheat',
 'This Bavarian classic offers that kind of balance. It’s not overly bitter or sweet. The original gangster of cloudy beers is thirst quenching and effervescent.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511653651/saucy_bfhefe_berr_pic_iqldv7.png', 11);
-INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511653651/saucy_bfhefe_berr_pic_iqldv7.png', 11, true);
+INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('Punchline', 5.7, 12, 'Wheat',
 ' Our fruit beer is a tribute to fruit punch. Tons of fruit flavors come together in a haymaker that hits you right in the red rubber nose.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511653767/saucy_punchline_beer_pic_wud65m.png', 11);
-INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511653767/saucy_punchline_beer_pic_wud65m.png', 11, true);
+INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('Sweet Potato Saison', 7.8, 25, 'Saison',
 'Our kitchen roasted 150 lbs. of sweet potatoes from Morningside Farm for this fall seasonal. Cinnamon, fresh ginger, and allspice complement the Belgian saison yeast and the sweet potatoes impart a glowing orange hue.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511654836/noble_sweet_potato_maete8.jpg', 12);
-INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511654836/noble_sweet_potato_maete8.jpg', 12, true);
+INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('S.A.F. Oatmeal Stout', 6.2, 30, 'Oatmeal Stout',
 'This silky stout is brewed with copious amounts of flaked oats to create a rich and smooth character. Dark malts cap off this brew with a deep roasty finish perfect for the fall.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511655001/noble_oatmeal_stout_beer_pic_qdzqez.jpg', 12);
-INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id) VALUES 
+'http://res.cloudinary.com/teclebrew/image/upload/v1511655001/noble_oatmeal_stout_beer_pic_qdzqez.jpg', 12, true);
+INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('Evil Motives IPA', 7.0, 65, 'American IPA',
 'West Coast style dry-hopped IPA, brewed to be drinkable with big additions of Citra and Simcoe hops introduced with experimental hopping techniques.',
-'http://res.cloudinary.com/teclebrew/image/upload/v1511655255/noble_evil_ipa_beer_pic_lptyzw.jpg', 12);
+'http://res.cloudinary.com/teclebrew/image/upload/v1511655255/noble_evil_ipa_beer_pic_lptyzw.jpg', 12, true);
 
 COMMIT;
