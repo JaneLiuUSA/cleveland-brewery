@@ -17,6 +17,8 @@ public class Beer {
 	private String imgUrl;
 	
 	private Long breweryId;
+	
+	private boolean isActive = true;
 
 	public Long getId() {
 		return id;
@@ -80,6 +82,14 @@ public class Beer {
 
 	public void setBreweryId(Long breweryId) {
 		this.breweryId = breweryId;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
 	}
 	
 	
