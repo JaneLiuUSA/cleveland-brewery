@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.techelevator.clebrews.model.Beer;
@@ -58,7 +59,7 @@ public class BeerController {
 	}
 	
 	@RequestMapping(path="/addBeer", method=RequestMethod.POST)
-	public String addNewBeer(@Valid @ModelAttribute("newBeer") Beer newBeer, BindingResult result, RedirectAttributes flash) {
+	public String addNewBeer(@Valid @ModelAttribute("newBeer") Beer newBeer, @RequestParam int breweryId, BindingResult result, RedirectAttributes flash) {
 		flash.addFlashAttribute("newBeer", newBeer);
 
 		if(result.hasErrors()) {
@@ -68,6 +69,7 @@ public class BeerController {
 		if(!beerDAO.searchForBeerByName(newBeer.getName())) { 
 			newBeer.setImgUrl("http://res.cloudinary.com/teclebrew/" + newBeer.getImgUrl());
 			
+			newBeer.setBreweryId((long) breweryId);
 			beerDAO.saveBeer(newBeer);
 			return "redirect:/breweries";
 		} else {
