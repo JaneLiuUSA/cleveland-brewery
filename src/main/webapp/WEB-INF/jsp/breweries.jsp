@@ -42,11 +42,13 @@
        * element that contains the map. */
  		  #map {
 			position: absolute;
-			height: 40%;
-			width: 40%;
+			height: 50%;
+			width: 100%;
 			text-align: center;
 			z-index: 1;
-		}
+			
+		}      
+
     </style>
  <div>
   <body>
@@ -56,12 +58,12 @@
       function initMap() {
 
         var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 13,
+          zoom: 14,
           center: {lat: 41.4920355, lng: -81.6996095},
         });
 
         // Create an array of alphabetical characters used to label the markers.
-        var labels = ['Butcher and the Brewer','Goldhorn','Great Lakes','Masthead','Platform'];
+        var labels = ['Butcher and the Brewer','Goldhorn','Great Lakes','Masthead','Platform','Collision Bend','Hofbrauhaus','Market Garden','Brick and Barrel','Forest City','Saucy Brew Works','Noble Beast'];
 
         // Add some markers to the map.
         // Note: The code uses the JavaScript Array.prototype.map() method to
@@ -76,7 +78,7 @@
 
         // Add a marker clusterer to manage the markers.
         var markerCluster = new MarkerClusterer(map, markers,
-            {imagePath: '/capstone-delta/src/main/webapp/img/m'});
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
       }
       var locations = [
         {lat: 41.499134, lng: -81.690086}, 
@@ -84,6 +86,13 @@
         {lat: 41.484312, lng: -81.704461}, 
         {lat: 41.504100, lng: -81.685403}, 
         {lat: 41.4795909, lng: -81.7138139},
+        {lat: 41.498726, lng: -81.703804}, 
+        {lat: 41.502917, lng: -81.681164}, 
+        {lat: 41.484879, lng: -81.703725}, 
+        {lat: 41.489468, lng: -81.700874}, 
+        {lat: 41.483207, lng: -81.700203},
+        {lat: 41.489580, lng: -81.710672},
+        {lat: 41.507762, lng: -81.686419},  
         
       ]
     </script>
