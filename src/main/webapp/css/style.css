@@ -119,10 +119,15 @@ hr {
 		margin-right: 0px;
 	}
 }
+@media (max-width : 450px ) {
+	#map {
+		display: none;
+	}
+}
 
 #map {
 	position: fixed;
-	margin-left: 30%;
+	
 }
 
 .bg-1 {
@@ -193,13 +198,6 @@ hr {
 	height: 400px;
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
-}
-
-#map {
-	      position: absolute;
-        height: 40%;
-     	width: 60%;
-     	text-align: center;
 }
 
 .navbar {
