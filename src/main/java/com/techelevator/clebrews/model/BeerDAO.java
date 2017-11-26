@@ -9,6 +9,8 @@ public interface BeerDAO {
 	
 	public Beer getBeerByBrewery(Long breweryId);
 	
+	public Beer getBeerById(Long id);
+	
 	public boolean searchForBeerByName(String name);
 	
 	public void saveBeer(Beer newBeer);

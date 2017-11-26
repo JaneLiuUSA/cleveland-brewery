@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Brewery {
 
-	private int id;
+	private long id;
 	@NotBlank(message="Name cannot be blank")
 	private String name;
 	@NotBlank(message="required")
@@ -34,12 +34,12 @@ public class Brewery {
 	}
 
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
 
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 
@@ -140,6 +140,10 @@ public class Brewery {
 
 	public void setBreweryLogoUrl(String breweryLogoUrl) {
 		this.breweryLogoUrl = breweryLogoUrl;
+	}
+	
+	public String getNameById(int id){
+		return name;
 	}
 	
 }

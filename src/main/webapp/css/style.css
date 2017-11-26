@@ -11,14 +11,37 @@ body {
 }
 
 h2 {
-	margin: 10px 0 30px 0;
+	margin: 20px 0 30px 0;
 	letter-spacing: 10px;
 	font-size: 20px;
-	color: #111;
+	color: #d69827;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.pictwo {display:none;}
+
+.hoverholder:hover .picone{
+  display:none;
+}
+
+.hoverholder:hover .pictwo{
+  display:block;
 }
 
 .container {
 	padding: 80px 120px 60px;
+}
+
+.homeTitle {
+	color: black;
 }
 
 .person {
@@ -91,10 +114,15 @@ h2 {
 	}
 }
 
-@media (min-width : 768px ) {
+@media (min-width : 900px ) {
 	.navbar-right {
 		margin-right: 0px;
 	}
+}
+
+#map {
+	position: fixed;
+	margin-left: 30%;
 }
 
 .bg-1 {
@@ -179,7 +207,7 @@ h2 {
 	margin-bottom: 0;
 	background-color: #2d2d30;
 	border: 0;
-	font-size: 12px !important;
+	font-size: 11px !important;
 	letter-spacing: 4px;
 	opacity: 0.9;
 }
@@ -190,6 +218,7 @@ h2 {
 
 .navbar-default .navbar-brand {
 	color: #fff;
+	font-size: 16px;
 }
 
 
@@ -228,7 +257,19 @@ footer {
 	bottom: 0;
 	width: 100%;
 	height: 60px;
-	text-align: center
+	text-align: center;
+}
+
+.space {
+			position: absolute;
+			height: 40%;
+			width: 40%;
+			text-align: center;
+			z-index: 1;
+		}
+		
+.title {
+	color: #fff;
 }
 
 footer a {
@@ -287,6 +328,7 @@ textarea {
 	letter-spacing: 0;
 	text-align: center;
 	text-decoration: underline;
+	margin: 40px 0 30px 0;
 }
 
 .breweryContainer a {
@@ -297,7 +339,7 @@ textarea {
 	flex: 1;
 	display: inline-block;
 	border-style: solid;
-	padding: 5px;
+	padding: 30px;
 	border: 0;
 	text-align: center;
 }
@@ -315,6 +357,7 @@ textarea {
 	height: 200px;
 	background-color: black;
 	box-shadow: 5px 5px 20px #949296;
+	margin-bottom: 40px;
 }
 
 
@@ -328,7 +371,6 @@ textarea {
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-top: 30px;
-
 }
 
 .center-block {
@@ -338,12 +380,18 @@ textarea {
 }
 
 .namePadding {
-	margin-top: 17%;
+	margin-top: 40px;
+	color: #d69827;
 }
 
 .breweryLocation {
 	flex: 1;
 	padding: 1em 1em 1em 1em;
+}
+
+.detailsTitle {
+    font-weight: 700;
+    color: black;
 }
 
 .sizing img {
@@ -359,6 +407,10 @@ textarea {
 	bottom: 0px;
 	height: 60px;
 	width: 100%;
+}
+
+.detailsTitle {
+	color: black;
 }
 
 .flex-container {

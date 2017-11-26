@@ -26,7 +26,10 @@
 			</div>
 		</div>
 	</c:forEach>
+	
+	
 	</div>
+
 	
 	<!DOCTYPE html>
 
@@ -37,14 +40,15 @@
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-      position: absolute;
-        height: 40%;
-     	width: 40%;
-     	text-align: center;
-      }
+ 		  #map {
+			position: absolute;
+			height: 40%;
+			width: 40%;
+			text-align: center;
+			z-index: 1;
+		}
     </style>
-  </head>
+ <div>
   <body>
     <div id="map"></div>
     <script>
@@ -89,11 +93,10 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC3mur1M8U_H2VkkIPY79clXbZpNg19nI&callback=initMap">
     </script>
- 
-
-
 
 
 </div>
 
-<c:import url="/WEB-INF/jsp/shared/footer.jsp" />
+</body>
+</html>
+

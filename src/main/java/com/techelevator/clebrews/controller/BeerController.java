@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -73,5 +74,16 @@ public class BeerController {
 			flash.addFlashAttribute("message", "This brewery alreadys exists");
 			return "redirect:/breweries/new";
 		}
+	}
+	
+	@RequestMapping(path="/beerDetails/{id}", method=RequestMethod.GET)
+	public String showBreweryDetails(@PathVariable long id, ModelMap modelHolder) {
+		Beer beer = beerDAO.getBeerById(id);
+		System.out.print(beer.getBreweryId());
+		Brewery brewery = breweryDAO.getBreweryById(beer.getBreweryId());
+		modelHolder.addAttribute("beer", beer);
+		modelHolder.addAttribute("brewery", brewery);
+		
+		return "beerDetails";
 	}
 }
