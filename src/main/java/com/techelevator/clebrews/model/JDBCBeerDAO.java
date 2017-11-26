@@ -72,8 +72,8 @@ public class JDBCBeerDAO implements BeerDAO {
 
 	@Override
 	public void saveBeer(Beer newBeer) {
-		jdbcTemplate.update("INSERT INTO beers(name, abv, ibu, type, info, img_url, brewery_id) VALUES (?,?,?,?,?,?,?)",
-				newBeer.getName(), newBeer.getAbv(), newBeer.getIbu(), newBeer.getType(), newBeer.getInfo(), newBeer.getImgUrl(), newBeer.getBreweryId());
+		jdbcTemplate.update("INSERT INTO beers(name, abv, ibu, type, info, img_url, brewery_id, is_active) VALUES (?,?,?,?,?,?,?,?)",
+				newBeer.getName(), newBeer.getAbv(), newBeer.getIbu(), newBeer.getType(), newBeer.getInfo(), newBeer.getImgUrl(), newBeer.getBreweryId(), newBeer.isActive());
 	}
 	
 	private Beer mapRowToBeer(SqlRowSet row) {
@@ -87,6 +87,7 @@ public class JDBCBeerDAO implements BeerDAO {
 		newBeer.setInfo(row.getString("info"));
 		newBeer.setImgUrl(row.getString("img_url"));
 		newBeer.setBreweryId(row.getLong("brewery_id"));
+		newBeer.setActive(row.getBoolean("is_active"));
 
 		return newBeer;
 	}
