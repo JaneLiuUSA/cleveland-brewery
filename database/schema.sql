@@ -48,6 +48,7 @@ CREATE TABLE beers (
     info text NOT NULL,
     img_url varchar(255),
     brewery_id integer,
+    is_active boolean,
     CONSTRAINT pk_beer_beer_id PRIMARY KEY (beer_id),
     CONSTRAINT fk_brewery_brewery_id FOREIGN KEY (brewery_id) REFERENCES breweries(brewery_id)
 );
