@@ -38,6 +38,11 @@
 			</div>
 			</div>
 		</div>
+		</div>
+		</div>
+		
+		<div class="row">
+		<div class="col-lg-12 breweryList">
 		<div class="breweryLocation">
 		<table>
 				<c:forEach items="${beers}" var="beer">
@@ -61,8 +66,30 @@
 			</c:forEach>
 		</table>
 		</div>
+		</div>
+		</div>
+	
+<%-- <c:forEach items="${allBreweries}" var="brewery"> --%>
+	
 		
-	</div>
-</div>
+<!-- 		<div class="row"> -->
+<!-- 		<div class="col-lg-12 breweryList">			 -->
+<!-- 			<div class="breweryImage clickHover grow">  -->
+<%-- 			<c:url var="breweryLink" value="/breweryDetails/${brewery.id}"></c:url> --%>
+<%-- 			<a href=" <c:out value='${breweryLink}'/> "> <img src="<c:out value='${brewery.breweryLogoUrl}'/>" /> </a></div> --%>
+<!-- 			<div class="breweryLocation"> -->
+<!-- 				<div class="clickHover2 grow"> -->
+<%-- 				<c:url var="breweryLink" value="/breweryDetails/${brewery.id}"></c:url> --%>
+<%-- 				<h2> <a href=" <c:out value='${breweryLink}'/> "><c:out value="${brewery.name}"/></a></h2> --%>
+<!-- 				</div> -->
+<!-- 				<ul> -->
+<%-- 					<li> <c:out value="${brewery.address}"/> <c:out value="${brewery.city}"/><br> <c:out value="${brewery.zipcode}"/> </li> --%>
+<%-- 					<li><c:out value="${brewery.phoneNumber }"/></li> --%>
+<%-- <%-- 					<li><c:out value="${brewery.description }"/></li> --%> --%>
+<!-- 				</ul> -->
+<!-- 			</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<%-- 	</c:forEach> --%>
 
 <c:import url="/WEB-INF/jsp/shared/footer.jsp" />
