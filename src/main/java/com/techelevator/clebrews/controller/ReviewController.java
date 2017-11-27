@@ -45,9 +45,10 @@ public class ReviewController {
 	
 	
 	@RequestMapping(path="/beerDetails/{beerId}/review", method=RequestMethod.POST)
-	public String createNewMessage(@Valid @PathVariable String userName,@PathVariable long beerId, @ModelAttribute("newReview") Review review) {
+	public String createNewMessage(@PathVariable long beerId, @ModelAttribute("newReview") Review review) {
 		
-		review.setCreatTime(LocalDateTime.now());
+		review.setCreateTime(LocalDateTime.now());
+		System.out.println("Create Time: " + review.getCreateTime());
 		
 		reviewDAO.saveReview(review);
 		

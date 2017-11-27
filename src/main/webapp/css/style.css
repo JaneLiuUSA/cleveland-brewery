@@ -19,6 +19,18 @@ h2 {
 	color: #d69827;
 }
 
+.title2 {
+	margin: 20px 0 30px 0;
+	letter-spacing: 10px;
+	font-size: 20px;
+	color: black;
+	text-align: center;
+}
+
+.detailsHR {
+	
+}
+
 hr {
     display: block;
     height: 1px;
@@ -40,6 +52,10 @@ hr {
 
 .container {
 	padding: 80px 120px 60px;
+}
+
+.beersContainer {
+	padding: 20px 120px 5px;
 }
 
 .homeTitle {
@@ -337,6 +353,11 @@ textarea {
 	margin: 40px 0 30px 0;
 }
 
+.breweryContainer h1 {
+	color: black;
+	letter-spacing: 6px;
+}
+
 .breweryContainer a {
 	color: #d69827;
 }
@@ -371,7 +392,7 @@ textarea {
 	width: 400px;
 	height: 400px;
 	background-color: black;
-	box-shadow: 5px 5px 20px #d69827;
+	box-shadow: 5px 5px 20px #949296;
 	margin-bottom: 40px;
 }
 
@@ -468,6 +489,7 @@ textarea {
 		display: block !important;
 	}
 }
+
 
 /****** Style Star Rating Widget *****/
 
