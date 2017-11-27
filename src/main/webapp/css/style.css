@@ -482,6 +482,10 @@ textarea {
 	height: 600px;
 }
 
+.alert > p, .alert > ul{
+	padding-right: 8px;
+}
+
 /****** Style Star Rating Widget *****/
 
 .star-rating { 
