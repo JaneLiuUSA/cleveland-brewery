@@ -1,6 +1,10 @@
 package com.techelevator.clebrews.model;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
@@ -52,8 +56,15 @@ public class Review {
 		this.beerId = beerId;
 	}
 	public LocalDateTime getCreateTime() {
+		
 		return createTime;
 	}
+	
+	public Date getCreateTimeAsDate() {
+		Instant instant = createTime.toInstant(ZoneOffset.of("-5"));
+		return Date.from(instant);
+	}
+	
 	public void setCreateTime(LocalDateTime createTime) {
 		this.createTime = createTime;
 	}
@@ -64,6 +75,13 @@ public class Review {
 		this.userId = userId;
 	}
 	
+	
+	public String getFormatDateTime(){
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formatDateTime = createTime.format(formatter);
+        
+		return formatDateTime;
+	}
 	
 	
 	

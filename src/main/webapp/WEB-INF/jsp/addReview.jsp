@@ -66,18 +66,20 @@
 				<img class="center-block" src="<c:out value='${beer.imgUrl}'/>" />
 			</div>
 			
+
 			<div>
 				<label class="col-md-12 star-rating"> Overall Rating</label></div>
 				<fieldset class="star-rating">
-	    			<form:radiobutton path="rating" id="star5" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars">5</label>
-				    <form:radiobutton path="rating" id="star4" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars">4</label>
-				    <form:radiobutton path="rating" id="star3" value="3" /><label class = "full" for="star3" title="Meh - 3 stars">3</label>
-				    <form:radiobutton path="rating" id="star2" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars">2</label>
-				    <form:radiobutton path="rating" id="star1" value="1" /><label class = "full" for="star1" title="Gross - 1 star">1</label>
+	    			<form:radiobutton path="rating" id="star5" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+				    <form:radiobutton path="rating" id="star4" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+				    <form:radiobutton path="rating" id="star3" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+				    <form:radiobutton path="rating" id="star2" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+				    <form:radiobutton path="rating" id="star1" value="1" /><label class = "full" for="star1" title="Gross - 1 star"></label>
 				</fieldset><br>
 				<br>
-			
-			
+
+			</div>
+			<br>
 			<div class="form-group">
 				<div class="col-md-12">
 				<label for="subject">Review Title: </label>

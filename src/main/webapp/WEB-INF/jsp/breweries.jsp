@@ -23,7 +23,7 @@
 				<h2> <a href=" <c:out value='${breweryLink}'/> "><c:out value="${brewery.name}"/></a></h2>
 				</div>
 				<ul>
-					<li> <c:out value="${brewery.address}"/> <c:out value="${brewery.city}"/><br><%--  <c:out value="${brewery.zipcode}"/> --%> </li>
+					<li> <c:out value="${brewery.address},"/> <c:out value="${brewery.city}"/><br><%--  <c:out value="${brewery.zipcode}"/> --%> </li>
 					<li><c:out value="${brewery.phoneNumber }"/></li>
 <%-- 					<li><c:out value="${brewery.description }"/></li> --%>
 				</ul>
@@ -55,8 +55,9 @@
 		}      
 
     </style>
+    </head>
  <div>
-  <body>
+<!--   <body> -->
     <div id="map"></div>
     <script>
 
@@ -108,9 +109,10 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC3mur1M8U_H2VkkIPY79clXbZpNg19nI&callback=initMap">
     </script>
 
-
-</div>
+<c:import url="/WEB-INF/jsp/shared/footer.jsp" />
+<!-- </div>
 
 </body>
 </html>
 
+ -->
