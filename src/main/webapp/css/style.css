@@ -486,6 +486,10 @@ textarea {
 	padding-right: 8px;
 }
 
+.star-img{
+	width:10%;
+}
+
 /****** Style Star Rating Widget *****/
 
 .star-rating { 
