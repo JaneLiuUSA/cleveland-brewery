@@ -42,6 +42,7 @@
 		</div>
 		<div class="detailsHR beersContainer">
 			<h3 class="title2">Our Beers</h3>
+			<p class="centered">Leave a review and let us know what your taste buds think!</p>
 			<hr/>
 		
 		<div class="breweryContainer">
@@ -53,8 +54,8 @@
 					<a href=" <c:out value='${beerDetailLink}'/> "><img src="<c:out value='${beer.imgUrl}'/>"><!--  style='width:40%' /> --></a></div>
 				<ul>	
 					<li><c:out value="${beer.name}"/></li>
-					<li>ABV<c:out value="${beer.abv}"/>% </li>
-					<li>IBU<c:out value="${beer.ibu}"/> </li>
+					<li>ABV <c:out value="${beer.abv}"/>% </li>
+					<li>IBU <c:out value="${beer.ibu}"/> </li>
 					<li><c:out value="${beer.type}"/> </li>
 				</ul>
 				<c:forEach items="${allBreweries}" var="brewery">
