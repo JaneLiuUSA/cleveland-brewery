@@ -2,6 +2,10 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
+<div>
+	<h3 class="Breweries">CLE Brews</h3>
+</div>
+
 	<table class="beer-list-table">
 	
 			<th> &nbsp; </th>

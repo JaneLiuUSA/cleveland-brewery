@@ -52,20 +52,23 @@
 
 
 	<div class="row">
-		<h2>WRITE YOUR REVIEW</h2>
+	<div>
+	<h3 class="Breweries">WRITE YOUR REVIEW FOR</h3>
+	</div>
+		
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
 			
-			<h3>
+			<h3 class="centered2">
 				<c:out value="${beer.name}" />
 			</h3>
 			<div class="col-md-12 breweryImage">
 				<img class="center-block" src="<c:out value='${beer.imgUrl}'/>" />
 			</div>
 			
-			
+
 			<div>
-				<label class="star-rating"> Overall Rating</label>
+				<label class="col-md-12 star-rating"> Overall Rating</label></div>
 				<fieldset class="star-rating">
 	    			<form:radiobutton path="rating" id="star5" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
 				    <form:radiobutton path="rating" id="star4" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
@@ -74,10 +77,13 @@
 				    <form:radiobutton path="rating" id="star1" value="1" /><label class = "full" for="star1" title="Gross - 1 star"></label>
 				</fieldset><br>
 				<br>
+
 			</div>
 			<br>
 			<div class="form-group">
+				<div class="col-md-12">
 				<label for="subject">Review Title: </label>
+				</div>
 				<form:input path="subject" class="form-control" />
 				<form:errors path="subject"></form:errors>
 			</div>
@@ -86,7 +92,7 @@
 				<form:input path="description" class="form-control" />
 				<form:errors path="description"></form:errors>
 			</div>
-		<div>
+		<div class="buttonMargin">
 			<button type="submit" class="btn btn-default">Submit Your Review</button><br>
 		</div>
 	</div>
@@ -94,3 +100,22 @@
 </form:form>
 
 <c:import url="/WEB-INF/jsp/shared/footer.jsp" />
+
+
+	<!-- <div id="star-rating">
+			  <label>
+			  		Overall Rating  <input id="star-rating-demo" value="4" type="number" class="rating" min=0 max=5 step=1 data-size="lg">
+			  </label>
+			  <label>
+			    <input type="radio" name="star" value="4" title="4 stars" > 4
+			  </label>
+			  <label>
+			    <input type="radio" name="star" value="3" title="3 stars"> 3
+			  </label>
+			  <label>
+			    <input type="radio" name="star" value="2" title="2 stars"> 2
+			  </label>
+			  <label>
+			    <input type="radio" name="star" value="1" title="1 star"> 1
+			  </label>
+			</div> -->

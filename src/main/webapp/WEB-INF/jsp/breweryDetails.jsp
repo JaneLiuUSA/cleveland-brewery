@@ -23,7 +23,7 @@
 				<div style="color:black"><strong>Location</strong></div>
 				<li> 
 					<c:out value="${details.address}" /> 
-					<c:out value="${details.city}" />
+					<c:out value="${details.city}, " />
 					<c:out value="${details.zipcode}" />
 				</li>
 				<div style="color:black"><strong>Phone Number</strong></div>

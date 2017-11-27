@@ -294,6 +294,12 @@ footer {
 .centered {
 	text-align: center;
 }
+
+.centered2 {
+	text-align: center;
+	padding-bottom: 30px;
+	color: #d69827;
+}
 		
 .title {
 	color: #fff;
@@ -318,7 +324,13 @@ textarea {
 }
 
 .form-group {
-	margin-top: 70px;
+	margin-top: 30px;
+	
+}
+
+.buttonMargin {
+	margin-bottom: 70px;
+	margin-top: 40px;
 }
 
 /*   .right { */
@@ -345,7 +357,7 @@ textarea {
 .breweryContainer {
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 65px;
+	margin-top: 20px;
 	margin-bottom: 35px;
 	justify-content: center;
 	border-style: solid;
@@ -356,7 +368,7 @@ textarea {
 	letter-spacing: 0;
 	text-align: center;
 	text-decoration: underline;
-	margin: 40px 0 30px 0;
+	margin: 0px 0 30px 0;
 }
 
 .breweryContainer h1 {
@@ -397,7 +409,7 @@ textarea {
 	flex: 1;
 	width: 400px;
 	height: 400px;
-	background-color: black;
+	background-color: white;
 	box-shadow: 5px 5px 20px #949296;
 	margin-bottom: 40px;
 }
@@ -407,6 +419,16 @@ textarea {
 }
 .beer-list-table td {
 	padding: 10px;
+}
+
+.Breweries {
+	text-align: center;
+	letter-spacing: 10px;
+	margin-top: 90px;
+	color: black;
+/* 	background-image: url("http://res.cloudinary.com/teclebrew/image/upload/v1511214071/brown_beer_aassb3.jpg"); */
+	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .row {
@@ -428,7 +450,7 @@ textarea {
 
 .breweryLocation {
 	flex: 1;
-	padding: 1em 1em 1em 1em;
+	padding: 0em 1em 1em 1em;
 }
 
 .detailsTitle {
