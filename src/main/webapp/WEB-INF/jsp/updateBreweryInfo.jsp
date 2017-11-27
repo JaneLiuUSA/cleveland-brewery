@@ -132,7 +132,7 @@
 					<form:input path="breweryLogoUrl" class="form-control" />
 					<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="breweryLogoUrl" 
    				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" style='width:40%' ></input>
-   				<img src="<c:out value='${brewery.breweryLogoUrl}'/>" />
+   				<img src="<c:out value='${brewery.breweryLogoUrl}'/>" style='width:40%' />
 					<form:errors path="breweryLogoUrl"></form:errors>
 				</div>
 				
