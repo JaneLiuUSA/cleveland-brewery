@@ -7,36 +7,39 @@
 <script type='text/javascript'>
 
 	$(document).ready(function() {
-		  if($.fn.cloudinary_fileupload !== undefined) {
-		    $("input.cloudinary-fileupload[type=file]").cloudinary_fileupload();
-		  }
-		});
+	
+		$('.rating').change(function () {
+			  var $radio = $(this);
+			  $('.rating .selected').removeClass('selected');
+			  $radio.closest('label').addClass('selected');
+			});
 		
-	$("form").validate({
-		rules : {
-			rating : {
-				required : true,
-			},
-			subject : {
-				required : true,
-			},
-			description : {
-				required : true,
-			},
-		},
-			messages : {
+		$("form").validate({
+			rules : {
 				rating : {
-					required : "required",
+					required : true,
 				},
 				subject : {
-					required : "required",
+					required : true,
 				},
 				description : {
-					required : "required",
+					required : true,
 				},
 			},
-			errorClass : "error"
-		});
+				messages : {
+					rating : {
+						required : "required",
+					},
+					subject : {
+						required : "required",
+					},
+					description : {
+						required : "required",
+					},
+				},
+				errorClass : "error"
+			});
+	});
 
 
 </script>
@@ -59,7 +62,26 @@
 			<div class="col-md-12 breweryImage">
 				<img class="center-block" src="<c:out value='${beer.imgUrl}'/>" />
 			</div>
-			<div>
+			
+			<div class="rating">
+			  <label>
+			    <input type="radio" name="rating" value="5" title="5 stars"> 5
+			  </label>
+			  <label>
+			    <input type="radio" name="rating" value="4" title="4 stars"> 4
+			  </label>
+			  <label>
+			    <input type="radio" name="rating" value="3" title="3 stars"> 3
+			  </label>
+			  <label>
+			    <input type="radio" name="rating" value="2" title="2 stars"> 2
+			  </label>
+			  <label>
+			    <input type="radio" name="rating" value="1" title="1 star"> 1
+			  </label>
+			</div>
+			
+			<%-- <div>
 				<label class="rating"> Overall Rating</label>
 				<fieldset class="rating">
 	    			<form:radiobutton path="rating" id="star5" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
@@ -69,7 +91,8 @@
 				    <form:radiobutton path="rating" id="star1" value="1" /><label class = "full" for="star1" title="Waste of my time - 1 star"></label>
 				</fieldset><br>
 				<br>
-			</div>
+			</div> --%>
+			
 			<div class="form-group">
 				<label for="subject">Review Title: </label>
 				<form:input path="subject" class="form-control" />
