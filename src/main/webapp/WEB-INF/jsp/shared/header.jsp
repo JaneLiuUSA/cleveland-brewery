@@ -18,7 +18,8 @@
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
-		<link href="path/to/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
+	    
+		<%-- <link href="path/to/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
 
 		<!-- important mandatory libraries -->
 		<script src="path/to/js/star-rating.js" type="text/javascript"></script>
@@ -26,7 +27,7 @@
 
 		<!-- optionally if you need translation for your language then include locale file as mentioned below -->
 		<script src="path/to/js/locales/<lang>.js"></script>
-	    <script src="https://use.fontawesome.com/aad158a7ca.js"></script> 
+	    <script src="https://use.fontawesome.com/aad158a7ca.js"></script>  --%>
 	    
 	    <c:url var="cssHref" value="/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
