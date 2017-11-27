@@ -3,16 +3,17 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
-<div class="breweryContainer">
+<div class="row">
+<!-- <div class="breweryContainer"> -->
 
 	<div class="breweryList">
 		<div class="breweryLocation">
 
-			<div class="col-md-12 breweryImage">
+			<div class="col-md-6 breweryDetImage">
 				<img class="center-block"
 					src="<c:out value='${details.breweryLogoUrl}'/>" />
 			</div>
-
+			<div class="col-md-6">
 			<h2>
 				<c:out value="${details.name}" />
 			</h2>
@@ -35,7 +36,7 @@
 				<li><c:out value="${details.businessHours }" /></li>
 			</ul>
 			</div>
-
+			</div>
 		</div>
 		<div class="breweryLocation">
 		<table>
@@ -63,4 +64,5 @@
 		
 	</div>
 </div>
+
 <c:import url="/WEB-INF/jsp/shared/footer.jsp" />

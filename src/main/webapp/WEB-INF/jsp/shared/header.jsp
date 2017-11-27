@@ -17,6 +17,7 @@
 	    <script src="http://cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.js "></script>
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	    <!-- <script src="https://use.fontawesome.com/aad158a7ca.js"></script> -->
 	    <c:url var="cssHref" value="/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
 </head>
@@ -100,6 +101,8 @@
         					  <li><a href="${brewerAccount}">UPDATE INFO</a></li>
         					  <c:url var="addBeer" value="/addBeer" />
         					  <li><a href="${addBeer}">ADD BEER</a></li>
+        					  <c:url var="removeBeer" value="/breweryBeers"/>
+        					  <li> <a href="${removeBeer}">REMOVE BEER</a></li>
 
        						</ul>
      					 </li>

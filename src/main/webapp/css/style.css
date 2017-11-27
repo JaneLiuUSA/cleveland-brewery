@@ -1,3 +1,4 @@
+
 html {
   position: relative;
   min-height: 100%;
@@ -8,6 +9,7 @@ body {
 	color: #777;
 	margin-top: 50px;
 	margin-bottom: 60px;
+	background-color: #fff;
 }
 
 h2 {
@@ -60,6 +62,12 @@ hr {
 .clickHover:hover {
 	opacity: 0.75;
 }
+
+.clickHover2:hover {
+	opacity: 0.75;
+	color: black;
+}
+
 
 .grow:hover {
     -webkit-transform: scale(1.1);
@@ -226,7 +234,7 @@ hr {
 
 .navbar-nav li.active a {
 	color: #fff !important;
-	background-color: #b48331!important;
+	background-color: #d69827!important;
 }
 
 .navbar-default .navbar-toggle {
@@ -358,6 +366,14 @@ textarea {
 	margin-bottom: 40px;
 }
 
+.breweryDetImage img{
+	flex: 1;
+	width: 400px;
+	height: 400px;
+	background-color: black;
+	box-shadow: 5px 5px 20px #d69827;
+	margin-bottom: 40px;
+}
 
 .beer-list-table {
 	table-layout: fixed;
@@ -379,7 +395,7 @@ textarea {
 
 .namePadding {
 	margin-top: 40px;
-	color: #d69827;
+	color: #d69827; /*  #d69827 */
 }
 
 .breweryLocation {
@@ -482,7 +498,7 @@ textarea {
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 
-.rating > input:checked ~ label, /* show gold star when clicked */
+.rating > radio:checked ~ label, /* show gold star when clicked */
 .rating:not(:checked) > label:hover, /* hover current star */
 .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
 
