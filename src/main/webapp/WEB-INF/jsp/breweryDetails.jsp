@@ -3,8 +3,9 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
-<div class="row">
-<!-- <div class="breweryContainer"> -->
+
+ <div class="breweryContainer"> 
+ <div class="row">
 
 	<div class="breweryList">
 		<div class="breweryLocation">
@@ -39,35 +40,37 @@
 			</div>
 		</div>
 		</div>
-		</div>
 		
-		<div class="row">
-		<div class="col-lg-12 breweryList">
-		<div class="breweryLocation">
-		<table>
-				<c:forEach items="${beers}" var="beer">
-			<tr>
-				<td><c:url var="beerDetailLink" value="/beerDetails/${beer.id}"></c:url>
-					<a href=" <c:out value='${beerDetailLink}'/> "><img src="<c:out value='${beer.imgUrl}'/>" style='width:40%' /></a></td>
-				<td> <c:out value="${beer.name}"/> </td>
-				<td> ABV<c:out value="${beer.abv}"/>% </td>
-				<td> IBU<c:out value="${beer.ibu}"/> </td>
-				<td> <c:out value="${beer.type}"/> </td>
-				<td>
+		
+		<div class="breweryContainer">
+		<c:forEach items="${beers}" var="beer">
+	
+			<div class="col-lg-12 breweryList">
+			<div class="breweryLocation breweryImage">
+				<c:url var="beerDetailLink" value="/beerDetails/${beer.id}"></c:url>
+					<a href=" <c:out value='${beerDetailLink}'/> "><img src="<c:out value='${beer.imgUrl}'/>"><!--  style='width:40%' /> --></a></td>
+				<ul>	
+					<li><c:out value="${beer.name}"/></li>
+					<li>ABV<c:out value="${beer.abv}"/>% </li>
+					<li>IBU<c:out value="${beer.ibu}"/> </li>
+					<li><c:out value="${beer.type}"/> </li>
+				</ul>
 				<c:forEach items="${allBreweries}" var="brewery">
 				<c:set var = "breweryId" value = "${beer.breweryId}"/>
 				<c:if test="${brewery.id eq breweryId}">
 					<c:out value="${brewery.getNameById(beer.breweryId)}"/> 
 				</c:if>
 				</c:forEach>
-				</td>
-				<td> <button type="button" class="btn btn-default">Review this Beer</button></td>
-			</tr>	
+				
+				 <button type="button" class="btn btn-default">Review this Beer</button></td>
+			
+				</div>
+			</div>
+			</div>
 			</c:forEach>
-		</table>
-		</div>
-		</div>
-		</div>
+			</div>
+			</div>
+		
 	
 <%-- <c:forEach items="${allBreweries}" var="brewery"> --%>
 	
