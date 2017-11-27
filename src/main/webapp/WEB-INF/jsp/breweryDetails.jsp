@@ -56,7 +56,9 @@
 				</c:if>
 				</c:forEach>
 				</td>
-				<td> <button type="button" class="btn btn-default">Review this Beer</button></td>
+				<td>
+					<a href="../beerDetails/${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a>
+				</td>
 			</tr>	
 			</c:forEach>
 		</table>

@@ -15,7 +15,6 @@
 			</div>
 			
 			<div>
-			<c:url var="ReviewBeerLink" value="/beerDetails/${beer.id}/review" />
 			<a href="${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a>
 			</div>
 
