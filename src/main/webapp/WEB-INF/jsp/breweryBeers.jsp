@@ -70,7 +70,7 @@
  		event.preventDefault();
 		var beerId = $(this).attr('data-beer-id');
 		var beerName = $(this).attr('data-beer-name');
-		var thisTR = $(this).parents('tr');
+		var thisTR = $(this).closest('tr');
 		
 		$.ajax({
 			url: '/capstone/breweryBeerRemove',
