@@ -2,6 +2,10 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
+
+<div>
+	<h3 class="Breweries">CLE Breweries</h3>
+</div>
 <div class="backgroundPic">
 <div class="breweryContainer">
 
