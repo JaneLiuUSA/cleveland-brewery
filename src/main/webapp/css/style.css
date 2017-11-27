@@ -1,3 +1,4 @@
+
 html {
   position: relative;
   min-height: 100%;
@@ -468,6 +469,7 @@ textarea {
 	}
 }
 
+
 /****** Style Star Rating Widget *****/
 
 .rating { 
@@ -496,7 +498,7 @@ textarea {
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 
-.rating > input:checked ~ label, /* show gold star when clicked */
+.rating > radio:checked ~ label, /* show gold star when clicked */
 .rating:not(:checked) > label:hover, /* hover current star */
 .rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
 
