@@ -3,7 +3,9 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
+
 <c:url var="formAction" value="/breweryBeers" />
+
 <form method="GET" action="${formAction}">
 	<div>
 		
@@ -22,11 +24,12 @@
 				<td><c:out value="${beer.ibu}"/></td>
 				<td><c:out value="${beer.type}"/></td>
 				<td>
-					<input name="isActive" type="checkbox" data-beer-id="${beer.id}" ${beer.active ? 'checked="checked"' : ''}/>
+					<input name="isActive" type="checkbox"  data-beer-name="${beer.name}" data-beer-id="${beer.id}" ${beer.active ? 'checked="checked"' : ''}/>
+
 				</td>
 				<td> 
 					<input type="hidden" name="beerId" value="<c:out value='${beer.id}'/>" />
-					<button type="submit" name="Delete" class="btn btn-default" data-beer-id="${beer.id}">Delete</button> 
+					<button type="submit" name="Delete" class="btn btn-default" data-beer-name="${beer.name}" data-beer-id="${beer.id}">Delete</button> 
 				</td>
 			</tr>
 		</c:forEach>
@@ -35,11 +38,13 @@
 	</div>
 </form>
 
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://www.jqueryscript.net/demo/Create-Simple-Alert-Messages-with-jQuery-Bootstrap-alert-js/alert.js"></script>
 <script type="text/javascript">
 	$("input[name=isActive]").on('change',function() {
 		 var isActive = $( this ).prop( "checked" );
 		 var beerId = $( this ).attr('data-beer-id');
-		 
+		 var beerName = $(this).attr('data-beer-name');
 	
 		$.ajax({
 			url: '/capstone/breweryBeerActive',
@@ -49,11 +54,23 @@
  				'CSRF_TOKEN': '${CSRF_TOKEN}',
 			},
 			type: 'POST'
+		}).then(function() {
+			const message = "<strong>Success!</strong>  " + beerName + " has been updated.";
+			$.alert(message, {
+				autoClose:true,
+				closeTime: 5000,
+				type: 'success',
+				position: ['center', [-0.42, 0]],
+				minTop: 55,
+			});
 		});
 	});
 	
- 	$("button[name=Delete]").on('click', function() {
+ 	$("button[name=Delete]").on('click', function(event) {
+ 		event.preventDefault();
 		var beerId = $(this).attr('data-beer-id');
+		var beerName = $(this).attr('data-beer-name');
+		var thisTR = $(this).parents('tr');
 		
 		$.ajax({
 			url: '/capstone/breweryBeerRemove',
@@ -62,8 +79,18 @@
 				'CSRF_TOKEN': '${CSRF_TOKEN}',
 			},
 			type: 'POST'
-		});
-	}); 
+		}).then(function() {
+			const message = "<strong>Success!</strong>  " + beerName + " has been removed.";
+			$.alert(message, {
+				autoClose:true,
+				closeTime: 5000,
+				type: 'success',
+				position: ['center', [-0.42, 0]],
+				minTop: 55,
+			});
+			thisTR.remove();
+		}); 
+	});
 	
 </script>
 
