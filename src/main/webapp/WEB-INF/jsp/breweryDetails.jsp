@@ -15,9 +15,9 @@
 					src="<c:out value='${details.breweryLogoUrl}'/>" />
 			</div>
 			<div class="col-md-6">
-			<h2>
+			<h1>
 				<c:out value="${details.name}" />
-			</h2>
+			</h1>
 			<div class="breweryLocation">
 			<ul>
 				<div style="color:black"><strong>Location</strong></div>
@@ -40,7 +40,9 @@
 			</div>
 		</div>
 		</div>
-		
+		<div class="detailsHR beersContainer">
+			<h3 class="title2">Our Beers</h3>
+			<hr/>
 		
 		<div class="breweryContainer">
 		<c:forEach items="${beers}" var="beer">
@@ -48,7 +50,7 @@
 			<div class="col-lg-12 breweryList">
 			<div class="breweryLocation breweryImage">
 				<c:url var="beerDetailLink" value="/beerDetails/${beer.id}"></c:url>
-					<a href=" <c:out value='${beerDetailLink}'/> "><img src="<c:out value='${beer.imgUrl}'/>"><!--  style='width:40%' /> --></a></td>
+					<a href=" <c:out value='${beerDetailLink}'/> "><img src="<c:out value='${beer.imgUrl}'/>"><!--  style='width:40%' /> --></a></div>
 				<ul>	
 					<li><c:out value="${beer.name}"/></li>
 					<li>ABV<c:out value="${beer.abv}"/>% </li>
@@ -61,13 +63,10 @@
 					<c:out value="${brewery.getNameById(beer.breweryId)}"/> 
 				</c:if>
 				</c:forEach>
-				
-				 <button type="button" class="btn btn-default">Review this Beer</button></td>
-			
-				</div>
+					<a href="../beerDetails/${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a>
+			</div>		
+				</c:forEach>
 			</div>
-			</div>
-			</c:forEach>
 			</div>
 			</div>
 		
@@ -88,7 +87,7 @@
 <!-- 				<ul> -->
 <%-- 					<li> <c:out value="${brewery.address}"/> <c:out value="${brewery.city}"/><br> <c:out value="${brewery.zipcode}"/> </li> --%>
 <%-- 					<li><c:out value="${brewery.phoneNumber }"/></li> --%>
-<%-- <%-- 					<li><c:out value="${brewery.description }"/></li> --%> --%>
+<%-- <%-- 					<li><c:out value="${brewery.description }"/></li> --%> 
 <!-- 				</ul> -->
 <!-- 			</div> -->
 <!-- 			</div> -->

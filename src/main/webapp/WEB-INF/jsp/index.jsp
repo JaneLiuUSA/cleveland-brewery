@@ -13,7 +13,7 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
       <div class="item active">
-        <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511214076/amber_beer_vqd5xw.jpg" alt="Beer taps">
+        <img src="https://res.cloudinary.com/teclebrew/image/upload/v1511214076/amber_beer_vqd5xw.jpg" alt="Beer taps">
         <div class="carousel-caption">
           <h3>Cleveland Brews</h3>
           <p>Explore Some of Cleveland's Top Breweries.</p>
@@ -21,7 +21,7 @@
       </div>
 
       <div class="item">
-        <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511207908/platformBeer_g0km7c.jpg" alt="GL Porter">
+        <img src="https://res.cloudinary.com/teclebrew/image/upload/v1511207908/platformBeer_g0km7c.jpg" alt="GL Porter">
         <div class="carousel-caption">
           <h2 class="title">Platform Brewery</h2>
           <p>Check out one of Cleveland's newest breweries!</p>
@@ -29,7 +29,7 @@
       </div>
     
       <div class="item">
-        <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511214071/brown_beer_aassb3.jpg" alt="Market Garden">
+        <img src="https://res.cloudinary.com/teclebrew/image/upload/v1511214071/brown_beer_aassb3.jpg" alt="Market Garden">
         <div class="carousel-caption">
           <h3>Market Garden</h3>
           <p>Market Garden journey!</p>

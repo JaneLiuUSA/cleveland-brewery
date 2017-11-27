@@ -19,6 +19,18 @@ h2 {
 	color: #d69827;
 }
 
+.title2 {
+	margin: 20px 0 30px 0;
+	letter-spacing: 10px;
+	font-size: 20px;
+	color: black;
+	text-align: center;
+}
+
+.detailsHR {
+	
+}
+
 hr {
     display: block;
     height: 1px;
@@ -40,6 +52,10 @@ hr {
 
 .container {
 	padding: 80px 120px 60px;
+}
+
+.beersContainer {
+	padding: 20px 120px 5px;
 }
 
 .homeTitle {
@@ -335,6 +351,11 @@ textarea {
 	text-align: center;
 	text-decoration: underline;
 	margin: 40px 0 30px 0;
+}
+
+.breweryContainer h1 {
+	color: black;
+	letter-spacing: 6px;
 }
 
 .breweryContainer a {
