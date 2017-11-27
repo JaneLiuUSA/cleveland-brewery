@@ -243,4 +243,9 @@ INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VA
 'West Coast style dry-hopped IPA, brewed to be drinkable with big additions of Citra and Simcoe hops introduced with experimental hopping techniques.',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511655255/noble_evil_ipa_beer_pic_lptyzw.jpg', 12, true);
 
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Christmas magic in a a bottle',
+'This is one of my all time favorite beers, it keeps me warm and happy all winter long with its perfect combination of spices and Christmas magic',
+5,now(),1);
+
 COMMIT;
