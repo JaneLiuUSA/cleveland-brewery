@@ -117,12 +117,16 @@ public class BreweryController {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "updatedBrewery", result);
 			return "redirect:/updateBreweryInfo";
 		}
-		
-			updatedBrewery.setBreweryLogoUrl("http://res.cloudinary.com/teclebrew/" + updatedBrewery.getBreweryLogoUrl()); 
+		if (! updatedBrewery.getBreweryLogoUrl().startsWith("http://res.cloudinary.com/teclebrew/")) {
+			updatedBrewery.setBreweryLogoUrl("http://res.cloudinary.com/teclebrew/" + updatedBrewery.getBreweryLogoUrl());
+		}
+		if (! updatedBrewery.getImgUrl().startsWith("http://res.cloudinary.com/teclebrew/")) {
 			updatedBrewery.setImgUrl("http://res.cloudinary.com/teclebrew/" + updatedBrewery.getImgUrl());
-			breweryDAO.updateBrewery(updatedBrewery.getName(), updatedBrewery.getAddress(), updatedBrewery.getCity(), updatedBrewery.getZipcode(), 
-					updatedBrewery.getPhoneNumber(), updatedBrewery.getDescription(), updatedBrewery.getBreweryLogoUrl(), updatedBrewery.getImgUrl(), 
-					updatedBrewery.getWebsiteUrl(), updatedBrewery.getBusinessHours(),updatedBrewery.getId());
+		}
+		
+		breweryDAO.updateBrewery(updatedBrewery.getName(), updatedBrewery.getAddress(), updatedBrewery.getCity(), updatedBrewery.getZipcode(), 
+			updatedBrewery.getPhoneNumber(), updatedBrewery.getDescription(), updatedBrewery.getBreweryLogoUrl(), updatedBrewery.getImgUrl(), 
+			updatedBrewery.getWebsiteUrl(), updatedBrewery.getBusinessHours(),updatedBrewery.getId());
 		return "redirect:/breweries";
 		}
 		
