@@ -25,7 +25,7 @@ INSERT INTO breweries (name, address, city, zipcode, phone_number, description, 
 VALUES ('Goldhorn Brewery', '1361 E 55th St.', 'Cleveland', 44103,'(216) 465-1352',
 'Cool taproom offering seasonal, housemade beer in a vast space with a long bar & tables outside.',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511722787/goldhorn_brown_logo_er48xf.png',
-'http://res.cloudinary.com/teclebrew/image/upload/v1510954471/goldhorn_izgvac.jpg',
+'https://www.yelp.com/biz/goldhorn-brewery-cleveland',
 'http://res.cloudinary.com/teclebrew/image/upload/v1510956260/goldhorn_yzoif0.jpg',
 'Tuesday - Friday: 11:00 AM - 09:00 PM  Saturday: 12:00 PM - 10:00 PM Sunday: 12:00 PM - 06:00 PM Closed on Mondays');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours)
@@ -81,7 +81,7 @@ INSERT INTO breweries (name, address, city, zipcode, phone_number, description, 
 VALUES ('Forest City Brewery', '2135 Columbus Rd.', 'Cleveland', 44113,'(216) 228-9116',
 'Where old meets brew: Down a fresh cold one and a tasty bite in our vintage tasting room. Or mosey on out to our historic Biergarten and enjoy some CLE sunshine.',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511641325/forest_city_logo_pfb4un.png',
-'www.forestcitybrewery.com/',
+'https://www.forestcitybrewery.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511641330/forest-city-new-sign_thqut9.jpg',
 'Wednesday - Thursday: 04:00 PM - 12:00 AM Friday: 04:00 PM - 01:00 AM Saturday: 12:00 PM - 01:00 AM Sunday: 01:00 PM - 10:00 PM');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours)
@@ -247,5 +247,136 @@ INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 ('Christmas magic in a a bottle',
 'This is one of my all time favorite beers, it keeps me warm and happy all winter long with its perfect combination of spices and Christmas magic',
 5,now(),1);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Greatest Beer Ever',
+'This is the best Xmas beer in the world!',
+5,now(),1);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Ho Ho Drunk',
+'I had 6 of these already and Im wasted, Merry Christmas to all!!!!!',
+4,now(),1);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Twas the night before Xmas',
+'Or maybe it was the night after, I blacked out both so Im not sure',
+5,now(),1);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Still better than Al Capone',
+'Im not sure which is cooler the man or the beer! ',
+5,now(),2);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Delicious Hops ',
+'This is a good choice from a great brewery',
+4,now(),2);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Amber Meh ',
+'Its not bad for an Amber lager',
+3,now(),2);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Its on fire!',
+'This beer is awesome, try it! ',
+5,now(),3);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('This beer,This beer,This beer is on fire',
+'We dont need no water just BEER',
+4,now(),3);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Good beer',
+'Love the bottle, the beer is alright too',
+3,now(),3);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Terrible Highway Section',
+'Lovely brew',
+4,now(),4);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Awesome Theater',
+'Mediocre beer...',
+3,now(),5);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Rowdy Rowdy',
+'HUlkster would be a better name',
+3,now(),6);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Holy Hops',
+'Maybe just a bit to hoppy for my liking, but delicious',
+4,now(),7);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Sweet?',
+'Not so sweet, average heat might be a better name',
+2,now(),9);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Great Beer',
+'Try this, you woont be upset if you do!',
+4,now(),10);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Awesome Name',
+'This is a very intersting mix',
+4,now(),11);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Bring it back',
+'Please make another batch soon!!',
+4,now(),12);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('AMAZEBALLS',
+'You wont regret drinking a few of these',
+4,now(),13);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Wheat Beer!',
+'Its great to see a local take on a wheat beer ',
+3,now(),17);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('A true classic',
+'This is probably the first microbrew in the city and still one of the best',
+4,now(),19);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Hefe',
+'Boss Beer',
+4,now(),20);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Dunkeldorf',
+'a powerful brew',
+4,now(),21);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('It was okay',
+'save the money and get a domestic',
+1,now(),24);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Awesome Beer',
+'I love this, its my new favorite beer!',
+5,now(),24);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Long Live the Chief',
+'Awesome taste and logo, its my new favorite beer!',
+5,now(),25);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Racism is never OK',
+'Great beer, terrible logo',
+2,now(),25);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Chocolicious',
+'I enjoyed the mix of flavors in this brew',
+4,now(),27);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Go Tribe!!',
+'Great beer, Roll Tribe!',
+4,now(),29);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Best Beer Ever',
+'I love wheat beer and this one is the best I have had',
+5,now(),32);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('WOW',
+'This beer is awesome!',
+5,now(),32);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Next',
+'Great can, but clowns are terrible, not as terrible as this beer though',
+1,now(),33);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Very interesting',
+'This is one of the most unique beers I have had, it tastes great too',
+4,now(),33);
+
+
+
 
 COMMIT;
