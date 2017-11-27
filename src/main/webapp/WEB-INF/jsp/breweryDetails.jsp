@@ -22,8 +22,8 @@
 			<ul>
 				<div style="color:black"><strong>Location</strong></div>
 				<li><c:out value="${details.address}" /> <c:out
-						value="${details.city}" />
-					<c:out value="${details.zipcode}" /></li>
+						value="${details.city}," />
+					<c:out value=" OH ${details.zipcode}" /></li>
 				<div style="color:black"><strong>Phone Number</strong></div>
 				<li><c:out value="${details.phoneNumber }" /></li>
 				<div style="color:black"><strong>Description</strong></div>
