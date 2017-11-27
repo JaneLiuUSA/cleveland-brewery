@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.techelevator.clebrews.model.Beer;
+import com.techelevator.clebrews.model.BeerDAO;
+import com.techelevator.clebrews.model.BreweryDAO;
 import com.techelevator.clebrews.model.User;
 import com.techelevator.clebrews.model.UserDAO;
 
@@ -21,6 +23,13 @@ public class BrewerProfileController {
 	
 	@Autowired
 	private UserDAO userDAO;
+	
+	@Autowired
+	private BreweryDAO breweryDAO;
+	
+	@Autowired
+	private BeerDAO beerDAO;
+	
 	
 		@RequestMapping(path="/brewerAccounts", method=RequestMethod.GET)
 		public String showAllBreweryAccounts(ModelMap modelHolder, HttpSession session) throws NotAllowedException {
@@ -44,4 +53,33 @@ public class BrewerProfileController {
 			return true;
 		}
 	
+		@RequestMapping(path="/breweryBeers", method=RequestMethod.GET)
+		public String showAllBreweryBeers(ModelMap modelHolder, HttpSession session) throws NotAllowedException {
+			User currentUser = (User) session.getAttribute("currentUser");
+			
+			if (currentUser == null || currentUser.getRoleId() != 2) {
+				throw new NotAllowedException();
+			}
+
+			Long breweryId = (long) breweryDAO.getBreweryByUserId(currentUser.getId()).getId();
+
+			List<Beer> breweryBeerList = beerDAO.getAllBeerByBrewery(breweryId);
+			modelHolder.put("beers", breweryBeerList);
+			return "breweryBeers";
+		}
+		
+		@ResponseBody
+		@RequestMapping(path="/breweryBeerActive", method=RequestMethod.POST)
+		public boolean updateBreweryActiveBeer(@RequestParam Long beerId, @RequestParam boolean isActive) {
+			beerDAO.updateActiveBeerByBrewery(beerId, isActive);
+			return true;
+		}
+		
+		@ResponseBody
+		@RequestMapping(path="/breweryBeerRemove", method=RequestMethod.POST)
+		public boolean deleteBeerFromBrewery(@RequestParam Long beerId) {
+			beerDAO.removeBeer(beerId);
+			return true;
+		}
+		
 }

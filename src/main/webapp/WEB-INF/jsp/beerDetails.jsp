@@ -3,6 +3,7 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
+
 <div class="breweryContainer">
 
 	<div class="breweryList">
@@ -14,7 +15,8 @@
 			</div>
 			
 			<div>
-				<button type="button" class="btn btn-default">Review this Beer</button>
+			<c:url var="ReviewBeerLink" value="/beerDetails/${beer.id}/review" />
+			<a href="${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a>
 			</div>
 
 			<h2>
@@ -33,24 +35,25 @@
 			</div>
 			<div>
 				<h3>
-				<c:out value=" Brewed by:  ${brewery.name}" />
-			</h3>
-			<div class="breweryLocation">
-			<ul>
-				<p class="detailsTitle"></p>
-				<li><c:out value="${brewery.address}" /> <c:out
-						value="${brewery.city}" />
-					<c:out value="${brewery.zipcode}" /></li>
-				<li><c:out value="${brewery.phoneNumber }" /></li>
+					<c:out value=" Brewed by:  ${brewery.name}" />
+				</h3>
+				<div class="breweryLocation">
+				<ul>
+					<p class="detailsTitle"></p>
+					<li><c:out value="${brewery.address}" /> <c:out
+							value="${brewery.city}" />
+						<c:out value="${brewery.zipcode}" /></li>
+					<li><c:out value="${brewery.phoneNumber }" /></li>
+	
+					<c:url var="breweryWebsite" value="${brewery.websiteUrl }"></c:url>
+					<li><a href=" <c:out value='${breweryWebsite }'/> "><c:out
+								value="${brewery.name} Website" /></a></li>
+	
+					<li><c:out value="${brewery.businessHours }" /></li>
+				</ul>
+				</div>
 
-				<c:url var="breweryWebsite" value="${brewery.websiteUrl }"></c:url>
-				<li><a href=" <c:out value='${breweryWebsite }'/> "><c:out
-							value="${brewery.name} Website" /></a></li>
-
-				<li><c:out value="${brewery.businessHours }" /></li>
-			</ul>
 			</div>
-
 		</div>
 	</div>
 </div>
