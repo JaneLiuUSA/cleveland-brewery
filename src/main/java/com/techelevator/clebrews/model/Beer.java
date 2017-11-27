@@ -18,6 +18,8 @@ public class Beer {
 	
 	private Long breweryId;
 	
+	private float rating;
+	
 	private boolean isActive = true;
 
 	public Long getId() {
@@ -90,6 +92,14 @@ public class Beer {
 
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
+	}
+
+	public float getRating() {
+		return rating;
+	}
+
+	public void setRating(float rating) {
+		this.rating = rating;
 	}
 	
 	
