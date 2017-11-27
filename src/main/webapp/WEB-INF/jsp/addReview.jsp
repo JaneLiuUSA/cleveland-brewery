@@ -44,7 +44,7 @@
 
 </script>
 
-<c:url var="formAction" value="/beerDetails/{beerId}/review" />
+<c:url var="formAction" value="/beerDetails/${beer.id}/review" />
 <form:form method="POST" action="${formAction}" modelAttribute="newReview">
 
 	<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
