@@ -108,7 +108,8 @@ hr {
 	margin: 100px 0 30px 0;
 	letter-spacing: 10px;
 	font-size: 7em;
-	color: #fff !important;
+	color: #fbf9f2!important;
+	text-shadow: 2px 2px #7b7b7b;
 }
 
 .carousel-inner > .item > img {
@@ -267,7 +268,7 @@ hr {
 }
 
 .dropdown-menu li a:hover {
-	background-color: #b48331!important;
+	background-color: #000000!important;
 }
 
 footer {
@@ -283,15 +284,20 @@ footer {
 }
 
 .space {
-			position: absolute;
-			height: 40%;
-			width: 40%;
-			text-align: center;
-			z-index: 1;
-		}
+	position: absolute;
+	height: 40%;
+	width: 40%;
+	text-align: center;
+	z-index: 1;
+}
+
+.centered {
+	text-align: center;
+}
 		
 .title {
 	color: #fff;
+	font-size: 35px;
 }
 
 footer a {
