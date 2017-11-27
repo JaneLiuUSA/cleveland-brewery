@@ -1,3 +1,4 @@
+
 html {
   position: relative;
   min-height: 100%;
@@ -8,6 +9,7 @@ body {
 	color: #777;
 	margin-top: 50px;
 	margin-bottom: 60px;
+	background-color: #fff;
 }
 
 h2 {
@@ -15,6 +17,18 @@ h2 {
 	letter-spacing: 10px;
 	font-size: 20px;
 	color: #d69827;
+}
+
+.title2 {
+	margin: 20px 0 30px 0;
+	letter-spacing: 10px;
+	font-size: 20px;
+	color: black;
+	text-align: center;
+}
+
+.detailsHR {
+	
 }
 
 hr {
@@ -40,6 +54,10 @@ hr {
 	padding: 80px 120px 60px;
 }
 
+.beersContainer {
+	padding: 20px 120px 5px;
+}
+
 .homeTitle {
 	color: black;
 }
@@ -60,6 +78,12 @@ hr {
 .clickHover:hover {
 	opacity: 0.75;
 }
+
+.clickHover2:hover {
+	opacity: 0.75;
+	color: black;
+}
+
 
 .grow:hover {
     -webkit-transform: scale(1.1);
@@ -226,7 +250,7 @@ hr {
 
 .navbar-nav li.active a {
 	color: #fff !important;
-	background-color: #b48331!important;
+	background-color: #d69827!important;
 }
 
 .navbar-default .navbar-toggle {
@@ -329,6 +353,11 @@ textarea {
 	margin: 40px 0 30px 0;
 }
 
+.breweryContainer h1 {
+	color: black;
+	letter-spacing: 6px;
+}
+
 .breweryContainer a {
 	color: #d69827;
 }
@@ -358,6 +387,14 @@ textarea {
 	margin-bottom: 40px;
 }
 
+.breweryDetImage img{
+	flex: 1;
+	width: 400px;
+	height: 400px;
+	background-color: black;
+	box-shadow: 5px 5px 20px #949296;
+	margin-bottom: 40px;
+}
 
 .beer-list-table {
 	table-layout: fixed;
@@ -379,7 +416,7 @@ textarea {
 
 .namePadding {
 	margin-top: 40px;
-	color: #d69827;
+	color: #d69827; /*  #d69827 */
 }
 
 .breweryLocation {
@@ -452,3 +489,41 @@ textarea {
 		display: block !important;
 	}
 }
+
+
+/****** Style Star Rating Widget *****/
+
+.rating { 
+  border: none;
+  float: left;
+}
+
+.rating > input { display: none; } 
+.rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.rating > radio:checked ~ label, /* show gold star when clicked */
+.rating:not(:checked) > label:hover, /* hover current star */
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.rating > input:checked + label:hover, /* hover current star when changing rating */
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 

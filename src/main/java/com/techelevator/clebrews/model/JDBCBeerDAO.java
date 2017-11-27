@@ -23,8 +23,8 @@ public class JDBCBeerDAO implements BeerDAO {
 	@Override
 	public List<Beer> getAllBeer() {
 		List<Beer> allBeers = new ArrayList<>();
-		String sqlSelectAllBeers = "SELECT * FROM beers ORDER BY name";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllBeers);
+		String sqlSelectAllBeers = "SELECT * FROM beers WHERE is_active = ? ORDER BY name";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectAllBeers, true);
 		
 		while(results.next()) {
 			allBeers.add(mapRowToBeer(results));
@@ -35,8 +35,8 @@ public class JDBCBeerDAO implements BeerDAO {
 	@Override
 	public Beer getBeerByName(String name) {
 		Beer newBeer = new Beer();
-		String sqlSelectBeerByName = "SELECT * FROM beers WHERE name = ?";
-		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSelectBeerByName, name);
+		String sqlSelectBeerByName = "SELECT * FROM beers WHERE name = ? AND is_active = ?";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlSelectBeerByName, name, true);
 		
 		if(result.next()) {
 			newBeer = mapRowToBeer(result);
@@ -47,6 +47,18 @@ public class JDBCBeerDAO implements BeerDAO {
 	@Override
 	public List<Beer> getBeerByBrewery(Long breweryId) {
 		List<Beer> breweryBeerList = new ArrayList<>();
+		String sqlSelectBeerByBrewery = "SELECT * FROM beers WHERE brewery_id = ? AND is_active = ? ORDER BY name";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeerByBrewery, breweryId, true);
+		
+		while(results.next()) {
+			breweryBeerList.add(mapRowToBeer(results));
+		}
+		return breweryBeerList;
+	}
+
+	@Override
+	public List<Beer> getAllBeerByBrewery(Long breweryId) { // This is for a Brewery to update the status of its beers.
+		List<Beer> breweryBeerList = new ArrayList<>();
 		String sqlSelectBeerByBrewery = "SELECT * FROM beers WHERE brewery_id = ? ORDER BY name";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeerByBrewery, breweryId);
 		
@@ -55,7 +67,6 @@ public class JDBCBeerDAO implements BeerDAO {
 		}
 		return breweryBeerList;
 	}
-
 	@Override
 	public boolean searchForBeerByName(String name) {
 		String sqlSearchForBeer = "SELECT * " +
@@ -95,12 +106,24 @@ public class JDBCBeerDAO implements BeerDAO {
 	@Override
 	public Beer getBeerById(Long id) {
 		Beer beer = new Beer();
-		String sqlGetgetBeerById = "SELECT * FROM beers WHERE beer_id = ?";
-		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlGetgetBeerById, id);
+		String sqlGetgetBeerById = "SELECT * FROM beers WHERE beer_id = ? AND is_active = ?";
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlGetgetBeerById, id, true);
 		while(result.next()) {
 			beer = mapRowToBeer(result);
 		}
 		return beer;
+	}
+
+	@Override
+	public void updateActiveBeerByBrewery(Long beerId, boolean isActive) {
+		jdbcTemplate.update("UPDATE beers SET is_active = ? WHERE beer_id = ?", isActive, beerId);
+		
+	}
+
+	@Override
+	public void removeBeer(Long beerId) {
+		jdbcTemplate.update("DELETE FROM beers WHERE beer_id = ?", beerId);
+		
 	}
 
 }
