@@ -2,14 +2,18 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
+<div>
+	<h3 class="Breweries">CLE Brews</h3>
+</div>
+
 	<table class="beer-list-table">
-			<th> </th>
+			<th> &nbsp; </th>
 			<th>Name</th>
 			<th>ABV</th>
 			<th>IBU</th>
 			<th>Type</th>
 			<th>Brewery</th>
-			<th></th>
+			<th> &nbsp; </th>
 			
 		<c:forEach items="${allBeers}" var="beer">
 			<tr>

@@ -61,8 +61,8 @@
 					<ul>
 						<li><c:out value = "Rating: ${review.rating}" /></li>
 						<li><c:out value = "Review Title: ${review.subject}" /></li>
-						<li><c:out value = "Review: ${review.description}" /></li>
-						<li><c:out value = "${review.createTime}" /></li>
+						<li><c:out value = "Review:${review.description}" /></li>
+						<li><c:out value = "${review.formatDateTime}" /></li>
 					</ul>
 					</c:forEach>
 					
