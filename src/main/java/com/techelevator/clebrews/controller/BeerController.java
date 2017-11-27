@@ -20,6 +20,8 @@ import com.techelevator.clebrews.model.Beer;
 import com.techelevator.clebrews.model.BeerDAO;
 import com.techelevator.clebrews.model.Brewery;
 import com.techelevator.clebrews.model.BreweryDAO;
+import com.techelevator.clebrews.model.Review;
+import com.techelevator.clebrews.model.ReviewDAO;
 import com.techelevator.clebrews.model.User;
 
 @Controller
@@ -30,6 +32,9 @@ public class BeerController {
 	
 	@Autowired
 	BreweryDAO breweryDAO;
+	
+	@Autowired
+	ReviewDAO reviewDAO;
 
 	@RequestMapping(path="/beers", method=RequestMethod.GET)
 	public String showAllBeers(ModelMap modelHolder) {
@@ -82,8 +87,10 @@ public class BeerController {
 	public String showBreweryDetails(@PathVariable long id, ModelMap modelHolder) {
 		Beer beer = beerDAO.getBeerById(id);
 		Brewery brewery = breweryDAO.getBreweryById(beer.getBreweryId());
+		List<Review> reviews = reviewDAO.searchReviewsByBeerId(id);
 		modelHolder.addAttribute("beer", beer);
 		modelHolder.addAttribute("brewery", brewery);
+		modelHolder.addAttribute("reviews", reviews);
 		
 		return "beerDetails";
 	}

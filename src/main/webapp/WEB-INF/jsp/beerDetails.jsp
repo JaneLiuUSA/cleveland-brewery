@@ -53,6 +53,23 @@
 				</div>
 
 			</div>
+			
+			<div>
+				<h3> <c:out value = "Reviews for this beer" /></h3>
+				<div>
+					<c:forEach items="${reviews}" var="review">
+					<ul>
+						<li><c:out value = "Rating: ${review.rating}" /></li>
+						<li><c:out value = "Review Title: ${review.subject}" /></li>
+						<li><c:out value = "Review: ${review.description}" /></li>
+						<li><c:out value = "${review.createTime}" /></li>
+					</ul>
+					</c:forEach>
+					
+				</div>
+			</div>
+			
+			
 		</div>
 	</div>
 </div>

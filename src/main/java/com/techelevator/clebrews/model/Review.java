@@ -14,7 +14,7 @@ public class Review {
 	private String description;
 	@NotBlank
 	private int rating;
-	private LocalDateTime creatTime;
+	private LocalDateTime createTime;
 	@NotBlank
 	private long beerId;
 	private long userId;
@@ -51,11 +51,11 @@ public class Review {
 	public void setBeerId(long beerId) {
 		this.beerId = beerId;
 	}
-	public LocalDateTime getCreatTime() {
-		return creatTime;
+	public LocalDateTime getCreateTime() {
+		return createTime;
 	}
-	public void setCreatTime(LocalDateTime creatTime) {
-		this.creatTime = creatTime;
+	public void setCreateTime(LocalDateTime createTime) {
+		this.createTime = createTime;
 	}
 	public long getUserId() {
 		return userId;
