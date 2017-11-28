@@ -38,13 +38,13 @@
 				name : {
 					required : true,
 				},
-				address : {
+				abv : {
 					required : true,
 				},
-				city : {
+				ibu : {
 					required : true,
 				},
-				zipcode : {
+				type : {
 					zipcode : true,
 
 				},
@@ -87,7 +87,7 @@
 </script>
 
 <c:url var="formAction" value="/updateBeerInfo" />
-<form:form method="POST" action="${formAction}" modelAttribute="updatedBeer">
+<form:form method="POST" action="${formAction}" modelAttribute="beer">
 	<input type="hidden" name="CSRF_TOKEN" value="${CSRF_TOKEN}" />
 	<input type="hidden" name="id" value="${beer.id}"/>
 	
