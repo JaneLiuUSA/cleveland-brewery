@@ -59,7 +59,9 @@
 				<div>
 					<c:forEach items="${reviews}" var="review">
 					<ul>
-						<li><c:out value = "Rating: ${review.rating}" /></li>
+						<li><c:out value = "Rating:"/>
+						<c:url var="imageName" value="/img/${review.rating}-star.png"/>
+						<img src="${imageName}" class="star-img"/></li>
 						<li><c:out value = "Review Title: ${review.subject}" /></li>
 						<li><c:out value = "Review:${review.description}" /></li>
 						<li><c:out value = "${review.formatDateTime}" /></li>

@@ -61,6 +61,9 @@
 					<li>ABV <c:out value="${beer.abv}"/>% </li>
 					<li>IBU <c:out value="${beer.ibu}"/> </li>
 					<li><c:out value="${beer.type}"/> </li>
+		<!-- This imgge name need to update to beer average rating -->
+					<li><c:url var="imageName" value="img/${review.rating}-star.png"/>
+						<img src="${imageName}" class="star-img"/></li>
 				</ul>
 				<c:forEach items="${allBreweries}" var="brewery">
 				<c:set var = "breweryId" value = "${beer.breweryId}"/>
