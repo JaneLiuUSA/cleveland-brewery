@@ -36,9 +36,8 @@
 
  		<script type="text/javascript"> 
   			$(document).ready(function() { 
-  				$("time.timeago").timeago(); 
-				
-  				$("#logoutLink").click(function(event){ 
+  				 
+  				$("#logoutLink").on('click', function(event){ 
   					$("#logoutForm").submit(); 
   				}); 
 				
