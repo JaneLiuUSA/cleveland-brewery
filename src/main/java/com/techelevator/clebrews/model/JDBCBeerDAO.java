@@ -117,8 +117,8 @@ public class JDBCBeerDAO implements BeerDAO {
 	@Override
 	public Beer getBeerById(Long id) {
 		Beer beer = new Beer();
-		String sqlGetgetBeerById = "SELECT * FROM beers LEFT JOIN (SELECT beer_id, AVG(rating)AS avg_rating FROM reviews GROUP BY beer_id)AS rating " + 
-				"ON rating.beer_id = beers.beer_id WHERE beer_id =? AND is_active = ? GROUP BY beers.beer_id, rating.beer_id, avg_rating ORDER BY name";
+		String sqlGetgetBeerById = "SELECT * FROM beers LEFT JOIN (SELECT beer_id, AVG(rating) AS avg_rating FROM reviews GROUP BY beer_id)AS rating " + 
+				"ON rating.beer_id = beers.beer_id WHERE beers.beer_id =? AND is_active = ? GROUP BY beers.beer_id, rating.beer_id, avg_rating ORDER BY name";
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlGetgetBeerById, id, true);
 		while(result.next()) {
 			beer = mapRowToBeer(result);
