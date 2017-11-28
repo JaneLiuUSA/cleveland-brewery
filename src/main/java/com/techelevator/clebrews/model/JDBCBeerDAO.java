@@ -46,11 +46,11 @@ public class JDBCBeerDAO implements BeerDAO {
 	}
 
 	@Override
-	public List<Beer> getBeerByBrewery(String breweryName) {
+	public List<Beer> getBeerByBrewery(long breweryId) {
 		List<Beer> breweryBeerList = new ArrayList<>();
 		String sqlSelectBeerByBrewery = "SELECT * FROM beers LEFT JOIN (SELECT beer_id, AVG(rating)AS avg_rating FROM reviews GROUP BY beer_id)AS rating " + 
-				"ON rating.beer_id = beers.beer_id WHERE name = ? AND is_active = ? GROUP BY beers.beer_id, rating.beer_id, avg_rating ORDER BY name";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeerByBrewery, breweryName, true);
+				"ON rating.beer_id = beers.beer_id WHERE brewery_id = ? AND is_active = ? GROUP BY beers.beer_id, rating.beer_id, avg_rating ORDER BY name";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeerByBrewery, breweryId, true);
 //		String sqlSelectBeerByBrewery = "SELECT * FROM beers WHERE name = ? AND is_active = ? ORDER BY name";
 //		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeerByBrewery, breweryName, true);
 		
@@ -116,7 +116,11 @@ public class JDBCBeerDAO implements BeerDAO {
 	@Override
 	public Beer getBeerById(Long id) {
 		Beer beer = new Beer();
+<<<<<<< HEAD
 		String sqlGetgetBeerById = "SELECT * FROM beers LEFT JOIN (SELECT beer_id, AVG(rating)AS avg_rating FROM reviews GROUP BY beer_id)AS rating " + 
+=======
+		String sqlGetgetBeerById = "SELECT * FROM beers LEFT JOIN (SELECT beer_id, AVG(rating) AS avg_rating FROM reviews GROUP BY beer_id)AS rating " + 
+>>>>>>> 084235c07bb519af3bdfbeefdbc65770b0df36e1
 				"ON rating.beer_id = beers.beer_id WHERE beers.beer_id =? AND is_active = ? GROUP BY beers.beer_id, rating.beer_id, avg_rating ORDER BY name";
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sqlGetgetBeerById, id, true);
 		while(result.next()) {
