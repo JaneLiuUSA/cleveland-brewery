@@ -84,6 +84,18 @@ hr {
 	color: black;
 }
 
+.modalText {
+	font-size: 25px;
+	text-align: center;
+}
+
+.modalTop {
+	margin-top: 20px;
+}
+
+.carouselText {
+	font-size: 20px;
+}
 
 .grow:hover {
     -webkit-transform: scale(1.1);
@@ -93,6 +105,15 @@ hr {
 
 .circle:hover {
 	border-radius:50%;
+}
+
+.img-circle {
+	border-radius: 2px;
+}
+
+.topImg {
+	width: 50px;
+	height: 50px;
 }
 
 .carousel {
@@ -329,8 +350,8 @@ textarea {
 }
 
 .buttonMargin {
-	margin-bottom: 70px;
-	margin-top: 40px;
+	margin-bottom: 70px !important;
+	margin-top: 40px !important;
 }
 
 /*   .right { */

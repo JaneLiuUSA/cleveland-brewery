@@ -18,6 +18,7 @@
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js"></script>
 	    
 		<%-- <link href="path/to/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
 
@@ -36,9 +37,8 @@
 
  		<script type="text/javascript"> 
   			$(document).ready(function() { 
-  				$("time.timeago").timeago(); 
-				
-  				$("#logoutLink").click(function(event){ 
+  				 
+  				$("#logoutLink").on('click', function(event){ 
   					$("#logoutForm").submit(); 
   				}); 
 				

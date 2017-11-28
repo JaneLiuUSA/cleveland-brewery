@@ -33,8 +33,11 @@ CREATE TABLE breweries (
     brewery_logo_url varchar(255),
     img_url varchar(255),
     website_url varchar(255),
+    google_maps_url varchar(255),
     business_hours varchar(255),
     user_id bigint,
+    lat varchar(20),
+    lng varchar(20),
     CONSTRAINT pk_brewery_brewery_id PRIMARY KEY (brewery_id),
     CONSTRAINT fk_user_user_id FOREIGN KEY (user_id) REFERENCES users(user_id)
 );

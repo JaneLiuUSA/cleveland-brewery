@@ -14,13 +14,14 @@
 					src="<c:out value='${beer.imgUrl}'/>" />
 			</div>
 			
-			<div>
-			<a href="${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a>
-			</div>
-
-			<h2>
+			<h2 class="buttonMargin">
 				<c:out value="${beer.name}" />
 			</h2>
+			
+			<div>
+			<a href="${beer.id}/review"><button class="btn btn-default buttonMargin" >Review this Beer</button></a>
+			</div>
+			
 			<div class="breweryLocation">
 			<ul>
 				<p class="detailsTitle"></p>
@@ -69,7 +70,15 @@
 					<c:forEach items="${reviews}" var="review">
 					<ul>
 						<li><c:out value = "Rating:"/>
-						<c:url var="imageName" value="/img/${review.rating}-star.png"/>
+						<c:choose>
+							<c:when test="${beer.starRating == 0}">
+								No Rating
+							</c:when>
+							<c:otherwise>
+								<c:url var="imageName" value="/img/${review.rating}-star.png"/>
+							</c:otherwise>
+						</c:choose>
+
 						<img src="${imageName}" class="star-img"/></li>
 						<li><c:out value = "Review Title: ${review.subject}" /></li>
 						<li><c:out value = "Review:${review.description}" /></li>
