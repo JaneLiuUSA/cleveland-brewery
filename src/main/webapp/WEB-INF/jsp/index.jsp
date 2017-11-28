@@ -12,18 +12,6 @@
  });
  
 </script>
-	    
-<!-- // $(document).ready(function() { -->
-<!-- //     if ($.cookie(‘pop’) == null) { -->
-<!-- //         $(‘#myModal’).modal(‘show’); -->
-<!-- //         $.cookie(‘pop’, ’7'); -->
-<!-- //     } -->
-<!-- // }); -->
-
-<!-- //         $(window).load(function(){         -->
-<!-- //      	   $('#myModal').modal('show'); -->
-<!-- //      	    });  -->
-     	    
 
 
 <div id="myModal" class="modal fade" role="dialog">
@@ -37,6 +25,7 @@
       <div class="modal-body">
         <p class="modalText">Are you at least 21 years old?</p>
       </div>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">No</button>

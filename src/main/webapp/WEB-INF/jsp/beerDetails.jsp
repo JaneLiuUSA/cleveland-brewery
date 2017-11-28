@@ -14,13 +14,14 @@
 					src="<c:out value='${beer.imgUrl}'/>" />
 			</div>
 			
-			<div>
-			<a href="${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a>
-			</div>
-
-			<h2>
+			<h2 class="buttonMargin">
 				<c:out value="${beer.name}" />
 			</h2>
+			
+			<div>
+			<a href="${beer.id}/review"><button class="btn btn-default buttonMargin" >Review this Beer</button></a>
+			</div>
+			
 			<div class="breweryLocation">
 			<ul>
 				<p class="detailsTitle"></p>
