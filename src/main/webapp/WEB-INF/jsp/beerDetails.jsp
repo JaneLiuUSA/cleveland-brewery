@@ -70,11 +70,12 @@
 				<div>
 					<c:forEach items="${reviews}" var="review">
 					<ul>
-						<li><c:out value = "${review.subject}" /></li>
+					<li><strong><c:out value = "Review:"/></strong><br>
+						<strong><li><c:out value = "${review.subject}" /></li></strong>
 						<li><c:out value = "${review.description}" /></li>
-						<li><c:out value = "Rating:"/>
-
 						<li><strong><c:out value = "Rating:"/></strong><br>
+
+						
 
 						<c:choose>
 							<c:when test="${beer.starRating == 0}">
@@ -89,9 +90,8 @@
 
 
 						<li><c:out value = "${review.formatDateTime}" /></li>
-						<li><strong>Review Title: </strong><c:out value = "${review.subject}" /></li>
-						<li><strong>Review: </strong><c:out value ="${review.description}" /></li>
-						<li><c:out value = "${review.formatDateTime}" /></li>
+					
+					
 					</ul>
 					</c:forEach>
 					
