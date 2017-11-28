@@ -76,13 +76,13 @@ public class BreweryController {
 		}
 	}
 	
-	@RequestMapping(path="/breweryDetails/{name}", method=RequestMethod.GET)
-	public String showBreweryDetails(@PathVariable String name, ModelMap modelHolder) {
-		Brewery breweryDetails = breweryDAO.getBreweryByName(name);
+	@RequestMapping(path="/breweryDetails/{id}", method=RequestMethod.GET)
+	public String showBreweryDetails(@PathVariable long id, ModelMap modelHolder) {
+		Brewery breweryDetails = breweryDAO.getBreweryById(id);
 
 		modelHolder.addAttribute("details", breweryDetails);
 		
-		List<Beer> breweryBeerList = beerDAO.getBeerByBrewery((String) name);
+		List<Beer> breweryBeerList = beerDAO.getBeerByBrewery((long) id);
 		modelHolder.addAttribute("beers", breweryBeerList);
 		
 		return "breweryDetails";

@@ -47,11 +47,11 @@ public class JDBCBeerDAO implements BeerDAO {
 	}
 
 	@Override
-	public List<Beer> getBeerByBrewery(String breweryName) {
+	public List<Beer> getBeerByBrewery(long breweryId) {
 		List<Beer> breweryBeerList = new ArrayList<>();
 		String sqlSelectBeerByBrewery = "SELECT * FROM beers LEFT JOIN (SELECT beer_id, AVG(rating)AS avg_rating FROM reviews GROUP BY beer_id)AS rating " + 
-				"ON rating.beer_id = beers.beer_id WHERE name = ? AND is_active = ? GROUP BY beers.beer_id, rating.beer_id, avg_rating ORDER BY name";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeerByBrewery, breweryName, true);
+				"ON rating.beer_id = beers.beer_id WHERE brewery_id = ? AND is_active = ? GROUP BY beers.beer_id, rating.beer_id, avg_rating ORDER BY name";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeerByBrewery, breweryId, true);
 //		String sqlSelectBeerByBrewery = "SELECT * FROM beers WHERE name = ? AND is_active = ? ORDER BY name";
 //		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeerByBrewery, breweryName, true);
 		
