@@ -1,5 +1,7 @@
 package com.techelevator.clebrews.model;
 
+import java.math.BigDecimal;
+
 public class Beer {
 
 	private Long id;
@@ -18,7 +20,8 @@ public class Beer {
 	
 	private Long breweryId;
 	
-	private float rating;
+	private BigDecimal rating;
+	
 	
 	private boolean isActive = true;
 
@@ -94,13 +97,21 @@ public class Beer {
 		this.isActive = isActive;
 	}
 
-	public float getRating() {
+	public BigDecimal getRating() {
 		return rating;
 	}
 
-	public void setRating(float rating) {
+	public void setRating(BigDecimal rating) {
 		this.rating = rating;
 	}
 	
+	public int getStarRating() {
+		int starRating = 0;
+		
+		if (rating != null) {
+			starRating = rating.intValue();
+		}
+		return starRating;
+	}
 	
 }

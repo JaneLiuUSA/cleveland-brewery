@@ -33,7 +33,16 @@
 				</c:if>
 				</c:forEach>
 				</td>
-				<td> rating </td>
+				<td> 
+					<c:choose>
+						<c:when test="${empty beer.rating}">
+							No Reviews
+						</c:when>
+						<c:otherwise>
+							<c:out value="${beer.rating }"/> 
+						</c:otherwise>
+					</c:choose>
+				</td>
 				<td> 
 				<a href="../beerDetails/${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a>
 				</td>
