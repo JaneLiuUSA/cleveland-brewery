@@ -33,6 +33,7 @@ CREATE TABLE breweries (
     brewery_logo_url varchar(255),
     img_url varchar(255),
     website_url varchar(255),
+    google_maps_url varchar(255),
     business_hours varchar(255),
     user_id bigint,
     lat varchar(20),
