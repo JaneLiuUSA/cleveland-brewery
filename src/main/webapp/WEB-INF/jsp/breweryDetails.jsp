@@ -10,7 +10,7 @@
 	<div class="breweryList">
 		<div class="breweryLocation">
 
-			<div class="col-md-6 breweryDetImage">
+			<div class="col-md-6 breweryDetImage" width= 905px;>
 				<img class="center-block"
 					src="<c:out value='${details.breweryLogoUrl}'/>" />
 			</div>
@@ -62,8 +62,17 @@
 					<li>IBU <c:out value="${beer.ibu}"/> </li>
 					<li><c:out value="${beer.type}"/> </li>
 		<!-- This imgge name need to update to beer average rating -->
-					<li><c:url var="imageName" value="img/${review.rating}-star.png"/>
-						<img src="${imageName}" class="star-img"/></li>
+					<li>
+						<c:choose>
+							<c:when test="${empty beer.starRating or beer.starRating == 0}">
+								No Reviews
+							</c:when>
+							<c:otherwise>
+								<c:url var="imageName" value="/img/${beer.starRating}-star.png"/>
+								<img src="${imageName}" class="star-img"/>
+							</c:otherwise>
+						</c:choose>
+					</li>
 				</ul>
 				<c:forEach items="${allBreweries}" var="brewery">
 				<c:set var = "breweryId" value = "${beer.breweryId}"/>

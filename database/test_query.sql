@@ -1,3 +1,5 @@
-SELECT * FROM beers JOIN (SELECT beer_id, AVG(rating) FROM reviews GROUP BY beer_id)AS rating ON rating.beer_id = beers.beer_id WHERE brewery_id = 1 GROUP BY beers.beer_id ORDER BY name;
+SELECT * FROM beers LEFT JOIN (SELECT beer_id, AVG(rating)AS rating FROM reviews GROUP BY beer_id)AS rating ON rating.beer_id = beers.beer_id  GROUP BY beers.beer_id, rating.beer_id, rating.rating ORDER BY name;
 
 SELECT beer_id, AVG(rating) FROM reviews GROUP BY beer_id;
+
+SELECT * FROM beers LEFT JOIN (SELECT beer_id, AVG(rating)AS rating FROM reviews GROUP BY beer_id)AS rating ON rating.beer_id = beers.beer_id WHERE is_active = true GROUP BY beers.beer_id, rating.beer_id, rating ORDER BY name;
