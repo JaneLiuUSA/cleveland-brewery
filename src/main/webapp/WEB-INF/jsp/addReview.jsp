@@ -73,7 +73,7 @@
 			
 
 			<div>
-				<label class="col-md-12 star-rating"> Overall Rating</label></div>
+				<label class="col-md-12 star-rating"> Overall Rating</label>
 				<fieldset class="star-rating">
 	    			<form:radiobutton path="rating" id="star5" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
 				    <form:radiobutton path="rating" id="star4" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
@@ -99,6 +99,7 @@
 			</div>
 		<div class="buttonMargin">
 			<button type="submit" class="btn btn-default">Submit Your Review</button><br>
+		</div>
 		</div>
 	</div>
 </div>			

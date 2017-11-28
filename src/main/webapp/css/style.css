@@ -349,6 +349,10 @@ textarea {
 	
 }
 
+.beerDetButton {
+	margin-top: 10px;
+}
+
 .buttonMargin {
 	margin-bottom: 70px !important;
 	margin-top: 40px !important;
@@ -397,8 +401,23 @@ textarea {
 	letter-spacing: 6px;
 }
 
+.blackText {
+	color: black !important;
+}
+
+.hr2 {
+	display: -webkit-inline-box !important;
+	width: 60% !important;
+	margin-top: 6px;
+}
+
 .breweryContainer a {
 	color: #d69827;
+}
+
+.beerDetNames {
+	letter-spacing: 5px !important;
+	text-decoration: none !important;
 }
 
 .breweryList {
@@ -509,6 +528,7 @@ textarea {
 
 .star-img{
 	width:10%;
+	margin-bottom: 20px;
 }
 
 /****** Style Star Rating Widget *****/
