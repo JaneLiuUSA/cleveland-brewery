@@ -93,6 +93,10 @@ hr {
 	margin-top: 20px;
 }
 
+.carouselText {
+	font-size: 20px;
+}
+
 .grow:hover {
     -webkit-transform: scale(1.1);
     -ms-transform: scale(1.1);
@@ -101,6 +105,15 @@ hr {
 
 .circle:hover {
 	border-radius:50%;
+}
+
+.img-circle {
+	border-radius: 2px;
+}
+
+.topImg {
+	width: 50px;
+	height: 50px;
 }
 
 .carousel {
