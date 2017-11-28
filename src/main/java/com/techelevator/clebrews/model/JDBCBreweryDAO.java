@@ -120,7 +120,8 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		newBrewery.setImgUrl(row.getString("img_url"));
 		newBrewery.setWebsiteUrl(row.getString("website_url"));
 		newBrewery.setBusinessHours(row.getString("business_hours"));
-		
+		newBrewery.setLat(row.getString("lat"));
+		newBrewery.setLng(row.getString("lng"));
 		return newBrewery;
 	}
 
