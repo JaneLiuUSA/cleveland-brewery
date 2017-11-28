@@ -25,7 +25,16 @@
 			<ul>
 				<p class="detailsTitle"></p>
 				<li><c:out value="${beer.abv}% ABV" /> 
-				<li><c:out value=" ${beer.ibu} IBU" /></li>
+				<li>
+					<c:choose> 
+						<c:when test="${empty beer.ibu or beer.ibu == 0}">
+							N/A IBU
+						</c:when>
+						<c:otherwise>
+							<c:out value=" ${beer.ibu} IBU" />
+						</c:otherwise>
+					</c:choose>
+				</li>
 				<li><c:out value="Type: ${beer.type}" /></li>
 				<li><c:out value="${beer.info}" /></li>
 				

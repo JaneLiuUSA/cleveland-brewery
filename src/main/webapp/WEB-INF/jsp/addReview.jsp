@@ -14,10 +14,15 @@
 			  $radio.closest('label').addClass('selected');
 			});
 		
+		$.validator.addMethod('rating', function(value){
+			return value.match(/[1-5]/);
+			});
+		
 		$("form").validate({
 			rules : {
 				rating : {
 					required : true,
+					digits: true,
 				},
 				subject : {
 					required : true,
