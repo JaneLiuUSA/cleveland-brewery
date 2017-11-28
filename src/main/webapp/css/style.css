@@ -84,6 +84,14 @@ hr {
 	color: black;
 }
 
+.modalText {
+	font-size: 25px;
+	text-align: center;
+}
+
+.modalTop {
+	margin-top: 20px;
+}
 
 .grow:hover {
     -webkit-transform: scale(1.1);

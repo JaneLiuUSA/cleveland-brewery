@@ -1,6 +1,36 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
+
+<script>
+$(window).load(function(){ 
+	if($.cookie('pop') == null) {
+	  $('#myModal').modal('show');
+		$.cookie('pop', '0');
+		}
+	   }); 
+</script>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+      	<h3 class="modal-title modalText">Cleveland Brews</h3>
+        <h4 class="modal-title">You must be old enough to enter this site.</h4>
+      </div>
+      <div class="modal-body">
+        <p class="modalText">Are you at least 21 years old?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+      </div>
+    </div>
+
+  </div>
+</div>
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
