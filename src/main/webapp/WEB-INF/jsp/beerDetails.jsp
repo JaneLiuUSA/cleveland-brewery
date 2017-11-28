@@ -14,12 +14,12 @@
 					src="<c:out value='${beer.imgUrl}'/>" />
 			</div>
 			
-			<h2 class="buttonMargin">
+			<h2 class="beerDetNames">
 				<c:out value="${beer.name}" />
 			</h2>
 			
-			<div>
-			<a href="${beer.id}/review"><button class="btn btn-default buttonMargin" >Review this Beer</button></a>
+			<div class="beerDetButton">
+			<a href="${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a>
 			</div>
 			
 			<div class="breweryLocation">
@@ -37,13 +37,14 @@
 					</c:choose>
 				</li>
 				<li><c:out value="Type: ${beer.type}" /></li>
-				<li><c:out value="${beer.info}" /></li>
+				<li><c:out value="Info: ${beer.info}" /></li>
 				
 			</ul>
 			
 			</div>
+			<hr class="hr2"/>
 			<div>
-				<h3>
+				<h3 class="blackText">
 					<c:out value=" Brewed by:  ${brewery.name}" />
 				</h3>
 				<div class="breweryLocation">
@@ -63,15 +64,18 @@
 				</div>
 
 			</div>
-			
+			<hr class="hr2"/>
 			<div>
-				<h3> <c:out value = "Reviews for this beer" /></h3>
+				<h3 class="blackText"> <c:out value = "Reviews for this beer" /></h3>
 				<div>
 					<c:forEach items="${reviews}" var="review">
 					<ul>
-					<li><c:out value = "${review.subject}" /></li>
-						<li><c:out value = "${review.description}" /></li><br>
+						<li><c:out value = "${review.subject}" /></li>
+						<li><c:out value = "${review.description}" /></li>
 						<li><c:out value = "Rating:"/>
+
+						<li><strong><c:out value = "Rating:"/></strong><br>
+
 						<c:choose>
 							<c:when test="${beer.starRating == 0}">
 								No Rating
@@ -82,8 +86,12 @@
 						</c:choose>
 
 						<img src="${imageName}" class="star-img"/></li>
-						
-						<br><li><c:out value = "${review.formatDateTime}" /></li>
+
+
+						<li><c:out value = "${review.formatDateTime}" /></li>
+						<li><strong>Review Title: </strong><c:out value = "${review.subject}" /></li>
+						<li><strong>Review: </strong><c:out value ="${review.description}" /></li>
+						<li><c:out value = "${review.formatDateTime}" /></li>
 					</ul>
 					</c:forEach>
 					

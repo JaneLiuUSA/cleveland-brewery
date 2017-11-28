@@ -1,5 +1,6 @@
 package com.techelevator.clebrews.model;
 
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -97,7 +98,7 @@ public class JDBCBeerDAO implements BeerDAO {
 		Beer newBeer = new Beer();
 		
 		newBeer.setId(row.getLong("beer_id"));
-		newBeer.setName(row.getString("name"));
+		newBeer.setName(row.getString("name").toUpperCase());
 		newBeer.setAbv(row.getFloat("abv"));
 		newBeer.setIbu(row.getInt("ibu"));
 		newBeer.setType(row.getString("type"));
@@ -108,7 +109,7 @@ public class JDBCBeerDAO implements BeerDAO {
 		if (row.getBigDecimal("avg_rating") == null) {
 			newBeer.setRating(row.getBigDecimal("avg_rating"));
 		} else {
-			newBeer.setRating(row.getBigDecimal("avg_rating").setScale(2));
+			newBeer.setRating(row.getBigDecimal("avg_rating").setScale(2, RoundingMode.HALF_UP));
 		}
 
 		return newBeer;
@@ -138,5 +139,12 @@ public class JDBCBeerDAO implements BeerDAO {
 		jdbcTemplate.update("DELETE FROM beers WHERE beer_id = ?", beerId);
 		
 	}
+
+	@Override
+	public void updateBeerInfo(String name, float abv, int ibu, String type, String info, String imgUrl,Long beerId) {
+		jdbcTemplate.update("UPDATE beers SET name = ? , abv = ?, ibu = ?, type = ?, info = ?, imgUrl = ? WHERE beer_id = ?", 
+				name, abv,ibu, type, info, imgUrl, beerId); 		
+	}
+	
 
 }
