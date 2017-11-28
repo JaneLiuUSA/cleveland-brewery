@@ -6,20 +6,28 @@ import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotBlank;
 
 public class Review {
 	private long id;
-	@NotNull
+	
+	@NotBlank
 	private String subject;
-	@NotNull
+	
+	@NotBlank
 	private String description;
-	@NotBlank
+	@NotNull
+	@Min(value = 0, message="Rating must be between 1 and 5")
+	@Max(value = 5, message="Rating must be between 1 and 5")
 	private int rating;
+	
 	private LocalDateTime createTime;
-	@NotBlank
+	
+	@NotNull
 	private long beerId;
 	private long userId;
 	
