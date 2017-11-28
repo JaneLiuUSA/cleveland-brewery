@@ -411,6 +411,10 @@ textarea {
 	margin-top: 6px;
 }
 
+.formSize {
+	height: 100px !important;
+}
+
 .breweryContainer a {
 	color: #d69827;
 }
