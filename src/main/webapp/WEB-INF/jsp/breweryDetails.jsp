@@ -39,6 +39,14 @@
 				</li>
 				<div style="color:black"><strong>Hours</strong></div>
 				<li><c:out value="${details.businessHours }" /></li>
+				
+				
+				<c:url var="breweryGoogleMapsUrl" value="${details.googleMapsUrl }"/> 
+				<li>
+					<a href=" <c:out value="${breweryGoogleMapsUrl}"/> " target="_blank"> 
+					<div style="color:navy"><strong><c:out value="Get Directions from Google Maps" /></strong></div> </a>
+				</li>
+				
 			</ul>
 			</div>
 			</div>

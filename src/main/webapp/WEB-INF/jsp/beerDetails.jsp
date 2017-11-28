@@ -69,6 +69,8 @@
 				<div>
 					<c:forEach items="${reviews}" var="review">
 					<ul>
+					<li><c:out value = "${review.subject}" /></li>
+						<li><c:out value = "${review.description}" /></li><br>
 						<li><c:out value = "Rating:"/>
 						<c:choose>
 							<c:when test="${beer.starRating == 0}">
@@ -80,9 +82,8 @@
 						</c:choose>
 
 						<img src="${imageName}" class="star-img"/></li>
-						<li><c:out value = "Review Title: ${review.subject}" /></li>
-						<li><c:out value = "Review:${review.description}" /></li>
-						<li><c:out value = "${review.formatDateTime}" /></li>
+						
+						<br><li><c:out value = "${review.formatDateTime}" /></li>
 					</ul>
 					</c:forEach>
 					

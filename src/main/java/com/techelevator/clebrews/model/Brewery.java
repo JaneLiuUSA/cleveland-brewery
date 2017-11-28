@@ -25,6 +25,7 @@ public class Brewery {
 	private int userId;
 	private String lat;
 	private String lng;
+	private String googleMapsUrl;
 	
 	
 	public Brewery(){} //default constructor
@@ -162,6 +163,14 @@ public class Brewery {
 
 	public void setLng(String lng) {
 		this.lng = lng;
+	}
+
+	public String getGoogleMapsUrl() {
+		return googleMapsUrl;
+	}
+
+	public void setGoogleMapsUrl(String googleMapsUrl) {
+		this.googleMapsUrl = googleMapsUrl;
 	}
 	
 }
