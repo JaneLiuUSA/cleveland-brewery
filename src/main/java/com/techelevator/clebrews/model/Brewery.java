@@ -23,6 +23,8 @@ public class Brewery {
 	private String websiteUrl;
 	private String businessHours;
 	private int userId;
+	private String lat;
+	private String lng;
 	
 	
 	public Brewery(){} //default constructor
@@ -144,6 +146,22 @@ public class Brewery {
 	
 	public String getNameById(int id){
 		return name;
+	}
+
+	public String getLat() {
+		return lat;
+	}
+
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+
+	public String getLng() {
+		return lng;
+	}
+
+	public void setLng(String lng) {
+		this.lng = lng;
 	}
 	
 }

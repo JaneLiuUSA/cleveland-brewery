@@ -67,6 +67,19 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		return details;
 	}
 	
+	@Override
+	public Brewery getBreweryByName(String name) {
+		Brewery details = new Brewery();
+		String sqlGetBreweryByName = "SELECT * FROM breweries WHERE name = ?";
+		
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetBreweryByName, name);
+		
+		if (results.next()) {
+			details = mapRowToBrewery(results);
+		}
+		return details;
+	}
+	
 
 
 	@Override
@@ -107,7 +120,8 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		newBrewery.setImgUrl(row.getString("img_url"));
 		newBrewery.setWebsiteUrl(row.getString("website_url"));
 		newBrewery.setBusinessHours(row.getString("business_hours"));
-		
+		newBrewery.setLat(row.getString("lat"));
+		newBrewery.setLng(row.getString("lng"));
 		return newBrewery;
 	}
 

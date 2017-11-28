@@ -22,6 +22,8 @@ public interface BreweryDAO {
 	public List<Brewery> getBreweryWhereUserIdIsNULL();
 
 	public void updateBreweryUserId(long id, int userId);
+	
+	public Brewery getBreweryByName(String name);
 
 
 	
