@@ -28,6 +28,11 @@
 
 				</td>
 				<td> 
+					<c:url var="updateUrl" value="${beer.id}/updateInfo"/>
+					<a href="${updateUrl}"><button name="update" class="btn btn-default" >Update</button></a> 
+				</td>
+				
+				<td> 
 					<input type="hidden" name="beerId" value="<c:out value='${beer.id}'/>" />
 					<button type="submit" name="Delete" class="btn btn-default" data-beer-name="${beer.name}" data-beer-id="${beer.id}">Delete</button> 
 				</td>

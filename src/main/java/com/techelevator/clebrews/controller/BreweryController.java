@@ -98,9 +98,7 @@ public class BreweryController {
 			return "redirect:/login";
 		}
 		
-		if( ! modelHolder.containsAttribute("updatedBrewery")){
-			modelHolder.put("updatedBrewery", new Brewery());
-		}
+	
 		
 		Brewery brewery = breweryDAO.getBreweryByUserId(currentUser.getId());
 		modelHolder.put("brewery", brewery);

@@ -138,4 +138,11 @@ public class JDBCBeerDAO implements BeerDAO {
 		
 	}
 
+	@Override
+	public void updateBeerInfo(String name, float abv, int ibu, String type, String info, String imgUrl,Long beerId) {
+		jdbcTemplate.update("UPDATE beers SET name = ? , abv = ?, ibu = ?, type = ?, info = ?, imgUrl = ? WHERE beer_id = ?", 
+				name, abv,ibu, type, info, imgUrl, beerId); 		
+	}
+	
+
 }
