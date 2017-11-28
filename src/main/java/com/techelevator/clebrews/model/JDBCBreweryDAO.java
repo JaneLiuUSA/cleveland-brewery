@@ -122,6 +122,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		newBrewery.setBusinessHours(row.getString("business_hours"));
 		newBrewery.setLat(row.getString("lat"));
 		newBrewery.setLng(row.getString("lng"));
+		newBrewery.setGoogleMapsUrl(row.getString("google_maps_url"));
 		return newBrewery;
 	}
 

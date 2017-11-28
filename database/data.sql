@@ -21,7 +21,7 @@ VALUES ('Great Lakes Brewery', '2516 Market Ave.', 'Cleveland', 44113, '(216) 77
 'https://www.greatlakesbrewing.com',
 'http://res.cloudinary.com/teclebrew/image/upload/v1510956260/greatlakes_ps4e7h.jpg',
 'Monday - Thursday: 10:00 AM - 10:00 PM Friday and Saturday: 10:00 AM - 11:00 PM Closed on Sundays', 1,41.484312, -81.704461,
-'https://www.google.com/maps/place/Great+Lakes+Brewing+Company/@41.4843847,-81.7067074');
+'https://www.google.com/maps/place/Great+Lakes+Brewing+Company/@41.4843847,-81.7067074,17z/data=!3m1!4b1!4m5!3m4!1s0x8830f06dbb76e503:0xe4f2621c30edaa7b!8m2!3d41.4843807!4d-81.7045187');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url, website_url, img_url, business_hours, lat, lng, google_maps_url)
 VALUES ('Goldhorn Brewery', '1361 E 55th St.', 'Cleveland', 44103,'(216) 465-1352',
 'Cool taproom offering seasonal, housemade beer in a vast space with a long bar & tables outside.',
@@ -29,7 +29,7 @@ VALUES ('Goldhorn Brewery', '1361 E 55th St.', 'Cleveland', 44103,'(216) 465-135
 'https://www.yelp.com/biz/goldhorn-brewery-cleveland',
 'http://res.cloudinary.com/teclebrew/image/upload/v1510956260/goldhorn_yzoif0.jpg',
 'Tuesday - Friday: 11:00 AM - 09:00 PM  Saturday: 12:00 PM - 10:00 PM Sunday: 12:00 PM - 06:00 PM Closed on Mondays',41.521425, -81.651681,
-'https://www.google.com/maps/place/Goldhorn+Brewery/@41.5214229,-81.6537997');
+'https://www.google.com/maps/place/Goldhorn+Brewery/@41.5214229,-81.6537997,17z/data=!3m1!4b1!4m5!3m4!1s0x8830fa34737a5387:0xfd75530874198a8d!8m2!3d41.5214189!4d-81.651611');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours, lat, lng, google_maps_url)
 VALUES ('Masthead Brewing Co.', '1261 Superior Ave.', 'Cleveland', 44144,'(216) 206-6176',
 'Located in a historic building with 300 seats, a 100’ long bar, and an additional 50 seat dog friendly patio with a view of downtown Cleveland. Masthead includes a full bar and kitchen focusing on American and Belgian style beers, Neapolitan wood-fired pizza, and a barrel aged beer program',
@@ -37,7 +37,7 @@ VALUES ('Masthead Brewing Co.', '1261 Superior Ave.', 'Cleveland', 44144,'(216) 
 'http://mastheadbrewingco.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511362923/brewery_images/qmgwn5ao3vy0uygmndic.jpg',
 'Tuesday - Friday: 11:00 AM - 10:00 PM  Saturday: 11:00 PM - 01:00 AM Sunday: 11:00 PM - 05:00 PM Closed on Mondays',41.504100, -81.685403,
-'https://www.google.com/maps/place/Masthead+Brewing+Co./@41.5042134,-81.6876339');
+'https://www.google.com/maps/place/Masthead+Brewing+Co./@41.5042134,-81.6876339,17z/data=!3m1!4b1!4m5!3m4!1s0x8830fa7c033e9e49:0xb0ec1e822046d606!8m2!3d41.5042094!4d-81.6854452');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours, lat, lng, google_maps_url)
 VALUES ('Platform Beer Co.', '4125 Lorain Ave.', 'Cleveland', 44113,'(216) 202-1386',
 'Opened in 2014, 100+ seat tasting room and patio offers 20+ house beers and food options. 10BBL brewhouse creates constantly changing selection of styles. Head R&D brewer Danny Monnot leads the way at our flagship location.',
@@ -45,7 +45,7 @@ VALUES ('Platform Beer Co.', '4125 Lorain Ave.', 'Cleveland', 44113,'(216) 202-1
 'https://platformbeer.co/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511302705/brewery_images/pjemnqe07uerrx3rwzs2.jpg',
 'Monday - Thursday: 03:00 PM - 12:00 AM Friday: 03:00 AM - 02:00 AM Saturday: 10:00 PM - 02:00 AM Sunday: 10:00 PM - 10:00 PM',41.4795909, -81.7138139,
-'https://www.google.com/maps/place/Platform+Beer+Co./@41.47984,-81.716157');
+'https://www.google.com/maps/place/Platform+Beer+Co./@41.47984,-81.716157,17z/data=!3m1!4b1!4m5!3m4!1s0x8830f03fce9b16fb:0x9ecf99bd2bdbe03b!8m2!3d41.479836!4d-81.7139683');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours, lat, lng, google_maps_url)
 VALUES ('Butcher and the Brewer', '2043 E 4th St.', 'Cleveland', 44115,'(216) 331-0805',
 'Industrial-chic brewpub serving a menu of carefully sourced American fare & housemade beers.',
@@ -53,7 +53,7 @@ VALUES ('Butcher and the Brewer', '2043 E 4th St.', 'Cleveland', 44115,'(216) 33
 'http://www.butcherandthebrewer.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511379590/butcherBrewerImg_zgx95x.jpg',
 'Monday - Friday: 11:00 AM - 12:00 AM Saturday: 10:00 AM - 02:00 AM Sunday: 04:00 PM - 09:00 PM', 41.499134, -81.690086,
-'https://www.google.com/maps/place/Butcher+and+the+Brewer/@41.4991505,-81.6922019');
+'https://www.google.com/maps/place/Butcher+and+the+Brewer/@41.4991505,-81.6922019,17z/data=!3m1!4b1!4m5!3m4!1s0x8830fa803ef2dd71:0x57eee0b7557bad68!8m2!3d41.4991465!4d-81.6900132');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours, lat, lng, google_maps_url)
 VALUES ('Collision Bend Brewing Co.', '1250 Old River Rd.', 'Cleveland', 44113,'(216) 273-7879',
 'Collision Bend Brewing Company is setting new standards in modern microbreweries. With an unrivaled fresh, natural menu and beers destine for national awards, the brewery is quickly becoming a Cleveland landmark on the Cuyahoga River.',
@@ -61,7 +61,7 @@ VALUES ('Collision Bend Brewing Co.', '1250 Old River Rd.', 'Cleveland', 44113,'
 'http://www.collisionbendbrewery.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511637603/collision_bend_brewery_pstfuf.jpg',
 'Monday - Thursday: 03:00 PM - 11:00 PM Friday: 03:00 PM - 12:00 AM Saturday: 01:00 PM - 11:00 PM Sunday: 01:00 PM - 08:00 PM',41.498726, -81.703804,
-'https://www.google.com/maps/place/Collision+Bend+Brewing+Company/@41.4986489,-81.7060462');
+'https://www.google.com/maps/place/Collision+Bend+Brewing+Company/@41.4986489,-81.7060462,17z/data=!3m1!4b1!4m5!3m4!1s0x8830f0631df826d3:0x952a8f10e4c6788c!8m2!3d41.4986449!4d-81.7038575');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours, lat, lng, google_maps_url)
 VALUES ('Hofbräuhaus Cleveland', '1550 Chester Ave.', 'Cleveland', 44144,'(216) 621-2337',
 'German microbrewery with an on-site restaurant & beer garden offering traditional eats & live music.',
@@ -69,7 +69,7 @@ VALUES ('Hofbräuhaus Cleveland', '1550 Chester Ave.', 'Cleveland', 44144,'(216)
 'http://hofbrauhauscleveland.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511639013/Hofbrauhaus_Header2_i2zhz4.jpg',
 'Monday - Thursday: 11:00 AM - 11:00 PM Friday - Saturday: 11:00 AM - 02:00 AM Sunday: 11:00 AM - 09:00 PM',41.502917, -81.681164,
-'https://www.google.com/maps/place/Hofbräuhaus+Cleveland/@41.5028977,-81.6833062');
+'https://www.google.com/maps/place/Hofbr%C3%A4uhaus+Cleveland/@41.5028977,-81.6833062,17z/data=!3m1!4b1!4m5!3m4!1s0x8830fa7cc7356ecb:0x979a8530ca0f7d91!8m2!3d41.5028937!4d-81.6811175');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours, lat, lng, google_maps_url)
 VALUES ('Market Garden Brewery', '1947 W 25th St.', 'Cleveland', 44113,'(216) 621-4000',
 'American gastropub with a patio, house beers, a distillery & a menu of creative sandwiches & tacos.',
@@ -77,7 +77,7 @@ VALUES ('Market Garden Brewery', '1947 W 25th St.', 'Cleveland', 44113,'(216) 62
 'https://www.marketgardenbrewery.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511640093/beer-market-garden-2_eshukv.jpg',
 'Monday - Saturday: 11:00 AM - 02:30 AM Sunday: 10:00 AM - 02:30 AM',41.484879, -81.703725,
-'https://www.google.com/maps/place/Market+Garden+Brewery/@41.4849032,-81.7058744');
+'https://www.google.com/maps/place/Market+Garden+Brewery/@41.4849032,-81.7058744,17z/data=!3m1!4b1!4m5!3m4!1s0x8830f06dbf2f99c9:0xc955ac4156ee158!8m2!3d41.4848992!4d-81.7036857');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours, lat, lng, google_maps_url)
 VALUES ('Brick And Barrel', '1844 Columbus Rd.', 'Cleveland', 44113,'(216) 331-3308',
 'Taphouse offering house-brewed ales & wine in a cozy space with beer-centric decor.',
@@ -85,7 +85,7 @@ VALUES ('Brick And Barrel', '1844 Columbus Rd.', 'Cleveland', 44113,'(216) 331-3
 'https://www.brickandbarrelbrewing.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511640631/brick_and_barrel_image_n6ic5b.jpg',
 'Monday - Thursday: 04:00 PM - 10:00 PM Friday: 02:00 PM - 12:00 AM Saturday: 12:00 PM - 12:00 AM Sunday: 12:00 PM - 08:00 PM',41.489468, -81.700874,
-'https://www.google.com/maps/place/Brick+And+Barrel/@41.489494,-81.7029757');
+'https://www.google.com/maps/place/Brick+And+Barrel/@41.489494,-81.7029757,17z/data=!3m1!4b1!4m5!3m4!1s0x8830f0703f43127b:0x67dcad7d5249bbff!8m2!3d41.48949!4d-81.700787');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours, lat, lng, google_maps_url)
 VALUES ('Forest City Brewery', '2135 Columbus Rd.', 'Cleveland', 44113,'(216) 228-9116',
 'Where old meets brew: Down a fresh cold one and a tasty bite in our vintage tasting room. Or mosey on out to our historic Biergarten and enjoy some CLE sunshine.',
@@ -93,7 +93,7 @@ VALUES ('Forest City Brewery', '2135 Columbus Rd.', 'Cleveland', 44113,'(216) 22
 'https://www.forestcitybrewery.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511641330/forest-city-new-sign_thqut9.jpg',
 'Wednesday - Thursday: 04:00 PM - 12:00 AM Friday: 04:00 PM - 01:00 AM Saturday: 12:00 PM - 01:00 AM Sunday: 01:00 PM - 10:00 PM',41.483207, -81.700203,
-'https://www.google.com/maps/place/Forest+City+Brewery/@41.483244,-81.7023647');
+'https://www.google.com/maps/place/Forest+City+Brewery/@41.483244,-81.7023647,17z/data=!3m1!4b1!4m5!3m4!1s0x8830f072f73cdf03:0x322d3d36f7cafae5!8m2!3d41.48324!4d-81.700176');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours, lat, lng, google_maps_url)
 VALUES ('Saucy Brew Works', '2885 Detroit Rd', 'Cleveland', 44113,'(216) 666-2568',
 'Two-tiered brewery offering housemade European-style beer & customizable thin-crust pizzas.',
@@ -101,7 +101,7 @@ VALUES ('Saucy Brew Works', '2885 Detroit Rd', 'Cleveland', 44113,'(216) 666-256
 'https://www.saucybrewworks.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511643358/saucy_brew_pic_zpk9pc.jpg',
 'Sunday - Wednesday: 11:00 AM - 10:00 PM Thursday -  Saturday: 11:00 AM - 12:00 AM',41.489580, -81.710672,
-'https://www.google.com/maps/place/Saucy+Brew+Works/@41.489629,-81.7128136');
+'https://www.google.com/maps/place/Saucy+Brew+Works/@41.489633,-81.7128136,17z/data=!3m1!4b1!4m5!3m4!1s0x8830f06856cfcaf7:0xb7cc96529c4594ea!8m2!3d41.489629!4d-81.7106249');
 INSERT INTO breweries (name, address, city, zipcode, phone_number, description, brewery_logo_url,website_url, img_url, business_hours, lat, lng, google_maps_url)
 VALUES ('Noble Beast Brewing Co.', '1470 Lakeside Ave E', 'Cleveland', 44114,'(216) 417-8588',
 'Lively taproom for house-brewed beers & elevated bar snacks, sandwiches and salads.',
@@ -109,7 +109,7 @@ VALUES ('Noble Beast Brewing Co.', '1470 Lakeside Ave E', 'Cleveland', 44114,'(2
 'https://www.noblebeastbeer.com/',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511644471/noble_beast_pic_zkeocq.jpg',
 'Tuesday - Thursday and Sunday: 11:00 AM - 11:00 PM Friday - Saturday: 11:00 AM - 01:00 AM Closed on Mondays',41.507762, -81.686419,
-'https://www.google.com/maps/place/Noble+Beast+Brewing+Co./@41.507772,-81.6885407');
+'https://www.google.com/maps/place/Noble+Beast+Brewing+Co./@41.507772,-81.6885407,17z/data=!3m1!4b1!4m5!3m4!1s0x8830fa7984d45ac9:0xb7cb75bbe9dcc391!8m2!3d41.507768!4d-81.686352');
 
 INSERT INTO beers (name, abv, ibu, type, info, img_url, brewery_id, is_active) VALUES ('Christmas Ale', 7.5, 30, 
 'Ale with spices and honey', 'A Yuletide`s worth of holiday spices and sweet honey
@@ -312,6 +312,10 @@ INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 'Maybe just a bit to hoppy for my liking, but delicious',
 4,now(),7);
 INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Decent',
+'',
+3,now(),8);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 ('Sweet?',
 'Not so sweet, average heat might be a better name',
 2,now(),9);
@@ -332,9 +336,21 @@ INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 'You wont regret drinking a few of these',
 4,now(),13);
 INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Average',
+'',
+3,now(),14);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Great',
+'',
+4,now(),15);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 ('Wheat Beer!',
 'Its great to see a local take on a wheat beer ',
 3,now(),17);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Not Terrible',
+'',
+3,now(),18);
 INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 ('A true classic',
 'This is probably the first microbrew in the city and still one of the best',
@@ -347,6 +363,14 @@ INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 ('Dunkeldorf',
 'a powerful brew',
 4,now(),21);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Not going to have it again',
+'',
+2,now(),22);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Wow',
+'',
+4,now(),23);
 INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 ('It was okay',
 'save the money and get a domestic',
@@ -368,9 +392,20 @@ INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 'I enjoyed the mix of flavors in this brew',
 4,now(),27);
 INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Excellent!!',
+'',
+4,now(),28);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 ('Go Tribe!!',
 'Great beer, Roll Tribe!',
 4,now(),29);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Good Choice',
+'',
+3,now(),30);INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('BEERILICIOUS',
+'',
+4,now(),31);
 INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 ('Best Beer Ever',
 'I love wheat beer and this one is the best I have had',
@@ -387,6 +422,14 @@ INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
 ('Very interesting',
 'This is one of the most unique beers I have had, it tastes great too',
 4,now(),33);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Buy This!',
+'Excellent Brew',
+4,now(),34);
+INSERT INTO reviews (subject, description, rating, create_date, beer_id) VALUES
+('Average',
+'Not my style',
+4,now(),35);
 
 
 

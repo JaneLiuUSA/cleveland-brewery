@@ -94,4 +94,44 @@ public class BeerController {
 		
 		return "beerDetails";
 	}
+	
+	
+	
+	
+	@RequestMapping(path="{beerId}/updateInfo", method=RequestMethod.GET)
+	public String updateBreweryInfo (@PathVariable long beerId, HttpSession session, ModelMap modelHolder) throws NotAllowedException {
+		
+		User currentUser = (User) session.getAttribute("currentUser");
+		
+		if(currentUser == null){
+			return "redirect:/login";
+		}
+//		if(! beerList.contains(beerDAO.getBeerById(beerId))){ //prevent other brewer update beers that doesn't belong to them
+//			throw new NotAllowedException();
+//		}
+		modelHolder.put("beer", beerDAO.getBeerById(beerId));
+		
+	 return "updateBeerInfo";
+	 
+		}
+	
+	@RequestMapping(path="/updateBeerInfo", method=RequestMethod.POST)
+	public String updateBreweryInfo (@Valid @ModelAttribute("updatedBeer") Beer updatedBeer, 
+			BindingResult result, RedirectAttributes flash){
+		
+		flash.addFlashAttribute("updatedBeer", updatedBeer);
+		
+		if(result.hasErrors()) {
+			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "updatedBeer", result);
+			return "redirect:/{beerId}/updateInfo";
+		}
+		if (! updatedBeer.getImgUrl().startsWith("http://res.cloudinary.com/teclebrew/")) {
+			updatedBeer.setImgUrl("http://res.cloudinary.com/teclebrew/" + updatedBeer.getImgUrl());
+		}
+		
+		beerDAO.updateBeerInfo(updatedBeer.getName(), updatedBeer.getAbv(), updatedBeer.getIbu(),updatedBeer.getType(),
+				updatedBeer.getInfo(), updatedBeer.getImgUrl(), updatedBeer.getId());
+		
+		return "redirect:/breweries";
+		}
 }
