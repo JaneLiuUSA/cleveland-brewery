@@ -34,7 +34,7 @@ public class Beer {
 	}
 
 	public String getName() {
-		return name;
+		return name.toUpperCase();
 	}
 
 	public void setName(String name) {

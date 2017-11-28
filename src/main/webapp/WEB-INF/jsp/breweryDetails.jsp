@@ -10,7 +10,7 @@
 	<div class="breweryList">
 		<div class="breweryLocation">
 
-			<div class="col-md-6 breweryDetImage">
+			<div class="col-md-6 breweryDetImage" width= 905px;>
 				<img class="center-block"
 					src="<c:out value='${details.breweryLogoUrl}'/>" />
 			</div>
