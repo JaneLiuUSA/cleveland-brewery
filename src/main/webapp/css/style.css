@@ -95,6 +95,8 @@ hr {
 
 .carouselText {
 	font-size: 20px;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 .reviewBox {
@@ -534,10 +536,20 @@ textarea {
 	padding-right: 8px;
 }
 
-.star-img{
-	width:10%;
-	margin-bottom: 20px;
+.underlined {
+	text-decoration: underline;
 }
+.star-img-small{
+	width:10%;
+}
+
+.star-img-medium{
+	width:40%;
+}
+
+
+
+
 
 /****** Style Star Rating Widget *****/
 

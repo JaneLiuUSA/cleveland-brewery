@@ -78,7 +78,6 @@ public class BrewerProfileController {
 		@ResponseBody
 		@RequestMapping(path="/breweryBeerRemove", method=RequestMethod.POST)
 		public boolean deleteBeerFromBrewery(@RequestParam Long beerId) {
-			System.out.println("DONT!");
 			beerDAO.removeBeer(beerId);
 			return true;
 		}

@@ -48,7 +48,6 @@ public class ReviewController {
 	public String createNewMessage(@PathVariable("id") long beerId, @Valid @ModelAttribute("newReview") Review review) {
 		
 		review.setCreateTime(LocalDateTime.now());
-//		System.out.println("Create Time: " + review.getCreateTime());
 		
 		reviewDAO.saveReview(review);
 		

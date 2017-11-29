@@ -56,7 +56,7 @@
 					<li><c:out value="${brewery.phoneNumber }" /></li>
 	
 					<c:url var="breweryWebsite" value="${brewery.websiteUrl }"></c:url>
-					<li><a href=" <c:out value='${breweryWebsite }'/> "><c:out
+					<li><a href=" <c:out value='${breweryWebsite }'/> " target="_blank"><c:out
 								value="${brewery.name} Website" /></a></li>
 	
 					<li><c:out value="${brewery.businessHours }" /></li>
@@ -71,11 +71,9 @@
 					<c:forEach items="${reviews}" var="review">
 					<ul>
 					<li><strong><c:out value = "Review:"/></strong><br>
-						<strong><li><c:out value = "${review.subject}" /></li></strong>
+						<strong><li class="underlined"><c:out value = "${review.subject}" /></li></strong>
 						<li><c:out value = "${review.description}" /></li>
 						<li><strong><c:out value = "Rating:"/></strong><br>
-
-						
 
 						<c:choose>
 							<c:when test="${beer.starRating == 0}">
@@ -86,7 +84,7 @@
 							</c:otherwise>
 						</c:choose>
 
-						<img src="${imageName}" class="star-img"/></li>
+						<img src="${imageName}" class="star-img-small"/></li>
 
 
 						<li><c:out value = "${review.formatDateTime}" /></li>
