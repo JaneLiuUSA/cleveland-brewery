@@ -17,7 +17,7 @@ public interface BreweryDAO {
 	public Brewery getBreweryById(long id);
 
 
-	public Brewery getBreweryByUserId(int userId);
+	public Brewery getBreweryByUserId(long l);
 	
 	public List<Brewery> getBreweryWhereUserIdIsNULL();
 

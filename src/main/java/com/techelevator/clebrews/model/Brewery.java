@@ -22,7 +22,7 @@ public class Brewery {
 	private String imgUrl;
 	private String websiteUrl;
 	private String businessHours;
-	private int userId;
+	private long userId;
 	private String lat;
 	private String lng;
 	private String googleMapsUrl;
@@ -91,11 +91,11 @@ public class Brewery {
 		this.businessHours = businessHours;
 	}
 
-	public int getUserId() {
+	public long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 

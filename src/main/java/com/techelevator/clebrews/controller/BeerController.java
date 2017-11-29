@@ -110,12 +110,12 @@ public class BeerController {
 		if( ! modelHolder.containsAttribute("updatedBeer")){
 			modelHolder.put("updatedBeer", new Beer());
 		}
-//		if(! beerList.contains(beerDAO.getBeerById(beerId))){ //prevent other brewer update beers that doesn't belong to them
-//			throw new NotAllowedException();
-//		}
-		
+	// Check if the beer belongs to the brewery
 		Beer beer = beerDAO.getBeerById(beerId);
-		System.out.println(beer.getName());
+		Brewery brewery = breweryDAO.getBreweryById(beer.getBreweryId());
+		if(currentUser.getId() != brewery.getUserId()){
+			throw new NotAllowedException();
+		}
 		modelHolder.put("beer",beer);
 		
 	 return "updateBeerInfo";

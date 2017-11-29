@@ -7,7 +7,7 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
 public class User {
-	private int id;
+	private long id;
 	@NotBlank(message="Username cannnot be blank")
 	private String userName;
 	
@@ -23,7 +23,7 @@ public class User {
 	@NotBlank(message="Email cannot be blank")
 	@Email(message="Must be a valid email address")
 	private String email;
-	private int roleId;
+	private long roleId;
 	
 	private boolean active = false;
 	
@@ -40,10 +40,10 @@ public class User {
 		this.password = password;
 	}
 
-	public int getRoleId() {
+	public long getRoleId() {
 		return roleId;
 	}
-	public void setRoleId(int roleId) {
+	public void setRoleId(long roleId) {
 		this.roleId = roleId;
 	}
 	public String getEmail() {
@@ -52,10 +52,10 @@ public class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getId() {
+	public long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 	
