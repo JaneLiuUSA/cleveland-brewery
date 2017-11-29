@@ -108,9 +108,9 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
     </div>
     <div class="col-sm-4">
     <p class="text-center homeTitle"><strong>TOP RATED BEER</strong></p><br>
-      <p class="text-center"><strong>Saucy B.F. Hefe</strong></p><br>
+      <p class="text-center"><strong> <c:out value="${topBeer.name}"></c:out></strong></p><br>
       <a href="#demo2" data-toggle="collapse">
-        <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511653651/saucy_bfhefe_berr_pic_iqldv7.png" class="img-circle person" alt="Random Name" width="255" height="255">
+        <img src="${topBeer.imgUrl }" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
       <div id="demo2" class="collapse">
         <p>Beer Description</p>

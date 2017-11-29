@@ -144,20 +144,5 @@ public class BeerController {
 		}
 	
 	
-//	public Beer getTopRatedBeer(){
-//		
-//		BigDecimal maxRating = new BigDecimal(0);
-//		
-//		List<Beer> beerList = beerDAO.getAllBeer();
-//		Beer topBeer = beerList.get(0);
-//		for (int i = 0 ; i < beerList.size() ; i++){
-//			if( beerList.get(i).getRating().topBeer.getRating()){
-//				maxRating = beer.getRating();
-//			}
-//		}
-//		List<Beer> topBeers = beerDAO.getBeersByRating(maxRating);
-//		
-//		return topBeer;
-//		
-//	}
+	
 }
