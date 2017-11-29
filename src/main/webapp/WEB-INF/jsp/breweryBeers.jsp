@@ -3,10 +3,6 @@
 
 <c:import url="/WEB-INF/jsp/shared/header.jsp" />
 
-
-<c:url var="formAction" value="/breweryBeers" />
-
-<form method="GET" action="${formAction}">
 	<div>
 		
 		<table class="table">
@@ -29,20 +25,15 @@
 				</td>
 				<td> 
 					<c:url var="updateUrl" value="${beer.id}/updateInfo"/>
-					<span class="btn btn-default"><a href="${updateUrl}"><c:out value="Update"/></a></span>
-<!-- 					<button name="update" class="btn btn-default" >Update</button> -->
+					<a href="${updateUrl}"> <button type="button" name="update" class="btn btn-default" data-beer-id="${beer.id}">Update</button> </a>
 				</td>
 				
-				<td> 
-					<input type="hidden" name="beerId" value="<c:out value='${beer.id}'/>" />
-					<button type="submit" name="Delete" class="btn btn-default" data-beer-name="${beer.name}" data-beer-id="${beer.id}">Delete</button> 
-				</td>
 			</tr>
 		</c:forEach>
 		</table>
 		
 	</div>
-</form>
+
 
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="https://www.jqueryscript.net/demo/Create-Simple-Alert-Messages-with-jQuery-Bootstrap-alert-js/alert.js"></script>
@@ -51,9 +42,11 @@
 		 var isActive = $( this ).prop( "checked" );
 		 var beerId = $( this ).attr('data-beer-id');
 		 var beerName = $(this).attr('data-beer-name');
-	
+		 <c:url var="acvtiveUrl" value="/breweryBeerActive"/>
+		 
 		$.ajax({
-			url: '/capstone/breweryBeerActive',
+			
+			url: '${acvtiveUrl}',
  			data: {
  				beerId: beerId,
  				isActive: isActive,
@@ -72,14 +65,16 @@
 		});
 	});
 	
- 	$("button[name=Delete]").on('click', function(event) {
+/*  	$("button[name=Delete]").on('click', function(event) {
  		event.preventDefault();
 		var beerId = $(this).attr('data-beer-id');
 		var beerName = $(this).attr('data-beer-name');
 		var thisTR = $(this).closest('tr');
+		<c:url var="deleteUrl" value="/breweryBeerRemove"/>
 		
 		$.ajax({
-			url: '/capstone/breweryBeerRemove',
+			
+			url: '${deleteUrl}',
 			data: {
 				beerId: beerId,
 				'CSRF_TOKEN': '${CSRF_TOKEN}',
@@ -96,7 +91,7 @@
 			});
 			thisTR.remove();
 		}); 
-	});
+	}); */
 	
 </script>
 
