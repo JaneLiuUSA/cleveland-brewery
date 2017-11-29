@@ -139,6 +139,6 @@ public class BeerController {
 		beerDAO.updateBeerInfo(updatedBeer.getName(), updatedBeer.getAbv(), updatedBeer.getIbu(),updatedBeer.getType(),
 				updatedBeer.getInfo(), updatedBeer.getImgUrl(), updatedBeer.getId());
 		
-		return "redirect:/breweries";
+		return "redirect:/breweryBeers";
 		}
 }

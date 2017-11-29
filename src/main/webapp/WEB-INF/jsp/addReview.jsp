@@ -94,7 +94,8 @@
 			</div>
 			<div class="form-group">
 				<label for="description">Review: </label>
-				<form:input path="description" class="form-control reviewBox" />
+				<%-- <form:input path="description" class="form-control reviewBox" /> --%>
+				<form:textarea path="description" row="5" cols="53"/>
 				<form:errors path="description"></form:errors>
 			</div>
 		<div class="buttonMargin">

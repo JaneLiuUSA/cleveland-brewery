@@ -119,7 +119,7 @@
 				</div>
 				<div class="form-group">
 					<label for="info"> Description: </label>
-					<form:input path="info" class="form-control" />
+					<form:textarea path="info" row="5" cols="53" class="form-control"/>
 					<form:errors path="info"></form:errors>
 				</div>
 				
