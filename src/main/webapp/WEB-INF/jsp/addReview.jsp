@@ -93,9 +93,11 @@
 				<form:errors path="subject"></form:errors>
 			</div>
 			<div class="form-group">
+				<div class="col-md-12">
 				<label for="description">Review: </label>
+				</div>
 				<%-- <form:input path="description" class="form-control reviewBox" /> --%>
-				<form:textarea path="description" row="5" cols="53"/>
+				<form:textarea path="description" row="5" cols="53" class="form-control"/>
 				<form:errors path="description"></form:errors>
 			</div>
 		<div class="buttonMargin">
