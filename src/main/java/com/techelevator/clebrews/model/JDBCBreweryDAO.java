@@ -83,7 +83,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 
 
 	@Override
-	public Brewery getBreweryByUserId(int userId) {
+	public Brewery getBreweryByUserId(long userId) {
 		
 		Brewery breweries = new Brewery();
 		String sqlSelectBrewerieByUserId = "SELECT * FROM breweries WHERE user_id = ?";
@@ -123,6 +123,7 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		newBrewery.setLat(row.getString("lat"));
 		newBrewery.setLng(row.getString("lng"));
 		newBrewery.setGoogleMapsUrl(row.getString("google_maps_url"));
+		newBrewery.setUserId(row.getLong("user_id"));
 		return newBrewery;
 	}
 

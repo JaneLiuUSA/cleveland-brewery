@@ -67,7 +67,8 @@
         <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511811243/market-garden-brewery-tap-handles-6_1200xx6000-3381-0-0_ctykgf.jpg" alt="MarketGarden">
         <div class="carousel-caption">
           <h2 class="title">Market Garden</h2>
-          <p class="carouselText">Check out one of Ohio City's finest!</p>
+          <c:url var="breweryDetailsPage" value="breweryDetails/8"></c:url>
+          <a href=" <c:out value='${breweryDetailsPage}'/> "><p class="carouselText">Check out one of Ohio City's finest!</p></a>
         </div>      
       </div>
     </div>

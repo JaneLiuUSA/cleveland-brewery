@@ -115,7 +115,11 @@ public class BeerController {
 //		}
 		
 		Beer beer = beerDAO.getBeerById(beerId);
-		System.out.println(beer.getName());
+		Brewery brewery = breweryDAO.getBreweryById(beer.getBreweryId());
+		System.out.print(brewery.getName());
+		if(currentUser.getId() != brewery.getUserId()){
+			throw new NotAllowedException();
+		}
 		modelHolder.put("beer",beer);
 		
 	 return "updateBeerInfo";
