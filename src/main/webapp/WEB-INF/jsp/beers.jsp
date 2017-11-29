@@ -20,7 +20,7 @@
 			<div class="beerInformation">	
 			<ul>
 				
-				<strong><li style="color:black"><c:out value="${beer.name}"/></li></strong>
+				<strong><li class="nameColor"><c:out value="${beer.name}"/></li></strong>
 				<li>ABV: <c:out value="${beer.abv}"/>% </li>
 				<li>IBU: <c:out value="${beer.ibu}"/> </li>
 				<li><c:out value="${beer.type}"/></li>
