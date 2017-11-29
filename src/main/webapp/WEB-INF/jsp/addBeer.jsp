@@ -48,16 +48,16 @@
 				name : {
 					required : "required",
 				},
-				address : {
+				abv : {
 					required : "required",
 				},
-				city : {
+				ibu : {
 					required : "required",
 				},
-				zipcode : {
+				info : {
 					required : "required",
 				},
-				description : {
+				imgUrl : {
 					required : "required",
 				},
 			},
