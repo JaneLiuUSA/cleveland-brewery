@@ -534,6 +534,9 @@ textarea {
 	padding-right: 8px;
 }
 
+.underlined {
+	text-decoration: underline;
+}
 .star-img{
 	width:10%;
 	margin-bottom: 20px;
