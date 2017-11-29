@@ -84,7 +84,7 @@
 							</c:otherwise>
 						</c:choose>
 
-						<img src="${imageName}" class="star-img"/></li>
+						<img src="${imageName}" class="star-img-small"/></li>
 
 
 						<li><c:out value = "${review.formatDateTime}" /></li>
