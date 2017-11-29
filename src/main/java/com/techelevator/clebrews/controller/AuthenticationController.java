@@ -41,13 +41,16 @@ public class AuthenticationController {
 						@RequestParam String userName,
 						@RequestParam String password,
 						@RequestParam(required=false) String destination,
-						HttpServletRequest request) {
+						HttpServletRequest request) throws NotAllowedException {
 		
 		if(userDAO.searchForUsernameAndPassword(userName, password)) {
 			request.changeSessionId();
 			User currentUser = userDAO.getUserByUsername(userName);
-			request.getSession().setAttribute("currentUser", currentUser);  //put the user object in the session
-			
+			if (currentUser.isActive() == true) {
+				request.getSession().setAttribute("currentUser", currentUser);  //put the user object in the session
+			} else {
+				throw new NotAllowedException();
+			}
 			if(isValidRedirect(destination)) {
 				return "redirect:"+destination;
 			} else {

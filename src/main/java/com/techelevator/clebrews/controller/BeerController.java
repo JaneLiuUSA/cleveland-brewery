@@ -64,9 +64,9 @@ public class BeerController {
 	}
 	
 	@RequestMapping(path="/addBeer", method=RequestMethod.POST)
-	public String addNewBeer(@Valid @ModelAttribute("newBeer") Beer newBeer, @RequestParam int breweryId, BindingResult result, RedirectAttributes flash) {
+	public String addNewBeer(@Valid @ModelAttribute("newBeer") Beer newBeer, @RequestParam int breweryId, HttpSession session, BindingResult result, RedirectAttributes flash) {
 		flash.addFlashAttribute("newBeer", newBeer);
-
+		
 		if(result.hasErrors()) {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "newBrewery", result);
 			return "redirect:/breweries/new";
@@ -76,7 +76,7 @@ public class BeerController {
 			
 			newBeer.setBreweryId((long) breweryId);
 			beerDAO.saveBeer(newBeer);
-			return "redirect:/breweries";
+			return "redirect:/breweryBeers";
 		} else {
 			flash.addFlashAttribute("message", "This brewery alreadys exists");
 			return "redirect:/breweries/new";

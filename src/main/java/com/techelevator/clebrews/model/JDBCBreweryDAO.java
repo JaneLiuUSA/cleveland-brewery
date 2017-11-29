@@ -138,10 +138,10 @@ public class JDBCBreweryDAO implements BreweryDAO {
 
 
 	@Override
-	public void updateBreweryUserId(long id, int userId) {
+	public boolean updateBreweryUserId(long id, int userId) {
 		String sqlUpdateBreweryUserId = "UPDATE breweries SET user_id = ? WHERE brewery_id = ?";
-		jdbcTemplate.queryForRowSet(sqlUpdateBreweryUserId, userId, id);
-		
+		jdbcTemplate.update(sqlUpdateBreweryUserId, userId, id);
+		return true;
 	}
 
 }
