@@ -567,7 +567,7 @@ textarea {
 
 /***** CSS Magic to Highlight Stars on Hover *****/
 
-.star-rating > radio:checked ~ label, /* show gold star when clicked */
+.star-rating > input:checked ~ label, /* show gold star when clicked */
 .star-rating:not(:checked) > label:hover, /* hover current star */
 .star-rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
 
@@ -575,6 +575,7 @@ textarea {
 .star-rating > input:checked ~ label:hover,
 .star-rating > label:hover ~ input:checked ~ label, /* lighten current selection */
 .star-rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
 
 /* Collapses the navbar early */
 @media ( max-width : 900px) {

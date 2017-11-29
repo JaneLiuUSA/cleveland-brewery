@@ -106,17 +106,24 @@ public class BeerController {
 		if(currentUser == null){
 			return "redirect:/login";
 		}
+		
+		if( ! modelHolder.containsAttribute("updatedBeer")){
+			modelHolder.put("updatedBeer", new Beer());
+		}
 //		if(! beerList.contains(beerDAO.getBeerById(beerId))){ //prevent other brewer update beers that doesn't belong to them
 //			throw new NotAllowedException();
 //		}
-		modelHolder.put("beer", beerDAO.getBeerById(beerId));
+		
+		Beer beer = beerDAO.getBeerById(beerId);
+		System.out.println(beer.getName());
+		modelHolder.put("beer",beer);
 		
 	 return "updateBeerInfo";
 	 
 		}
 	
 	@RequestMapping(path="/updateBeerInfo", method=RequestMethod.POST)
-	public String updateBreweryInfo (@Valid @ModelAttribute("updatedBeer") Beer updatedBeer, 
+	public String updateBreweryInfo (@Valid @ModelAttribute Beer updatedBeer, 
 			BindingResult result, RedirectAttributes flash){
 		
 		flash.addFlashAttribute("updatedBeer", updatedBeer);
