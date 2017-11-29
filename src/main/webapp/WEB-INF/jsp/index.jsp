@@ -49,7 +49,8 @@
         <img src="https://res.cloudinary.com/teclebrew/image/upload/v1511214076/amber_beer_vqd5xw.jpg" alt="BeerPic">
         <div class="carousel-caption">
           <h3>Cleveland Brews</h3>
-          <p class="carouselText">Welcome! Explore Some of Cleveland's Top Breweries!</p>
+          <c:url var="breweriesWebsite" value="/breweries"></c:url>
+          <a href=" <c:out value='${breweriesWebsite }'/> "><p class="carouselText">Welcome! Explore Some of Cleveland's Top Breweries!</p></a>
         </div>      
       </div>
 
@@ -57,7 +58,8 @@
         <img src="https://res.cloudinary.com/teclebrew/image/upload/v1511207908/platformBeer_g0km7c.jpg" alt="PlatformBrewery">
         <div class="carousel-caption">
           <h2 class="title">Platform Brewery</h2>
-          <p class="carouselText">Check out one of Cleveland's newest breweries!</p>
+          <c:url var="breweryDetailsPage" value="breweryDetails/4"></c:url>
+          <a href=" <c:out value='${breweryDetailsPage}'/> "><p class="carouselText">Check out one of Cleveland's newest breweries!</p></a>
         </div>      
       </div>
     

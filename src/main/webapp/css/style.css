@@ -95,6 +95,8 @@ hr {
 
 .carouselText {
 	font-size: 20px;
+	color: white !important;
+	text-decoration: none !important;
 }
 
 .reviewBox {
