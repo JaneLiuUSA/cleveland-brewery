@@ -439,6 +439,14 @@ textarea {
 	text-align: center;
 }
 
+.beerList {
+	flex: 1;
+	display: inline-block;
+	padding: 30px;
+	text-align: center;
+	justify-content: center !important;
+}
+
 .breweryList ul {
 	list-style-type: none;
 	margin: auto;
@@ -446,10 +454,26 @@ textarea {
 	padding: .5em 1em 1em 1em;
 }
 
+.beerList ul {
+	list-style-type: none;
+	margin: auto;
+	text-align: center;
+	padding: .5em 1em 1em 1em
+}
+
 .breweryImage img {
 	flex: 1;
 	width: 200px;
 	height: 200px;
+	background-color: white;
+	box-shadow: 5px 5px 20px #949296;
+	margin-bottom: 40px;
+}
+
+.breweryBeerImage img {
+	flex: 1;
+	width: 300px;
+	height: 300px;
 	background-color: white;
 	box-shadow: 5px 5px 20px #949296;
 	margin-bottom: 40px;
@@ -503,6 +527,13 @@ textarea {
 	padding: 0em 1em 1em 1em;
 }
 
+.beerInformation {
+	flex: 1;
+	padding: 0em 1em 1em 1em;
+	max-width: 250px;
+	text-align: center;
+}
+
 .detailsTitle {
     font-weight: 700;
     color: black;
@@ -539,12 +570,26 @@ textarea {
 .underlined {
 	text-decoration: underline;
 }
-.star-img-small{
-	width:10%;
+.star-img-medium{
+	width:70%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.star-img-small {
+	width: 10%;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 .star-img-medium{
 	width:40%;
+}
+
+.noReviews {
+	width: 100%;
+	margin-top: 7px;
+	margin-bottom: 10px;
 }
 
 
