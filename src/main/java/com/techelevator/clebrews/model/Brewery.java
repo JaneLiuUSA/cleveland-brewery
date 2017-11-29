@@ -18,13 +18,17 @@ public class Brewery {
 	private String phoneNumber;
 	@NotBlank(message="required")
 	private String description;
+	@NotBlank(message="required")
 	private String breweryLogoUrl;
 	private String imgUrl;
 	private String websiteUrl;
 	private String businessHours;
 	private long userId;
+	@NotBlank(message="required")
 	private String lat;
+	@NotBlank(message="required")
 	private String lng;
+	@NotBlank(message="required")
 	private String googleMapsUrl;
 	
 	
