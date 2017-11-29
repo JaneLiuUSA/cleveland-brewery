@@ -27,9 +27,7 @@
 				subject : {
 					required : true,
 				},
-				description : {
-					required : true,
-				},
+				
 			},
 				messages : {
 					rating : {
@@ -38,9 +36,7 @@
 					subject : {
 						required : "required",
 					},
-					description : {
-						required : "required",
-					},
+					
 				},
 				errorClass : "error"
 			});
@@ -97,7 +93,7 @@
 				<label for="description">Review: </label>
 				</div>
 				<%-- <form:input path="description" class="form-control reviewBox" /> --%>
-				<form:textarea path="description" row="5" cols="53" class="form-control"/>
+				<form:textarea path="description" placeholder="Optional" row="5" cols="53" class="form-control"/>
 				<form:errors path="description"></form:errors>
 			</div>
 		<div class="buttonMargin">
