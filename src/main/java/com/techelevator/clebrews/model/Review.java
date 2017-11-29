@@ -18,7 +18,6 @@ public class Review {
 	@NotBlank
 	private String subject;
 	
-	@NotBlank
 	private String description;
 	@NotNull
 	@Min(value = 1, message="Rating must be between 1 and 5")
