@@ -94,7 +94,7 @@
 			</div>
 			<div class="form-group">
 				<label for="description">Review: </label>
-				<form:input path="description" class="form-control" />
+				<form:input path="description" class="form-control reviewBox" />
 				<form:errors path="description"></form:errors>
 			</div>
 		<div class="buttonMargin">
