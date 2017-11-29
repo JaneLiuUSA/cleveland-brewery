@@ -95,7 +95,7 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
  <hr/>
   <div class="row">
     <div class="col-sm-4">
-     <p class="text-center homeTitle"><strong>BREWERY</strong></p><br>
+     <p class="text-center homeTitle"><strong>FEATURED BREWERY</strong></p><br>
       <p class="text-center"><strong>Masthead Brewery</strong></p><br>
       <a href="#demo" data-toggle="collapse">
         <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511363501/brewery_images/oorzznvts0irqao76zqb.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
