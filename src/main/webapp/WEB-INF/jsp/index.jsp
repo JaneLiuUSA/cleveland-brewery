@@ -99,8 +99,8 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
       </a>
       <div id="demo" class="collapse">
         <p>Opened 2016</p>
-        <p>Top Beer Goes Here</p>
-        <p>Rating Goes Here</p>
+        <p>Top Beer: Masthead IPA</p>
+        <p>1261 Superior Ave. Cleveland</p>
       </div>
     </div>
     <div class="col-sm-4">
