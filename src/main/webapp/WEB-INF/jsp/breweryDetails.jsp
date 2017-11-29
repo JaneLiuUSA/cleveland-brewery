@@ -77,7 +77,7 @@
 							</c:when>
 							<c:otherwise>
 								<c:url var="imageName" value="/img/${beer.starRating}-star.png"/>
-								<img src="${imageName}" class="star-img"/>
+								<img src="${imageName}" class="star-img-medium"/>
 							</c:otherwise>
 						</c:choose>
 					</li>

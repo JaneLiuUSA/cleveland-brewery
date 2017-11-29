@@ -26,18 +26,22 @@
 				<li>STYLE: <c:out value="${beer.type}"/></li>
 				
 				<c:forEach items="${allBreweries}" var="brewery">
-				<c:set var = "breweryId" value = "${beer.breweryId}"/>
-				<c:if test="${brewery.id eq breweryId}">
-					<c:out value="${brewery.getNameById(beer.breweryId)}"/> 
-				<br>
-				</c:if>
+					<c:set var = "breweryId" value = "${beer.breweryId}"/>
+					<c:if test="${brewery.id eq breweryId}">
+						<c:out value="${brewery.getNameById(beer.breweryId)}"/> 
+					<br>
+					</c:if>
 				</c:forEach>
 				<c:choose>
-						<c:when test="${empty beer.rating}">
-							No Reviews
+						<c:when test="${empty beer.starRating or beer.starRating == 0}">
+							<li>No Reviews</li>
 						</c:when>
-						<c:otherwise>
+						<%-- <c:otherwise>
 							<c:out value="${beer.rating }"/> 
+						</c:otherwise> --%>
+						<c:otherwise>
+								<c:url var="imageName" value="/img/${beer.starRating}-star.png"/>
+								<li><img src="${imageName}" class="star-img-small"/></li>
 						</c:otherwise>
 					</c:choose>
 				<li><a href="../beerDetails/${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a></li>
