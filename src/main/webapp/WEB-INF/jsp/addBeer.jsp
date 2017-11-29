@@ -109,7 +109,7 @@
 				<form:errors path="imgUrl"></form:errors>	
 			</div>						
 		<div>
-			<button type="submit" class="btn btn-default">Add New Beer</button><br>
+			<button type="submit" class="btn btn-default addBreweryButton">Add New Beer</button><br>
 		</div>
 	</div>
 </div>			

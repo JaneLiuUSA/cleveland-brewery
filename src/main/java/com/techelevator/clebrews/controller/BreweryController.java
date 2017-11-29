@@ -68,7 +68,7 @@ public class BreweryController {
 			newBrewery.setImgUrl("http://res.cloudinary.com/teclebrew/" + newBrewery.getImgUrl()); 
 
 			breweryDAO.saveBrewery(newBrewery.getName(), newBrewery.getAddress(), newBrewery.getCity(), newBrewery.getZipcode(), 
-					newBrewery.getPhoneNumber(), newBrewery.getDescription(), newBrewery.getBreweryLogoUrl(), newBrewery.getImgUrl(), newBrewery.getWebsiteUrl(), newBrewery.getBusinessHours());
+					newBrewery.getPhoneNumber(), newBrewery.getDescription(), newBrewery.getBreweryLogoUrl(), newBrewery.getImgUrl(), newBrewery.getWebsiteUrl(), newBrewery.getBusinessHours(), newBrewery.getGoogleMapsUrl(), newBrewery.getLat(), newBrewery.getLng());
 			return "redirect:/breweries";
 		} else {
 			flash.addFlashAttribute("message", "This brewery alreadys exists");
@@ -124,7 +124,7 @@ public class BreweryController {
 		
 		breweryDAO.updateBrewery(updatedBrewery.getName(), updatedBrewery.getAddress(), updatedBrewery.getCity(), updatedBrewery.getZipcode(), 
 			updatedBrewery.getPhoneNumber(), updatedBrewery.getDescription(), updatedBrewery.getBreweryLogoUrl(), updatedBrewery.getImgUrl(), 
-			updatedBrewery.getWebsiteUrl(), updatedBrewery.getBusinessHours(),updatedBrewery.getId());
+			updatedBrewery.getWebsiteUrl(), updatedBrewery.getBusinessHours(), updatedBrewery.getGoogleMapsUrl(), updatedBrewery.getLat(), updatedBrewery.getLng(), updatedBrewery.getId());
 		return "redirect:/breweries";
 		}
 		
