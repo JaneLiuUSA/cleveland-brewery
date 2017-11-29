@@ -472,11 +472,19 @@ textarea {
 
 .breweryBeerImage img {
 	flex: 1;
-	width: 300px;
-	height: 300px;
+	width: 200px;
+	height: 200px;
 	background-color: white;
 	box-shadow: 5px 5px 20px #949296;
 	margin-bottom: 40px;
+}
+
+.maxWidth {
+	max-width: 250px !important;
+}
+
+.nameColor {
+	color: black !important;
 }
 
 .breweryDetImage img{
