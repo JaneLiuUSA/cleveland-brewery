@@ -42,7 +42,7 @@
 			</div>
 			<button type="submit" class="btn btn-default">Login</button>
 		</form>
-		<div>
+		<div class="linkSpacing">
 				<c:url var="signUpHref" value="/users/new" />
 				<a href="${signUpHref}">Brewer without an account? Click here to create one!</a>
 		</div>
