@@ -12,18 +12,18 @@
 		<c:forEach items="${allBeers}" var="beer">
 			
 			<div class="row">
-			<div class="col-lg-12 breweryList">
-			<div class="breweryImage clickHover grow"> 	
+			<div class="col-lg-12 beerList">
+			<div class="breweryBeerImage clickHover grow"> 	
 				<c:url var="beerDetailLink" value="/beerDetails/${beer.id}"></c:url>
 					<a href=" <c:out value='${beerDetailLink}'/> "><img src="<c:out value='${beer.imgUrl}'/>" /></a>
 			</div>
-			<div class="breweryLocation">	
+			<div class="beerInformation">	
 			<ul>
 				
 				<strong><li style="color:black"><c:out value="${beer.name}"/></li></strong>
 				<li>ABV: <c:out value="${beer.abv}"/>% </li>
 				<li>IBU: <c:out value="${beer.ibu}"/> </li>
-				<li>STYLE: <c:out value="${beer.type}"/></li>
+				<li><c:out value="${beer.type}"/></li>
 				
 				<c:forEach items="${allBreweries}" var="brewery">
 					<c:set var = "breweryId" value = "${beer.breweryId}"/>
@@ -34,14 +34,14 @@
 				</c:forEach>
 				<c:choose>
 						<c:when test="${empty beer.starRating or beer.starRating == 0}">
-							<li>No Reviews</li>
+							<li class="noReviews">No Reviews</li>
 						</c:when>
 						<%-- <c:otherwise>
 							<c:out value="${beer.rating }"/> 
 						</c:otherwise> --%>
 						<c:otherwise>
 								<c:url var="imageName" value="/img/${beer.starRating}-star.png"/>
-								<li><img src="${imageName}" class="star-img-small"/></li>
+								<li><img src="${imageName}" class="star-img-medium"/></li>
 						</c:otherwise>
 					</c:choose>
 				<li><a href="../beerDetails/${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a></li>

@@ -4,6 +4,15 @@
 
 BEGIN;
 
+DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS beers;
+DROP TABLE IF EXISTS breweries;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS roles;
+
+
+
+
 CREATE TABLE roles (
     role_id serial,
     role_name varchar(30),
