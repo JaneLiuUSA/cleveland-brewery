@@ -37,7 +37,7 @@
 					</c:choose>
 				</li>
 				<li><c:out value="Type: ${beer.type}" /></li>
-				<li><c:out value="Info: ${beer.info}" /></li>
+				<li><c:out value="${beer.info}" /></li>
 				
 			</ul>
 			
@@ -66,14 +66,14 @@
 			</div>
 			<hr class="hr2"/>
 			<div>
-				<h3 class="blackText"> <c:out value = "Reviews for this beer" /></h3>
+				<h3 class="blackText"> <c:out value = "${beer.name } Reviews" /></h3>
 				<div>
 					<c:forEach items="${reviews}" var="review">
 					<ul>
-					<li><strong><c:out value = "Review:"/></strong><br>
-						<strong><li class="underlined"><c:out value = "${review.subject}" /></li></strong>
+					
+						<strong><li ><c:out value = "Review Title: ${review.subject}" /></li></strong>
 						<li><c:out value = "${review.description}" /></li>
-						<li><strong><c:out value = "Rating:"/></strong><br>
+						
 
 						<c:choose>
 							<c:when test="${beer.starRating == 0}">
