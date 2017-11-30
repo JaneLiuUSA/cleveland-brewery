@@ -96,7 +96,7 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
   <div class="row">
     <div class="col-sm-4">
      <p class="text-center homeTitle"><strong>FEATURED BREWERY</strong></p><br>
-      <p class="text-center"><c:url var="featuredBeerLink" value="/breweryDetails/3"/><a href='${featuredBeerLink}'><strong>MASTHEAD</strong></a></p><br>
+      <p class="text-center"><c:url var="featuredBreweryLink" value="/breweryDetails/3"/><a href='${featuredBreweryLink}'><strong>MASTHEAD</strong></a></p><br>
       <a href="#demo" data-toggle="collapse">
         <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511363501/brewery_images/oorzznvts0irqao76zqb.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
@@ -130,8 +130,8 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
         <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511640275/christmas_ale_great_lakes_av32aw.png" class="img-circle person" alt="Random Name">
       </a>
       <div id="demo3" class="collapse">
-        <p></p>
-        <p></p>
+        <p>A Yuletide`s worth of holiday spices and sweet honey to keep you a-wassailing all season long</p>
+        <p><a href='${ChristmasLink}'>Check out this beer</a></p>
         <p></p>
       </div>
     </div>

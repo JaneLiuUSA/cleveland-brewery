@@ -85,15 +85,15 @@
 				<div class="col-md-12">
 				<label for="subject">Review Title: </label>
 				</div>
-				<form:input path="subject" class="form-control" />
-				<form:errors path="subject"></form:errors>
+				<form:input path="subject" class="form-control" placeholder="required"/>
+				<form:errors path="subject" PLACEHOLDER="REQUIRED"></form:errors>
 			</div>
 			<div class="form-group">
 				<div class="col-md-12">
 				<label for="description">Review: </label>
 				</div>
 				<%-- <form:input path="description" class="form-control reviewBox" /> --%>
-				<form:textarea path="description" placeholder="Optional" row="5" cols="53" class="form-control"/>
+				<form:textarea path="description" row="5" cols="53" class="form-control"/>
 				<form:errors path="description"></form:errors>
 			</div>
 		<div class="buttonMargin">
