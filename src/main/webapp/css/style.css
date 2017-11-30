@@ -450,9 +450,25 @@ textarea {
 .beerList {
 	flex: 1;
 	display: inline-block;
-	padding: 30px;
 	text-align: center;
 	justify-content: center !important;
+}
+
+.beerByBreweryList {
+	flex: 1;
+	display: inline-block;
+	border-style: solid;
+	padding: 30px;
+	border: 0;
+	text-align: center;
+	max-width: 360px;
+}
+
+.beerByBreweryList ul {
+	list-style-type: none;
+	margin: auto;
+	text-align: center;
+	padding: .5em 1em 1em 1em;
 }
 
 .breweryList ul {
