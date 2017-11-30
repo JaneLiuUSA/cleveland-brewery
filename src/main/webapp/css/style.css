@@ -356,7 +356,12 @@ textarea {
 }
 
 .beerDetButton {
-	margin-top: 10px;
+	margin-top: 10px !important;
+}
+
+.beerDetButton2 {
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
 }
 
 .addBreweryButton {
@@ -507,8 +512,13 @@ textarea {
 	max-width: 250px !important;
 }
 
-.nameColor {
+.nameColor1 {
 	color: black !important;
+	font-size: small;
+}
+
+.nameColor2 {
+	color: #d69827;
 }
 
 .breweryDetImage img{
