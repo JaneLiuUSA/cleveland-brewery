@@ -36,9 +36,6 @@
 						<c:when test="${empty beer.starRating or beer.starRating == 0}">
 							<li class="noReviews">No Reviews</li>
 						</c:when>
-						<%-- <c:otherwise>
-							<c:out value="${beer.rating }"/> 
-						</c:otherwise> --%>
 						<c:otherwise>
 								<c:url var="imageName" value="/img/${beer.starRating}-star.png"/>
 								<li><img src="${imageName}" class="star-img-medium"/></li>

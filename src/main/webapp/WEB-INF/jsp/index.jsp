@@ -104,18 +104,24 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
         <p>Opened 2016</p>
         <p>Top Beer: Masthead IPA</p>
         <p>1261 Superior Ave. Cleveland</p>
+        <p><c:url var="featuredBeerLink" value="/breweryDetails/3"/>
+        <a href="${featuredBeerLink}">Check out this brewery</a></p>
       </div>
     </div>
     <div class="col-sm-4">
     <p class="text-center homeTitle"><strong>TOP RATED BEER</strong></p><br>
-      <p class="text-center"><strong> <c:out value="${topBeer.name}"></c:out></strong></p><br>
+      <p class="text-center"><c:url var="beerDetailLink" value="/beerDetails/${topBeer.id}"/>
+      <a href=" <c:out value='${beerDetailLink}'/> "><strong> <c:out value="${topBeer.name}"></c:out></strong></a>
+      </p><br>
       <a href="#demo2" data-toggle="collapse">
         <img src="${topBeer.imgUrl }" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
       <div id="demo2" class="collapse">
-        <p>Beer Description</p>
-        <p>Link To Top Review Goes Here</p>
-        <p>Rating Goes Here</p>
+        <p><c:out value="${topBeer.info}"></c:out></p>
+        <p><c:url var="beerDetailLink" value="/beerDetails/${topBeer.id}"></c:url>
+        <a href=" <c:out value='${beerDetailLink}'/> ">Check out this beer</a></p>
+        <p><c:url var="imageName" value="/img/${topBeer.starRating}-star.png"/>
+			<img src="${imageName}" class="star-img-medium"/></p>
       </div>
     </div>
     <div class="col-sm-4">
