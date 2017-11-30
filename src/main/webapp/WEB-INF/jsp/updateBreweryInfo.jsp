@@ -157,8 +157,23 @@
 					<form:input path="businessHours"  class="form-control" />
 					<form:errors path="businessHours"></form:errors>
 				</div>
+				<div class="form-group">
+				<label for="googleMapsUrl">Google Maps Url: </label>
+				<form:input path="googleMapsUrl"  class="form-control" />
+				<form:errors path="googleMapsUrl"></form:errors>
+			</div>
+			<div class="form-group">
+				<label for="lat">Latitude: </label>
+				<form:input path="lat"  class="form-control" />
+				<form:errors path="lat"></form:errors>
+			</div>
+			<div class="form-group">
+				<label for="lng">Longitude: </label>
+				<form:input path="lng"  class="form-control" />
+				<form:errors path="lng"></form:errors>
+			</div>
 				<div>
-					<button type="submit" class="btn btn-default">Update</button><br>
+					<button type="submit" class="btn btn-default addBreweryButton">Update</button><br>
 				</div>
 		</div>
 

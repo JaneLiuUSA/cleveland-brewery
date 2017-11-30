@@ -57,5 +57,12 @@ public class JDBCReviewDAO implements ReviewDAO  {
 
 		return review;
 	}
+
+	@Override
+	public int getReviewCount(long beerId) {
+		String sqlGetReviewCount = "SELECT COUNT(*) FROM reviews WHERE beer_id = ?";		
+		int numOfReviews = jdbcTemplate.queryForObject(sqlGetReviewCount, int.class, beerId);
+		return numOfReviews;
+	}
 	
 }

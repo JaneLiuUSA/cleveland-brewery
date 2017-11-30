@@ -359,6 +359,10 @@ textarea {
 	margin-top: 10px;
 }
 
+.addBreweryButton {
+	margin-bottom: 30px !important;
+}
+
 .buttonMargin {
 	margin-bottom: 70px !important;
 	margin-top: 40px !important;
@@ -405,6 +409,10 @@ textarea {
 .breweryContainer h1 {
 	color: black;
 	letter-spacing: 6px;
+}
+
+.linkSpacing {
+	margin-top: 20px;
 }
 
 .blackText {

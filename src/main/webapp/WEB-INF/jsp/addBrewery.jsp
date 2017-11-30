@@ -60,6 +60,15 @@
 					required : true,
 
 				},
+				googleMapsUrl : {
+					required : true,
+				},
+				lat : {
+					required : true,
+				},
+				lng : {
+					required : true,
+				},
 			/* confirmPassword : {
 				required : true,		
 				equalTo : "#password"  
@@ -85,7 +94,16 @@
 				phoneNumber : {
 					minlength : "Please enter 10 digits",
 					maxlength : "Please enter 10 digits",
-				}
+				},
+				googleMapsUrl : {
+					required : "required",
+				},
+				lat : {
+					required : "required",
+				},
+				lng : {
+					required : "required",
+				},
 			/* confirmPassword : {
 				equalTo : "Passwords do not match"
 			} */
@@ -165,9 +183,26 @@
 				<label for="businessHours">Business Hours: </label>
 				<form:input path="businessHours"  class="form-control" />
 				<form:errors path="businessHours"></form:errors>
-			</div>								
+			</div>
+			<div class="form-group">
+				<label for="googleMapsUrl">Google Maps Url: </label>
+				<form:input path="googleMapsUrl"  class="form-control" />
+				<form:errors path="googleMapsUrl"></form:errors>
+				<p>Please start your web address with https://</p>
+			</div>
+			<div class="form-group">
+				<label for="lat">Latitude: </label>
+				<form:input path="lat"  class="form-control" />
+				<form:errors path="lat"></form:errors>
+			</div>
+			<div class="form-group">
+				<label for="lng">Longitude: </label>
+				<form:input path="lng"  class="form-control" />
+				<form:errors path="lng"></form:errors>
+			</div>
+											
 			<div>
-			<button type="submit" class="btn btn-default">Create New Brewery</button><br>
+			<button type="submit" class="btn btn-default addBreweryButton">Create New Brewery</button><br>
 			
 		</div>
 	</div>

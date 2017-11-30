@@ -2,18 +2,21 @@ package com.techelevator.clebrews.model;
 
 import java.math.BigDecimal;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Beer {
 
 	private Long id;
 	
+	@NotBlank
 	private String name;
 	
 	private float abv;
 	
 	private int ibu;
-	
+	@NotBlank
 	private String type;
-	
+	@NotBlank
 	private String info;
 	
 	private String imgUrl;

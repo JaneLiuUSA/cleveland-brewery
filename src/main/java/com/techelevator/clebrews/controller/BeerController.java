@@ -1,6 +1,5 @@
 package com.techelevator.clebrews.controller;
 
-import java.math.BigDecimal;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -65,12 +64,12 @@ public class BeerController {
 	}
 	
 	@RequestMapping(path="/addBeer", method=RequestMethod.POST)
-	public String addNewBeer(@Valid @ModelAttribute("newBeer") Beer newBeer, @RequestParam int breweryId, HttpSession session, BindingResult result, RedirectAttributes flash) {
+	public String addNewBeer(@Valid @ModelAttribute("newBeer") Beer newBeer, BindingResult result, @RequestParam int breweryId, HttpSession session, RedirectAttributes flash) {
 		flash.addFlashAttribute("newBeer", newBeer);
 		
 		if(result.hasErrors()) {
-			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "newBrewery", result);
-			return "redirect:/breweries/new";
+			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "newBeer", result);
+			return "redirect:/addBeer";
 		} 
 		if(!beerDAO.searchForBeerByName(newBeer.getName())) { 
 			newBeer.setImgUrl("http://res.cloudinary.com/teclebrew/" + newBeer.getImgUrl());
@@ -79,8 +78,8 @@ public class BeerController {
 			beerDAO.saveBeer(newBeer);
 			return "redirect:/breweryBeers";
 		} else {
-			flash.addFlashAttribute("message", "This brewery alreadys exists");
-			return "redirect:/breweries/new";
+			flash.addFlashAttribute("message", "This beer alreadys exists");
+			return "redirect:/addBeer";
 		}
 	}
 	
@@ -144,20 +143,5 @@ public class BeerController {
 		}
 	
 	
-//	public Beer getTopRatedBeer(){
-//		
-//		BigDecimal maxRating = new BigDecimal(0);
-//		
-//		List<Beer> beerList = beerDAO.getAllBeer();
-//		Beer topBeer = beerList.get(0);
-//		for (int i = 0 ; i < beerList.size() ; i++){
-//			if( beerList.get(i).getRating().topBeer.getRating()){
-//				maxRating = beer.getRating();
-//			}
-//		}
-//		List<Beer> topBeers = beerDAO.getBeersByRating(maxRating);
-//		
-//		return topBeer;
-//		
-//	}
+	
 }
