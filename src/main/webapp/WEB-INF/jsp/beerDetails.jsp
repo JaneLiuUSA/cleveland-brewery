@@ -19,6 +19,8 @@
 			</h2>
 			
 			<div class="beerDetButton">
+			<p><c:url var="imageName" value="/img/${beer.starRating}-star.png"/>
+			<img src="${imageName}" class="star-img-small"/></p>
 			<a href="${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a>
 			</div>
 			
