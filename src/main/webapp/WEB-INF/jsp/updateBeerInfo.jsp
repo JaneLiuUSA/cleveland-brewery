@@ -126,8 +126,9 @@
 				<div class="form-group">
 					<label for="imgUrl">Beer Image: </label>
 					<form:input path="imgUrl"  class="form-control" />
-					<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="imgUrl" 
-	   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" ></input>
+					<input id="hiddenButton3" name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="imgUrl" 
+	   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" style="display:none"></input>
+	   					<label id="topButton3" for="hiddenButton3" class="btn btn-default" >Choose File</label><br>
 	   				<img src="<c:out value='${beer.imgUrl}'/>" style='width:40%' />
 					<form:errors path="imgUrl"></form:errors>
 				</div>	

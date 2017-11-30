@@ -10,6 +10,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-jquery-file-upload/2.3.0/cloudinary-jquery-file-upload.min.js"></script>
 <script type='text/javascript'>
 
+
+
 	$.cloudinary.config({
 		"cloud_name" : "teclebrew",
 		"api_key" : "976593415828521",
@@ -159,15 +161,17 @@
 			<div class="form-group">
 				<label for="breweryLogoUrl">Brewery Logo: </label>
 				<form:input path="breweryLogoUrl"  class="form-control" />  
-				<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="breweryLogoUrl" 
-   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" ></input>
+				<input id="hiddenButton1" name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="breweryLogoUrl" 
+   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" style="display:none"></input>
+   				<label id="topButton1" for="hiddenButton1" class="btn btn-default" >Choose File</label><br>
 				<form:errors path="breweryLogoUrl"></form:errors>
 			</div>	
 			<div class="form-group">
 				<label for="imgUrl">Brewery Image: </label>
 				<form:input path="imgUrl"  class="form-control" />
-				<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="imgUrl" 
-   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" ></input>
+				<input id="hiddenButton2"  name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="imgUrl" 
+   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" style="display:none"></input>
+   				<label id="topButton2" for="hiddenButton2" class="btn btn-default" >Choose File</label><br>
 				<form:errors path="imgUrl"></form:errors>
 			</div>	
 			<div class="form-group">
