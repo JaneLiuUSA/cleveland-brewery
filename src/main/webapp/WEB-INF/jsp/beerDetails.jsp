@@ -68,7 +68,7 @@
 			</div>
 			<hr class="hr2"/>
 			<div>
-				<h3 class="blackText"> <c:out value = "${beer.name } Reviews" /></h3>
+				<h3 class="blackText"> <c:out value ="See what others are saying about ${beer.name }!" /></h3>
 				<div>
 					<c:forEach items="${reviews}" var="review">
 					<ul>
