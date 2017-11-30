@@ -10,7 +10,7 @@
 	<div class="breweryList">
 		<div class="breweryLocation">
 
-			<div class="col-md-6 breweryDetImage" width= 905px;>
+			<div class="col-md-6 breweryDetImage">
 				<img class="center-block"
 					src="<c:out value='${details.breweryLogoUrl}'/>" />
 			</div>
@@ -60,7 +60,7 @@
 		<div class="breweryContainer">
 		<c:forEach items="${beers}" var="beer">
 	
-			<div class="col-lg-12 breweryList">
+			<div class="col-lg-12 beerByBreweryList">
 			<div class="breweryLocation breweryImage">
 				<c:url var="beerDetailLink" value="/beerDetails/${beer.id}"></c:url>
 					<a href=" <c:out value='${beerDetailLink}'/> "><img src="<c:out value='${beer.imgUrl}'/>"><!--  style='width:40%' /> --></a></div>
