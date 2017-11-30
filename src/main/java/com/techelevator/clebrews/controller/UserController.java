@@ -58,7 +58,7 @@ public class UserController {
 		if(!userDAO.searchForUsername(newUser.getUserName())) { 
 			int userId = userDAO.saveUser(newUser);
 			breweryDAO.updateBreweryUserId(id, userId);
-			//TODO use breweryDAO to take the Long userId that will be returned from userDAO.saveUser
+			
 			return "redirect:/index"; 
 		} else {
 				flash.addFlashAttribute("message", "This username alreadys exists");
