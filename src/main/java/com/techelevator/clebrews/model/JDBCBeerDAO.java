@@ -117,7 +117,7 @@ public class JDBCBeerDAO implements BeerDAO {
 
 	@Override
 	public Beer getBeerById(Long id) {
-		Beer beer = new Beer();
+		Beer beer = null;
 
 		String sqlGetgetBeerById = "SELECT * FROM beers LEFT JOIN (SELECT beer_id, AVG(rating)AS avg_rating FROM reviews GROUP BY beer_id)AS rating " + 
 				"ON rating.beer_id = beers.beer_id WHERE beers.beer_id =? AND is_active = ? GROUP BY beers.beer_id, rating.beer_id, avg_rating ORDER BY name";
@@ -127,7 +127,7 @@ public class JDBCBeerDAO implements BeerDAO {
 		}
 		return beer;
 	}
-
+	
 	@Override
 	public void updateActiveBeerByBrewery(Long beerId, boolean isActive) {
 		jdbcTemplate.update("UPDATE beers SET is_active = ? WHERE beer_id = ?", isActive, beerId);

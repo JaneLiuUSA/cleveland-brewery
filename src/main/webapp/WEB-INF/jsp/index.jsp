@@ -96,7 +96,7 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
   <div class="row">
     <div class="col-sm-4">
      <p class="text-center homeTitle"><strong>FEATURED BREWERY</strong></p><br>
-      <p class="text-center"><strong>Masthead Brewery</strong></p><br>
+      <p class="text-center"><c:url var="featuredBeerLink" value="/breweryDetails/3"/><a href='${featuredBeerLink}'><strong>MASTHEAD</strong></a></p><br>
       <a href="#demo" data-toggle="collapse">
         <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511363501/brewery_images/oorzznvts0irqao76zqb.jpg" class="img-circle person" alt="Random Name" width="255" height="255">
       </a>
@@ -104,8 +104,7 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
         <p>Opened 2016</p>
         <p>Top Beer: Masthead IPA</p>
         <p>1261 Superior Ave. Cleveland</p>
-        <p><c:url var="featuredBeerLink" value="/breweryDetails/3"/>
-        <a href="${featuredBeerLink}">Check out this brewery</a></p>
+        <p><a href="${featuredBeerLink}">Check out this brewery</a></p>
       </div>
     </div>
     <div class="col-sm-4">
@@ -126,14 +125,14 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
     </div>
     <div class="col-sm-4">
     <p class="text-center homeTitle"><strong>MOST REVIEWED BEER</strong></p><br>
-      <p class="text-center"><strong>Great Lakes Christmas Ale</strong></p><br>
+      <p class="text-center"><c:url var="ChristmasLink" value="/beerDetails/1"/><a href='${ChristmasLink}'><strong>CHRISTMAS ALE</strong></a></p><br>
       <a href="#demo3" data-toggle="collapse">
         <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511640275/christmas_ale_great_lakes_av32aw.png" class="img-circle person" alt="Random Name">
       </a>
       <div id="demo3" class="collapse">
-        <p>Review Title Goes Here</p>
-        <p>Reviewer Name Goes Here</p>
-        <p>Link to review?</p>
+        <p></p>
+        <p></p>
+        <p></p>
       </div>
     </div>
   </div>
