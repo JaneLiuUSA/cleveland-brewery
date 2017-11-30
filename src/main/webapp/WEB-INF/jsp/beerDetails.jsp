@@ -73,7 +73,7 @@
 					<c:forEach items="${reviews}" var="review">
 					<ul>
 					
-						<strong><li ><c:out value = "Review Title: ${review.subject}" /></li></strong>
+						<strong><li><c:out value = "${review.subject}" /></li></strong>
 						<li><c:out value = "${review.description}" /></li>
 						
 
