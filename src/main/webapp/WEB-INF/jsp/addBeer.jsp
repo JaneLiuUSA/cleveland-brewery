@@ -104,8 +104,9 @@
 			<div class="form-group">
 				<label for="imgUrl">Image: </label>
 				<form:input path="imgUrl"  class="form-control" />
-				<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="imgUrl" 
-   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" ></input>
+				<input id="hiddenButton4" name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="imgUrl" 
+   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" style="display:none"></input>
+   					<label id="topButton4" for="hiddenButton4" class="btn btn-default" >Choose File</label><br>
 				<form:errors path="imgUrl"></form:errors>	
 			</div>						
 		<div>
