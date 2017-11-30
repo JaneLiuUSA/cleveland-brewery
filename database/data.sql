@@ -232,11 +232,11 @@ INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VA
 'http://res.cloudinary.com/teclebrew/image/upload/v1511652238/forst_city_irish_stout_beer_pic_lo3fxw.jpg', 10, true);
 INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('Habituale', 5.3, 21, 'Kölsch',
-'This crisp, clean Kölsch is a true German classic. It’s the perfect tribute to our fair-minded friend: sweet balanced with faint bitterness. Appeals to crossover mainstream drinkers and beer connoisseurs alike.',
+'This crisp, clean Kölsch is a true German classic. Its the perfect tribute to our fair-minded friend: sweet balanced with faint bitterness. Appeals to crossover mainstream drinkers and beer connoisseurs alike.',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511653346/saucy_habituale_beer_pic_e4okwx.png', 11, true);
 INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('B.F.Hefe', 5.5, 11, 'Wheat',
-'This Bavarian classic offers that kind of balance. It’s not overly bitter or sweet. The original gangster of cloudy beers is thirst quenching and effervescent.',
+'This Bavarian classic offers that kind of balance. Its not overly bitter or sweet. The original gangster of cloudy beers is thirst quenching and effervescent.',
 'http://res.cloudinary.com/teclebrew/image/upload/v1511653651/saucy_bfhefe_berr_pic_iqldv7.png', 11, true);
 INSERT INTO beers (name, abv,ibu, type, info, img_url, brewery_id, is_active) VALUES 
 ('Punchline', 5.7, 12, 'Wheat',
