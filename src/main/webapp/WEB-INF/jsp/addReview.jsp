@@ -18,11 +18,12 @@
 			return value.match(/[1-5]/);
 			});
 		
-		$("form").validate({
+		$("form#newReview").validate({
 			rules : {
 				rating : {
 					required : true,
 					digits: true,
+					rating: true,
 				},
 				subject : {
 					required : true,
@@ -32,6 +33,7 @@
 				messages : {
 					rating : {
 						required : "required",
+						rating : "Rating is required"
 					},
 					subject : {
 						required : "required",
@@ -44,6 +46,12 @@
 
 
 </script>
+
+<c:if test="${message != null }">
+	<h2>
+	<c:out value="${message }"/>
+	</h2>
+</c:if>
 
 <c:url var="formAction" value="/beerDetails/${beer.id}/review" />
 <form:form method="POST" action="${formAction}" modelAttribute="newReview">
@@ -76,6 +84,7 @@
 				    <form:radiobutton path="rating" id="star3" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
 				    <form:radiobutton path="rating" id="star2" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
 				    <form:radiobutton path="rating" id="star1" value="1" /><label class = "full" for="star1" title="Gross - 1 star"></label>
+				    <form:errors path="rating"></form:errors>
 				</fieldset><br>
 				<br>
 

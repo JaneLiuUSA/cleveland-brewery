@@ -84,7 +84,10 @@ public class BeerController {
 	}
 	
 	@RequestMapping(path="/beerDetails/{id}", method=RequestMethod.GET)
-	public String showBreweryDetails(@PathVariable long id, ModelMap modelHolder) {
+	public String showBreweryDetails(@PathVariable long id, ModelMap modelHolder) throws NotFoundException {
+		if (beerDAO.getBeerById(id) == null) {
+			throw new NotFoundException();
+		}
 		Beer beer = beerDAO.getBeerById(id);
 		Brewery brewery = breweryDAO.getBreweryById(beer.getBreweryId());
 		List<Review> reviews = reviewDAO.searchReviewsByBeerId(id);
@@ -94,8 +97,6 @@ public class BeerController {
 		
 		return "beerDetails";
 	}
-	
-	
 	
 	
 	@RequestMapping(path="{beerId}/updateInfo", method=RequestMethod.GET)
