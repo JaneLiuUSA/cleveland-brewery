@@ -33,9 +33,9 @@ public class JDBCBreweryDAO implements BreweryDAO {
 	}
 
 	@Override
-	public void saveBrewery(String name, String address, String city, String zipcode, String phoneNumber, String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHours) {
-		jdbcTemplate.update("INSERT INTO breweries(name, address, city, zipcode, phone_number, description, brewery_logo_url, img_url, website_url, business_hours) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
-				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imgUrl, websiteUrl, businessHours);
+	public void saveBrewery(String name, String address, String city, String zipcode, String phoneNumber, String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHours, String googleMapsUrl, String lat, String lng) {
+		jdbcTemplate.update("INSERT INTO breweries(name, address, city, zipcode, phone_number, description, brewery_logo_url, img_url, website_url, business_hours, google_maps_url, lat, lng) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imgUrl, websiteUrl, businessHours, googleMapsUrl, lat, lng);
 	}
 
 
@@ -67,10 +67,23 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		return details;
 	}
 	
+	@Override
+	public Brewery getBreweryByName(String name) {
+		Brewery details = new Brewery();
+		String sqlGetBreweryByName = "SELECT * FROM breweries WHERE name = ?";
+		
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlGetBreweryByName, name);
+		
+		if (results.next()) {
+			details = mapRowToBrewery(results);
+		}
+		return details;
+	}
+	
 
 
 	@Override
-	public Brewery getBreweryByUserId(int userId) {
+	public Brewery getBreweryByUserId(long userId) {
 		
 		Brewery breweries = new Brewery();
 		String sqlSelectBrewerieByUserId = "SELECT * FROM breweries WHERE user_id = ?";
@@ -107,25 +120,28 @@ public class JDBCBreweryDAO implements BreweryDAO {
 		newBrewery.setImgUrl(row.getString("img_url"));
 		newBrewery.setWebsiteUrl(row.getString("website_url"));
 		newBrewery.setBusinessHours(row.getString("business_hours"));
-		
+		newBrewery.setLat(row.getString("lat"));
+		newBrewery.setLng(row.getString("lng"));
+		newBrewery.setGoogleMapsUrl(row.getString("google_maps_url"));
+		newBrewery.setUserId(row.getLong("user_id"));
 		return newBrewery;
 	}
 
 
 	@Override
 	public void updateBrewery(String name, String address, String city, String zipcode, String phoneNumber,
-			String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHours, long id) {
+			String description, String breweryLogoUrl, String imgUrl, String websiteUrl, String businessHours, String googleMapsUrl, String lat, String lng, long id) {
 		jdbcTemplate.update("UPDATE breweries SET name = ?, address =? , city = ?, zipcode = ?, phone_number = ?, description = ?, "
-				+ "brewery_logo_url = ?, img_url = ?, website_url = ?, business_hours = ? WHERE brewery_id = ?",
-				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imgUrl, websiteUrl, businessHours, id);		
+				+ "brewery_logo_url = ?, img_url = ?, website_url = ?, business_hours = ?, google_maps_url = ?, lat = ?, lng = ? WHERE brewery_id = ?",
+				name, address, city, zipcode, phoneNumber, description, breweryLogoUrl, imgUrl, websiteUrl, businessHours, googleMapsUrl, lat, lng, id);		
 	}
 
 
 	@Override
-	public void updateBreweryUserId(long id, int userId) {
+	public boolean updateBreweryUserId(long id, int userId) {
 		String sqlUpdateBreweryUserId = "UPDATE breweries SET user_id = ? WHERE brewery_id = ?";
-		jdbcTemplate.queryForRowSet(sqlUpdateBreweryUserId, userId, id);
-		
+		jdbcTemplate.update(sqlUpdateBreweryUserId, userId, id);
+		return true;
 	}
 
 }

@@ -1,22 +1,30 @@
 package com.techelevator.clebrews.model;
 
+import java.math.BigDecimal;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 public class Beer {
 
 	private Long id;
 	
+	@NotBlank
 	private String name;
 	
 	private float abv;
 	
 	private int ibu;
-	
+	@NotBlank
 	private String type;
-	
+	@NotBlank
 	private String info;
 	
 	private String imgUrl;
 	
 	private Long breweryId;
+	
+	private BigDecimal rating;
+	
 	
 	private boolean isActive = true;
 
@@ -91,6 +99,22 @@ public class Beer {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
+
+	public BigDecimal getRating() {
+		return rating;
+	}
+
+	public void setRating(BigDecimal rating) {
+		this.rating = rating;
+	}
 	
+	public int getStarRating() {
+		int starRating = 0;
+		
+		if (rating != null) {
+			starRating = rating.intValue();
+		}
+		return starRating;
+	}
 	
 }

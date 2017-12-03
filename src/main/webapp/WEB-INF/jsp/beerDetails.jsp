@@ -14,26 +14,39 @@
 					src="<c:out value='${beer.imgUrl}'/>" />
 			</div>
 			
-			<div>
-			<a href="${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a>
-			</div>
-
-			<h2>
+			<h2 class="beerDetNames">
 				<c:out value="${beer.name}" />
 			</h2>
+			
+			<div class="beerDetButton">
+			<p><c:url var="imageName" value="/img/${beer.starRating}-star.png"/>
+			<img src="${imageName}" class="star-img-small"/></p>
+			<a href="${beer.id}/review"><button class="btn btn-default" >Review this Beer</button></a>
+			</div>
+			
 			<div class="breweryLocation">
 			<ul>
 				<p class="detailsTitle"></p>
 				<li><c:out value="${beer.abv}% ABV" /> 
-				<li><c:out value=" ${beer.ibu} IBU" /></li>
+				<li>
+					<c:choose> 
+						<c:when test="${empty beer.ibu or beer.ibu == 0}">
+							N/A IBU
+						</c:when>
+						<c:otherwise>
+							<c:out value=" ${beer.ibu} IBU" />
+						</c:otherwise>
+					</c:choose>
+				</li>
 				<li><c:out value="Type: ${beer.type}" /></li>
 				<li><c:out value="${beer.info}" /></li>
 				
 			</ul>
 			
 			</div>
+			<hr class="hr2"/>
 			<div>
-				<h3>
+				<h3 class="blackText">
 					<c:out value=" Brewed by:  ${brewery.name}" />
 				</h3>
 				<div class="breweryLocation">
@@ -45,7 +58,7 @@
 					<li><c:out value="${brewery.phoneNumber }" /></li>
 	
 					<c:url var="breweryWebsite" value="${brewery.websiteUrl }"></c:url>
-					<li><a href=" <c:out value='${breweryWebsite }'/> "><c:out
+					<li><a href=" <c:out value='${breweryWebsite }'/> " target="_blank"><c:out
 								value="${brewery.name} Website" /></a></li>
 	
 					<li><c:out value="${brewery.businessHours }" /></li>
@@ -53,16 +66,32 @@
 				</div>
 
 			</div>
-			
+			<hr class="hr2"/>
 			<div>
-				<h3> <c:out value = "Reviews for this beer" /></h3>
+				<h3 class="blackText"> <c:out value ="See what others are saying about ${beer.name }!" /></h3>
 				<div>
 					<c:forEach items="${reviews}" var="review">
 					<ul>
-						<li><c:out value = "Rating: ${review.rating}" /></li>
-						<li><c:out value = "Review Title: ${review.subject}" /></li>
-						<li><c:out value = "Review: ${review.description}" /></li>
-						<li><c:out value = "${review.createTime}" /></li>
+					
+						<strong><li><c:out value = "${review.subject}" /></li></strong>
+						<li><c:out value = "${review.description}" /></li>
+						
+
+						<c:choose>
+							<c:when test="${beer.starRating == 0}">
+								No Rating
+							</c:when>
+							<c:otherwise>
+								<c:url var="imageName" value="/img/${review.rating}-star.png"/>
+							</c:otherwise>
+						</c:choose>
+
+						<img src="${imageName}" class="star-img-small"/></li>
+
+
+						<li><c:out value = "${review.formatDateTime}" /></li>
+					
+					
 					</ul>
 					</c:forEach>
 					

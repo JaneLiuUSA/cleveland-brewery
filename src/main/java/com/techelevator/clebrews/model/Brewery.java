@@ -18,11 +18,18 @@ public class Brewery {
 	private String phoneNumber;
 	@NotBlank(message="required")
 	private String description;
+	@NotBlank(message="required")
 	private String breweryLogoUrl;
 	private String imgUrl;
 	private String websiteUrl;
 	private String businessHours;
-	private int userId;
+	private long userId;
+	@NotBlank(message="required")
+	private String lat;
+	@NotBlank(message="required")
+	private String lng;
+	@NotBlank(message="required")
+	private String googleMapsUrl;
 	
 	
 	public Brewery(){} //default constructor
@@ -88,11 +95,11 @@ public class Brewery {
 		this.businessHours = businessHours;
 	}
 
-	public int getUserId() {
+	public long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(int userId) {
+	public void setUserId(long userId) {
 		this.userId = userId;
 	}
 
@@ -144,6 +151,30 @@ public class Brewery {
 	
 	public String getNameById(int id){
 		return name;
+	}
+
+	public String getLat() {
+		return lat;
+	}
+
+	public void setLat(String lat) {
+		this.lat = lat;
+	}
+
+	public String getLng() {
+		return lng;
+	}
+
+	public void setLng(String lng) {
+		this.lng = lng;
+	}
+
+	public String getGoogleMapsUrl() {
+		return googleMapsUrl;
+	}
+
+	public void setGoogleMapsUrl(String googleMapsUrl) {
+		this.googleMapsUrl = googleMapsUrl;
 	}
 	
 }

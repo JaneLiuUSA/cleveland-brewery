@@ -64,27 +64,30 @@ public class BeerController {
 	}
 	
 	@RequestMapping(path="/addBeer", method=RequestMethod.POST)
-	public String addNewBeer(@Valid @ModelAttribute("newBeer") Beer newBeer, @RequestParam int breweryId, BindingResult result, RedirectAttributes flash) {
+	public String addNewBeer(@Valid @ModelAttribute("newBeer") Beer newBeer, BindingResult result, @RequestParam int breweryId, HttpSession session, RedirectAttributes flash) {
 		flash.addFlashAttribute("newBeer", newBeer);
-
+		
 		if(result.hasErrors()) {
-			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "newBrewery", result);
-			return "redirect:/breweries/new";
+			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "newBeer", result);
+			return "redirect:/addBeer";
 		} 
 		if(!beerDAO.searchForBeerByName(newBeer.getName())) { 
 			newBeer.setImgUrl("http://res.cloudinary.com/teclebrew/" + newBeer.getImgUrl());
 			
 			newBeer.setBreweryId((long) breweryId);
 			beerDAO.saveBeer(newBeer);
-			return "redirect:/breweries";
+			return "redirect:/breweryBeers";
 		} else {
-			flash.addFlashAttribute("message", "This brewery alreadys exists");
-			return "redirect:/breweries/new";
+			flash.addFlashAttribute("message", "This beer alreadys exists");
+			return "redirect:/addBeer";
 		}
 	}
 	
 	@RequestMapping(path="/beerDetails/{id}", method=RequestMethod.GET)
-	public String showBreweryDetails(@PathVariable long id, ModelMap modelHolder) {
+	public String showBreweryDetails(@PathVariable long id, ModelMap modelHolder) throws NotFoundException {
+		if (beerDAO.getBeerById(id) == null) {
+			throw new NotFoundException();
+		}
 		Beer beer = beerDAO.getBeerById(id);
 		Brewery brewery = breweryDAO.getBreweryById(beer.getBreweryId());
 		List<Review> reviews = reviewDAO.searchReviewsByBeerId(id);
@@ -94,4 +97,52 @@ public class BeerController {
 		
 		return "beerDetails";
 	}
+	
+	
+	@RequestMapping(path="{beerId}/updateInfo", method=RequestMethod.GET)
+	public String updateBreweryInfo (@PathVariable long beerId, HttpSession session, ModelMap modelHolder) throws NotAllowedException {
+		
+		User currentUser = (User) session.getAttribute("currentUser");
+		
+		if(currentUser == null){
+			return "redirect:/login";
+		}
+		
+		if( ! modelHolder.containsAttribute("updatedBeer")){
+			modelHolder.put("updatedBeer", new Beer());
+		}
+	// Check if the beer belongs to the brewery
+		Beer beer = beerDAO.getBeerById(beerId);
+		Brewery brewery = breweryDAO.getBreweryById(beer.getBreweryId());
+		if(currentUser.getId() != brewery.getUserId()){
+			throw new NotAllowedException();
+		}
+		modelHolder.put("beer",beer);
+		
+	 return "updateBeerInfo";
+	 
+		}
+	
+	@RequestMapping(path="/updateBeerInfo", method=RequestMethod.POST)
+	public String updateBreweryInfo (@Valid @ModelAttribute Beer updatedBeer, 
+			BindingResult result, RedirectAttributes flash){
+		
+		flash.addFlashAttribute("updatedBeer", updatedBeer);
+		
+		if(result.hasErrors()) {
+			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "updatedBeer", result);
+			return "redirect:/{beerId}/updateInfo";
+		}
+		if (! updatedBeer.getImgUrl().startsWith("http://res.cloudinary.com/teclebrew/")) {
+			updatedBeer.setImgUrl("http://res.cloudinary.com/teclebrew/" + updatedBeer.getImgUrl());
+		}
+		
+		beerDAO.updateBeerInfo(updatedBeer.getName(), updatedBeer.getAbv(), updatedBeer.getIbu(),updatedBeer.getType(),
+				updatedBeer.getInfo(), updatedBeer.getImgUrl(), updatedBeer.getId());
+		
+		return "redirect:/breweryBeers";
+		}
+	
+	
+	
 }

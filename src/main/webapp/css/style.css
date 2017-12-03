@@ -19,6 +19,18 @@ h2 {
 	color: #d69827;
 }
 
+.title2 {
+	margin: 20px 0 30px 0;
+	letter-spacing: 10px;
+	font-size: 20px;
+	color: black;
+	text-align: center;
+}
+
+.detailsHR {
+	
+}
+
 hr {
     display: block;
     height: 1px;
@@ -40,6 +52,10 @@ hr {
 
 .container {
 	padding: 80px 120px 60px;
+}
+
+.beersContainer {
+	padding: 20px 120px 5px;
 }
 
 .homeTitle {
@@ -68,6 +84,24 @@ hr {
 	color: black;
 }
 
+.modalText {
+	font-size: 25px;
+	text-align: center;
+}
+
+.modalTop {
+	margin-top: 20px;
+}
+
+.carouselText {
+	font-size: 20px;
+	color: white !important;
+	text-decoration: none !important;
+}
+
+.reviewBox {
+	height: 100px !important;
+}
 
 .grow:hover {
     -webkit-transform: scale(1.1);
@@ -77,6 +111,15 @@ hr {
 
 .circle:hover {
 	border-radius:50%;
+}
+
+.img-circle {
+	border-radius: 2px;
+}
+
+.topImg {
+	width: 50px;
+	height: 50px;
 }
 
 .carousel {
@@ -92,7 +135,8 @@ hr {
 	margin: 100px 0 30px 0;
 	letter-spacing: 10px;
 	font-size: 7em;
-	color: #fff !important;
+	color: #fbf9f2!important;
+	text-shadow: 2px 2px #7b7b7b;
 }
 
 .carousel-inner > .item > img {
@@ -251,7 +295,7 @@ hr {
 }
 
 .dropdown-menu li a:hover {
-	background-color: #b48331!important;
+	background-color: #000000!important;
 }
 
 footer {
@@ -267,15 +311,26 @@ footer {
 }
 
 .space {
-			position: absolute;
-			height: 40%;
-			width: 40%;
-			text-align: center;
-			z-index: 1;
-		}
+	position: absolute;
+	height: 40%;
+	width: 40%;
+	text-align: center;
+	z-index: 1;
+}
+
+.centered {
+	text-align: center;
+}
+
+.centered2 {
+	text-align: center;
+	padding-bottom: 30px;
+	color: #d69827;
+}
 		
 .title {
 	color: #fff;
+	font-size: 35px;
 }
 
 footer a {
@@ -296,7 +351,26 @@ textarea {
 }
 
 .form-group {
-	margin-top: 70px;
+	margin-top: 30px;
+	
+}
+
+.beerDetButton {
+	margin-top: 10px !important;
+}
+
+.beerDetButton2 {
+	margin-top: 10px !important;
+	margin-bottom: 10px !important;
+}
+
+.addBreweryButton {
+	margin-bottom: 30px !important;
+}
+
+.buttonMargin {
+	margin-bottom: 70px !important;
+	margin-top: 40px !important;
 }
 
 /*   .right { */
@@ -323,7 +397,7 @@ textarea {
 .breweryContainer {
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 65px;
+	margin-top: 20px;
 	margin-bottom: 35px;
 	justify-content: center;
 	border-style: solid;
@@ -334,11 +408,39 @@ textarea {
 	letter-spacing: 0;
 	text-align: center;
 	text-decoration: underline;
-	margin: 40px 0 30px 0;
+	margin: 0px 0 30px 0;
+}
+
+.breweryContainer h1 {
+	color: black;
+	letter-spacing: 6px;
+}
+
+.linkSpacing {
+	margin-top: 20px;
+}
+
+.blackText {
+	color: black !important;
+}
+
+.hr2 {
+	display: -webkit-inline-box !important;
+	width: 60% !important;
+	margin-top: 6px;
+}
+
+.formSize {
+	height: 100px !important;
 }
 
 .breweryContainer a {
 	color: #d69827;
+}
+
+.beerDetNames {
+	letter-spacing: 5px !important;
+	text-decoration: none !important;
 }
 
 .breweryList {
@@ -350,11 +452,42 @@ textarea {
 	text-align: center;
 }
 
+.beerList {
+	flex: 1;
+	display: inline-block;
+	text-align: center;
+	justify-content: center !important;
+}
+
+.beerByBreweryList {
+	flex: 1;
+	display: inline-block;
+	border-style: solid;
+	padding: 30px;
+	border: 0;
+	text-align: center;
+	max-width: 360px;
+}
+
+.beerByBreweryList ul {
+	list-style-type: none;
+	margin: auto;
+	text-align: center;
+	padding: .5em 1em 1em 1em;
+}
+
 .breweryList ul {
 	list-style-type: none;
 	margin: auto;
 	text-align: center;
 	padding: .5em 1em 1em 1em;
+}
+
+.beerList ul {
+	list-style-type: none;
+	margin: auto;
+	text-align: center;
+	padding: .5em 1em 1em 1em
 }
 
 .breweryImage img {
@@ -366,12 +499,34 @@ textarea {
 	margin-bottom: 40px;
 }
 
+.breweryBeerImage img {
+	flex: 1;
+	width: 200px;
+	height: 200px;
+	background-color: white;
+	box-shadow: 5px 5px 20px #949296;
+	margin-bottom: 40px;
+}
+
+.maxWidth {
+	max-width: 250px !important;
+}
+
+.nameColor1 {
+	color: black !important;
+	font-size: small;
+}
+
+.nameColor2 {
+	color: #d69827;
+}
+
 .breweryDetImage img{
 	flex: 1;
 	width: 400px;
 	height: 400px;
-	background-color: black;
-	box-shadow: 5px 5px 20px #d69827;
+	background-color: white;
+	box-shadow: 5px 5px 20px #949296;
 	margin-bottom: 40px;
 }
 
@@ -380,6 +535,17 @@ textarea {
 }
 .beer-list-table td {
 	padding: 10px;
+}
+
+.Breweries {
+	text-align: center;
+	letter-spacing: 10px;
+	margin-top: 90px;
+	color: black;
+/* 	background-image: url("http://res.cloudinary.com/teclebrew/image/upload/v1511214071/brown_beer_aassb3.jpg"); */
+	margin-left: 10px;
+	margin-right: 10px;
+}
 
 .row {
 	margin-left: 10px;
@@ -400,7 +566,14 @@ textarea {
 
 .breweryLocation {
 	flex: 1;
-	padding: 1em 1em 1em 1em;
+	padding: 0em 1em 1em 1em;
+}
+
+.beerInformation {
+	flex: 1;
+	padding: 0em 1em 1em 1em;
+	max-width: 250px;
+	text-align: center;
 }
 
 .detailsTitle {
@@ -431,6 +604,78 @@ textarea {
 	display: flex;
 	height: 600px;
 }
+
+.alert > p, .alert > ul{
+	padding-right: 8px;
+}
+
+.underlined {
+	text-decoration: underline;
+}
+.star-img-medium{
+	width:70%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.star-img-small {
+	width: 10%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.star-img-medium{
+	width:40%;
+}
+
+.noReviews {
+	width: 100%;
+	margin-top: 7px;
+	margin-bottom: 10px;
+}
+
+
+
+
+
+/****** Style Star Rating Widget *****/
+
+.star-rating { 
+  border: none;
+  float: left;
+}
+
+.star-rating > input { display: none; } 
+.star-rating > label:before { 
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.star-rating > .half:before { 
+  content: "\f089";
+  position: absolute;
+}
+
+.star-rating > label { 
+  color: #ddd; 
+ float: right; 
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+
+.star-rating > input:checked ~ label, /* show gold star when clicked */
+.star-rating:not(:checked) > label:hover, /* hover current star */
+.star-rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
+
+.star-rating > input:checked + label:hover, /* hover current star when changing rating */
+.star-rating > input:checked ~ label:hover,
+.star-rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+.star-rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 
+
+
 /* Collapses the navbar early */
 @media ( max-width : 900px) {
 	.navbar-header {
@@ -470,39 +715,3 @@ textarea {
 }
 
 
-/****** Style Star Rating Widget *****/
-
-.rating { 
-  border: none;
-  float: left;
-}
-
-.rating > input { display: none; } 
-.rating > label:before { 
-  margin: 5px;
-  font-size: 1.25em;
-  font-family: FontAwesome;
-  display: inline-block;
-  content: "\f005";
-}
-
-.rating > .half:before { 
-  content: "\f089";
-  position: absolute;
-}
-
-.rating > label { 
-  color: #ddd; 
- float: right; 
-}
-
-/***** CSS Magic to Highlight Stars on Hover *****/
-
-.rating > radio:checked ~ label, /* show gold star when clicked */
-.rating:not(:checked) > label:hover, /* hover current star */
-.rating:not(:checked) > label:hover ~ label { color: #FFD700;  } /* hover previous stars in list */
-
-.rating > input:checked + label:hover, /* hover current star when changing rating */
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label, /* lighten current selection */
-.rating > input:checked ~ label:hover ~ label { color: #FFED85;  } 

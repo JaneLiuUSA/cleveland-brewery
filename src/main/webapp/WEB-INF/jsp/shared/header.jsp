@@ -18,6 +18,19 @@
 	    <script src="https://cdn.jsdelivr.net/jquery.timeago/1.4.1/jquery.timeago.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	    <!-- <script src="https://use.fontawesome.com/aad158a7ca.js"></script> -->
+	    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" rel="stylesheet">
+	    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js"></script>
+	    
+		<%-- <link href="path/to/css/star-rating.css" media="all" rel="stylesheet" type="text/css" />
+
+		<!-- important mandatory libraries -->
+		<script src="path/to/js/star-rating.js" type="text/javascript"></script>
+		<script src="path/to/javascripts/bootstrap-rating-input.min.js" type="text/javascript"></script>
+
+		<!-- optionally if you need translation for your language then include locale file as mentioned below -->
+		<script src="path/to/js/locales/<lang>.js"></script>
+	    <script src="https://use.fontawesome.com/aad158a7ca.js"></script>  --%>
+	    
 	    <c:url var="cssHref" value="/css/style.css" />
 		<link rel="stylesheet" type="text/css" href="${cssHref}">
 </head>
@@ -25,9 +38,8 @@
 
  		<script type="text/javascript"> 
   			$(document).ready(function() { 
-  				$("time.timeago").timeago(); 
-				
-  				$("#logoutLink").click(function(event){ 
+  				 
+  				$("#logoutLink").on('click', function(event){ 
   					$("#logoutForm").submit(); 
   				}); 
 				
@@ -97,12 +109,12 @@
        						 <c:url var="brewerHref" value="/brewer" />
 						 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="${brewerHref}">BREWER<span class="caret"></span></a>
         					<ul class="dropdown-menu">
-        					  <c:url var="brewerAccount" value="/updateBreweryInfo" />
-        					  <li><a href="${brewerAccount}">UPDATE INFO</a></li>
         					  <c:url var="addBeer" value="/addBeer" />
         					  <li><a href="${addBeer}">ADD BEER</a></li>
+        					  <c:url var="brewerAccount" value="/updateBreweryInfo" />
+        					  <li><a href="${brewerAccount}">UPDATE BREWERY</a></li>
         					  <c:url var="removeBeer" value="/breweryBeers"/>
-        					  <li> <a href="${removeBeer}">REMOVE BEER</a></li>
+        					  <li> <a href="${removeBeer}">UPDATE BEER</a></li>
 
        						</ul>
      					 </li>

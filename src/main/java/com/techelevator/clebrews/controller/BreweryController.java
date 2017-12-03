@@ -68,7 +68,7 @@ public class BreweryController {
 			newBrewery.setImgUrl("http://res.cloudinary.com/teclebrew/" + newBrewery.getImgUrl()); 
 
 			breweryDAO.saveBrewery(newBrewery.getName(), newBrewery.getAddress(), newBrewery.getCity(), newBrewery.getZipcode(), 
-					newBrewery.getPhoneNumber(), newBrewery.getDescription(), newBrewery.getBreweryLogoUrl(), newBrewery.getImgUrl(), newBrewery.getWebsiteUrl(), newBrewery.getBusinessHours());
+					newBrewery.getPhoneNumber(), newBrewery.getDescription(), newBrewery.getBreweryLogoUrl(), newBrewery.getImgUrl(), newBrewery.getWebsiteUrl(), newBrewery.getBusinessHours(), newBrewery.getGoogleMapsUrl(), newBrewery.getLat(), newBrewery.getLng());
 			return "redirect:/breweries";
 		} else {
 			flash.addFlashAttribute("message", "This brewery alreadys exists");
@@ -77,7 +77,7 @@ public class BreweryController {
 	}
 	
 	@RequestMapping(path="/breweryDetails/{id}", method=RequestMethod.GET)
-	public String showBreweryDetails(@PathVariable int id, ModelMap modelHolder) {
+	public String showBreweryDetails(@PathVariable long id, ModelMap modelHolder) {
 		Brewery breweryDetails = breweryDAO.getBreweryById(id);
 
 		modelHolder.addAttribute("details", breweryDetails);
@@ -98,9 +98,7 @@ public class BreweryController {
 			return "redirect:/login";
 		}
 		
-		if( ! modelHolder.containsAttribute("updatedBrewery")){
-			modelHolder.put("updatedBrewery", new Brewery());
-		}
+	
 		
 		Brewery brewery = breweryDAO.getBreweryByUserId(currentUser.getId());
 		modelHolder.put("brewery", brewery);
@@ -117,12 +115,16 @@ public class BreweryController {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "updatedBrewery", result);
 			return "redirect:/updateBreweryInfo";
 		}
-		
-			updatedBrewery.setBreweryLogoUrl("http://res.cloudinary.com/teclebrew/" + updatedBrewery.getBreweryLogoUrl()); 
+		if (! updatedBrewery.getBreweryLogoUrl().startsWith("http://res.cloudinary.com/teclebrew/")) {
+			updatedBrewery.setBreweryLogoUrl("http://res.cloudinary.com/teclebrew/" + updatedBrewery.getBreweryLogoUrl());
+		}
+		if (! updatedBrewery.getImgUrl().startsWith("http://res.cloudinary.com/teclebrew/")) {
 			updatedBrewery.setImgUrl("http://res.cloudinary.com/teclebrew/" + updatedBrewery.getImgUrl());
-			breweryDAO.updateBrewery(updatedBrewery.getName(), updatedBrewery.getAddress(), updatedBrewery.getCity(), updatedBrewery.getZipcode(), 
-					updatedBrewery.getPhoneNumber(), updatedBrewery.getDescription(), updatedBrewery.getBreweryLogoUrl(), updatedBrewery.getImgUrl(), 
-					updatedBrewery.getWebsiteUrl(), updatedBrewery.getBusinessHours(),updatedBrewery.getId());
+		}
+		
+		breweryDAO.updateBrewery(updatedBrewery.getName(), updatedBrewery.getAddress(), updatedBrewery.getCity(), updatedBrewery.getZipcode(), 
+			updatedBrewery.getPhoneNumber(), updatedBrewery.getDescription(), updatedBrewery.getBreweryLogoUrl(), updatedBrewery.getImgUrl(), 
+			updatedBrewery.getWebsiteUrl(), updatedBrewery.getBusinessHours(), updatedBrewery.getGoogleMapsUrl(), updatedBrewery.getLat(), updatedBrewery.getLng(), updatedBrewery.getId());
 		return "redirect:/breweries";
 		}
 		

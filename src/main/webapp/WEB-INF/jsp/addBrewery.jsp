@@ -10,6 +10,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-jquery-file-upload/2.3.0/cloudinary-jquery-file-upload.min.js"></script>
 <script type='text/javascript'>
 
+
+
 	$.cloudinary.config({
 		"cloud_name" : "teclebrew",
 		"api_key" : "976593415828521",
@@ -58,6 +60,15 @@
 					required : true,
 
 				},
+				googleMapsUrl : {
+					required : true,
+				},
+				lat : {
+					required : true,
+				},
+				lng : {
+					required : true,
+				},
 			/* confirmPassword : {
 				required : true,		
 				equalTo : "#password"  
@@ -83,7 +94,16 @@
 				phoneNumber : {
 					minlength : "Please enter 10 digits",
 					maxlength : "Please enter 10 digits",
-				}
+				},
+				googleMapsUrl : {
+					required : "required",
+				},
+				lat : {
+					required : "required",
+				},
+				lng : {
+					required : "required",
+				},
 			/* confirmPassword : {
 				equalTo : "Passwords do not match"
 			} */
@@ -141,15 +161,17 @@
 			<div class="form-group">
 				<label for="breweryLogoUrl">Brewery Logo: </label>
 				<form:input path="breweryLogoUrl"  class="form-control" />  
-				<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="breweryLogoUrl" 
-   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" ></input>
+				<input id="hiddenButton1" name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="breweryLogoUrl" 
+   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" style="display:none"></input>
+   				<label id="topButton1" for="hiddenButton1" class="btn btn-default beerDetButton" >Choose File</label><br>
 				<form:errors path="breweryLogoUrl"></form:errors>
 			</div>	
 			<div class="form-group">
 				<label for="imgUrl">Brewery Image: </label>
 				<form:input path="imgUrl"  class="form-control" />
-				<input name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="imgUrl" 
-   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" ></input>
+				<input id="hiddenButton2"  name="file" type="file" class="cloudinary-fileupload" data-cloudinary-field="imgUrl" 
+   				data-form-data= "{&quot;upload_preset&quot;:  &quot;brewery_images&quot; }" style="display:none"></input>
+   				<label id="topButton2" for="hiddenButton2" class="btn btn-default beerDetButton" >Choose File</label><br>
 				<form:errors path="imgUrl"></form:errors>
 			</div>	
 			<div class="form-group">
@@ -161,9 +183,26 @@
 				<label for="businessHours">Business Hours: </label>
 				<form:input path="businessHours"  class="form-control" />
 				<form:errors path="businessHours"></form:errors>
-			</div>								
+			</div>
+			<div class="form-group">
+				<label for="googleMapsUrl">Google Maps Url: </label>
+				<form:input path="googleMapsUrl"  class="form-control" />
+				<form:errors path="googleMapsUrl"></form:errors>
+				<p>Please start your web address with https://</p>
+			</div>
+			<div class="form-group">
+				<label for="lat">Latitude: </label>
+				<form:input path="lat"  class="form-control" />
+				<form:errors path="lat"></form:errors>
+			</div>
+			<div class="form-group">
+				<label for="lng">Longitude: </label>
+				<form:input path="lng"  class="form-control" />
+				<form:errors path="lng"></form:errors>
+			</div>
+											
 			<div>
-			<button type="submit" class="btn btn-default">Create New Brewery</button><br>
+			<button type="submit" class="btn btn-default addBreweryButton">Create New Brewery</button><br>
 			
 		</div>
 	</div>

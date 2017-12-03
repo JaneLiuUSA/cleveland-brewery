@@ -16,7 +16,7 @@
 			$.validator.addMethod('lowercase', function(value) {
 			return value.match(/[a-z]/);
 			});
-			$.validator.addMethod('number', function(value){
+			$.validator.addMethod('numbers', function(value){
 			return value.match(/[0-9]/);
 			});
 		
@@ -28,7 +28,7 @@
 					maxlength : 128,
 					uppercase : true,
 					lowercase : true,
-					number : true,
+					numbers : true,
 				},
 				userName : {
 					required : true
@@ -40,18 +40,25 @@
 				email : {
 					required : true,
 					email : true,
-				}
+				},
+				id : {
+					required : true,
+					numbers : true,
+				},
 			},
 			messages : {	
 				password: {
 					minlength: "Password was too short. It should be at least 8 characters.",
 					uppercase: "Password must contain at least one uppercase letter",
 					lowercase: "Password must contain at least one lowercase letter",
-					number: "Password must contain one number",
+					numbers: "Password must contain one number",
 				},
 				confirmPassword : {
 					equalTo : "Passwords do not match",
 				},
+				id : {
+					numbers: "A brewery must be selected for a new brewer account."
+				}
 			},
 			errorClass : "error"
 		});

@@ -10,8 +10,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
-import com.techelevator.clebrews.security.PasswordHasher;
-
 @Component
 public class JDBCReviewDAO implements ReviewDAO  {
 	
@@ -36,7 +34,7 @@ public class JDBCReviewDAO implements ReviewDAO  {
 	@Override
 	public List<Review> searchReviewsByBeerId(long beerId) {
 		List<Review> reviewList = new ArrayList<>();
-		String sqlSearchReviewByBeerId = "SELECT * FROM reviews WHERE beer_id = ?";
+		String sqlSearchReviewByBeerId = "SELECT * FROM reviews WHERE beer_id = ? ORDER BY create_date DESC LIMIT 10";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSearchReviewByBeerId, beerId);
 		
 		while(results.next()){
@@ -58,6 +56,13 @@ public class JDBCReviewDAO implements ReviewDAO  {
 		review.setBeerId(row.getInt("beer_id"));
 
 		return review;
+	}
+
+	@Override
+	public int getReviewCount(long beerId) {
+		String sqlGetReviewCount = "SELECT COUNT(*) FROM reviews WHERE beer_id = ?";		
+		int numOfReviews = jdbcTemplate.queryForObject(sqlGetReviewCount, int.class, beerId);
+		return numOfReviews;
 	}
 	
 }
