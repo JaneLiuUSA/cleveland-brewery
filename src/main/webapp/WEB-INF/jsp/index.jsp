@@ -5,11 +5,15 @@
 
 <script type="text/javascript">
  $(document).ready(function() {
-     if ($.cookie('pop') == null) {
+     if ($.cookie('pop') == null) { 
          $('#myModal').modal('show');
-         $.cookie('pop', '1');
-     }
+         $.cookie('pop', '1'); 
+      } 
  });
+ 
+ function under21() {
+	    window.open("https://www.toysrus.com/");
+	}
  
 </script>
 
@@ -20,7 +24,7 @@
     <div class="modal-content">
       <div class="modal-header">
       	<h3 class="modal-title">Cleveland Brews</h3>
-        <h4 class="modal-title">You must be old enough to enter this site.</h4>
+        <h4 class="modal-title">You should be old enough to enter this site.</h4>
       </div>
       <div class="modal-body">
         <p class="modalText">Are you at least 21 years old?</p>
@@ -28,7 +32,7 @@
       
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Yes</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <button type="button" onclick="under21()" class="btn btn-default" data-dismiss="modal">No</button>
       </div>
     </div>
 
@@ -125,13 +129,14 @@ here to keep you up to date on those hopped up buds. Take a look around and get 
     </div>
     <div class="col-sm-4">
     <p class="text-center homeTitle"><strong>MOST REVIEWED BEER</strong></p><br>
-      <p class="text-center"><c:url var="ChristmasLink" value="/beerDetails/1"/><a href='${ChristmasLink}'><strong>CHRISTMAS ALE</strong></a></p><br>
+      <p class="text-center"><c:url var="hotBeerLink" value="/beerDetails/${hotBeer.id}"/>
+      <a href='${hotBeerLink}'><strong><c:out value="${hotBeer.name}"/></strong></a></p><br>
       <a href="#demo3" data-toggle="collapse">
-        <img src="http://res.cloudinary.com/teclebrew/image/upload/v1511640275/christmas_ale_great_lakes_av32aw.png" class="img-circle person" alt="Random Name">
+        <img src="${hotBeer.imgUrl}" class="img-circle person" alt="Random Name">
       </a>
       <div id="demo3" class="collapse">
-        <p>A Yuletide`s worth of holiday spices and sweet honey to keep you a-wassailing all season long</p>
-        <p><a href='${ChristmasLink}'>Check out this beer</a></p>
+        <p><c:out value="${hotBeer.info }"/></p>
+        <p><a href='${hotBeerLink}'>Check out this beer</a></p>
         <p></p>
       </div>
     </div>

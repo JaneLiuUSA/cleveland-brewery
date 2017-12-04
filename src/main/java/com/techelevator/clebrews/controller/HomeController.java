@@ -32,7 +32,7 @@ public class HomeController {
 	public String showHomePage(ModelMap modelHolder) {
 		
 		modelHolder.put("topBeer", getTopRatedBeer());
-		
+		modelHolder.put("hotBeer", getMostReviewedBeer());
 		
 		return "index";
 	}
@@ -49,7 +49,7 @@ private Beer getTopRatedBeer(){
 		Beer topBeer = beerList.get(0);
 		for (int i = 1 ; i < beerList.size() ; i++){
 			
-			if((beerList.get(i).getRating() == null)){
+			if(beerList.get(i).getRating() == null){
 				beerList.get(i).setRating(new BigDecimal(0));
 			}
 			
@@ -63,6 +63,20 @@ private Beer getTopRatedBeer(){
 		}
 			return topBeer;
 	}
+
+
+private Beer getMostReviewedBeer() {
+	
+	List<Beer>beerList = beerDAO.getAllBeer();
+	Beer hotBeer = beerList.get(0);
+	for(int i = 1 ; i < beerList.size() ; i++) {
+		if(getReviewCount(beerList.get(i).getId()) > getReviewCount(hotBeer.getId()))  {
+			hotBeer = beerList.get(i);
+		}
+	}
+	
+	return hotBeer;
+}
 	
 	public int getReviewCount (long beerId){
 		
