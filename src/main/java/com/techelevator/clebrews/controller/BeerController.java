@@ -99,7 +99,7 @@ public class BeerController {
 	}
 	
 	
-	@RequestMapping(path="{beerId}/updateInfo", method=RequestMethod.GET)
+	@RequestMapping(path="updateInfo/{beerId}", method=RequestMethod.GET)
 	public String updateBreweryInfo (@PathVariable long beerId, HttpSession session, ModelMap modelHolder) throws NotAllowedException {
 		
 		User currentUser = (User) session.getAttribute("currentUser");
@@ -127,7 +127,6 @@ public class BeerController {
 	public String updateBreweryInfo (@Valid @ModelAttribute Beer updatedBeer, 
 			BindingResult result, RedirectAttributes flash){
 		
-		flash.addFlashAttribute("updatedBeer", updatedBeer);
 		
 		if(result.hasErrors()) {
 			flash.addFlashAttribute(BindingResult.MODEL_KEY_PREFIX + "updatedBeer", result);
@@ -136,6 +135,8 @@ public class BeerController {
 		if (! updatedBeer.getImgUrl().startsWith("http://res.cloudinary.com/teclebrew/")) {
 			updatedBeer.setImgUrl("http://res.cloudinary.com/teclebrew/" + updatedBeer.getImgUrl());
 		}
+		
+		flash.addFlashAttribute("updatedBeer", updatedBeer);
 		
 		beerDAO.updateBeerInfo(updatedBeer.getName(), updatedBeer.getAbv(), updatedBeer.getIbu(),updatedBeer.getType(),
 				updatedBeer.getInfo(), updatedBeer.getImgUrl(), updatedBeer.getId());

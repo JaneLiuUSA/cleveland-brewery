@@ -24,7 +24,7 @@
 
 				</td>
 				<td> 
-					<c:url var="updateUrl" value="${beer.id}/updateInfo"/>
+					<c:url var="updateUrl" value="updateInfo/${beer.id}"/>
 					<a href="${updateUrl}"> <button type="button" name="update" class="btn btn-default" data-beer-id="${beer.id}">Update</button> </a>
 				</td>
 				
